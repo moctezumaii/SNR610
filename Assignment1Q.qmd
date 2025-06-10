@@ -1,0 +1,53 @@
+# Assignment 1  {.unnumbered}
+
+To create a new quarto file, go to File \> New File \> Quarto Document \> Write a title and your name \> Create.
+
+Make sure the header has the following information, with the following header (this will make it pretty, and upload all the information):
+
+```         
+title: "Title of document" 
+author: "Your name" 
+format:
+  html:
+    embed-resources: true
+editor: visual
+```
+
+You can copy and paste it.
+
+::: callout-warning
+## ✏️ Question 1 ✏️ 5pts
+
+1.  Create a new Quarto file (html). This is the file that you will upload to Canvas.
+2.  Write an explanation of what you think a statistical model is
+3.  Inside the Quarto file, using a code chunk, load the dataset, and then remove the first column `X` as we did earlier.
+4.  Look at the whole dataset
+5.  If you did your plot in R, try to embed it using code. If you used a different software option (or drew it), upload it to canvas as an independent file.
+:::
+
+::: callout-warning
+## ✏️ Question 2 ✏️ 5pts
+
+1.  In the same file, create an object with only monarchs, one object with only viceroy, and one with only queen.
+2.  Estimate the mean forewing area for each group. Do you think this differences are significant? Can we tell if the differences are because they are different species or because of some other variable (e.g., parasites)
+3.  Estimate the standard deviation of the forewing area for each group
+4.  Create a new object in which you only have observations that have a forewing area lower than 1000, AND 2 or more parasites.
+:::
+
+::: callout-warning
+## ✏️ Question 3 ✏️5pts
+
+You came up with a new population butterfly condition index (BCI). The equation is fairly simple:
+
+$$ BCI_i = \frac{x_i}{\overline{x}} $$
+
+where $BCI_i$ is the index for individual i, $x_i$ is the forewing area for individual i, and $\overline{x}$ is the sample mean. You need to estimate this for each individual, and you have to use a different $\overline{x}$ for each species (each species has its own mean forewing area).
+
+Write the code needed to estimate this BCI for each individual.
+
+tip: In the three objects you created (one for each species) add a column that estimates this BCI. Report he maximum and the minimum BCI (functions `max` and `min`) for each species.
+:::
+
+Click Render, and upload the resulting html file to CANVAS. If you can't get it to work contact me or talk to me after class.
+
+Finally, please let me know if this assignment and these types of exercises are useful! :)

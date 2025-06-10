@@ -1,0 +1,28 @@
+# The Central Limit Theorem and confidence intervals
+
+In this section we are going to learn the following:
+
+1.  Plotting and using ggplot. I commonly use ggplot, although still use "baseR" quite often to plot. But the reality is that the ggplot package **is probably the best tool and package to plot in R.** We will learn to make plots using ggplot and we will use it throughout the course.
+2.  Data simulation.
+3.  The central theorem and confidence intervals
+4.  Introduction to linear models
+
+This is a "longer" assignment. But the next one will be shorter. You can take as long as you need on it 😃
+
+You can download the quarto document (from Canvas) and use it to answer the questions, copy code, modify code, etc.
+
+# Remember!
+
+::: callout-note
+If you are comfortable with R basics, you can write the code for this exercise directly into Quarto. To add extra code chunks, write this symbols: \`\`\`{r}, if you are still not comfortable with R, I recommend for the time being you open a new file and copy and paste the code there, and run it. You can submit this as a qmd file or as an r-script. Whatever you feel more comfortable with at the moment (.qmd + .html preferred)
+
+You can also go to insert \> executable cell \> R and that should insert an r chunk
+:::
+
+::: callout-tip
+## Why is my data not loading?
+
+Make sure you download the data file, and also save the quarto file you're working on in the class folder!
+:::
+
+# 

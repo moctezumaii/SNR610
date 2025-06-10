@@ -1,0 +1,7 @@
+---
+bibliography: references.bib
+---
+
+# Readings 1 {.unnumbered}
+
+Please Read Chapter 4 and 5 of [@ward2024].

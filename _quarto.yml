@@ -1,0 +1,54 @@
+project:
+  type: book
+
+book:
+  title: "FWF 610 "
+  subtitle: "Data Modeling and Visualization Using R"
+  author: "Alejandro Molina Moctezuma"
+  date: "6/6/2025"
+  page-footer: "Alejandro Molina-Moctezuma, 2025"
+  downloads: [pdf, epub]
+  sidebar:
+    style: docked
+    background: light
+    collapse-level: 1
+  chapters:
+    - index.qmd
+    - part: intro.qmd
+      chapters:
+        - Assignment1.qmd
+        - Assignment1Q.qmd
+        - Readings1.qmd
+    - part: assignment2_intro.qmd
+      chapters:
+        - assignment2.qmd
+        - Readings2.qmd
+    - assignment3.qmd
+    - assignment4.qmd
+    - assignment5.qmd
+    - references.qmd
+  appendices:
+    - installation_instructions.qmd
+    - Datawrangling.qmd
+  navbar:
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Fisheries Research Group website"
+        href: https://moctezumaii.github.io/labwebsitetest/
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: united
+  pdf:
+    documentclass: scrreprt
+
+
+number-sections: true
+
+editor: visual
+

@@ -1,0 +1,27 @@
+# This book {.unnumbered}
+
+### Introduction to Statistical Analysis in Agriculture and the Natural Resources
+
+This book was created in order to host all of the materials for SNR610 class.
+
+This book/course will provide graduate students with a theoretical framework for data modeling (linear models, additive models and multivariate models), data visualization, data management, and data interpretation. This course will also aim to teach a practical use of program R for data management, analysis and visualization. Topics include an overview of data management principles, followed by methods in R for data wrangling, linear models, polynomial regression, generalized linear models, generalized additive models, and multivariate models, particularly ordination methods.  
+
+## Syllabus
+
+Please check Canvas for an updated syllabus.
+
+## Objectives and structure
+
+**Specific Course Objectives**
+
+The objectives of this class are multiple.
+
+**First**, this course is designed to review basic probability and statistics (Module 1).
+
+**Second**, develop your understanding and ability to develop models that are usual in research in agriculture and natural resources.
+
+**Third,** develop data management skills.
+
+**Fourth,** develop coding expertise for statistical analysis and for other tools.
+
+**Fifth,** develop the ability to design great publication ready plots in R. Finally, this course will cater to the students research needs, and some topics may be added in case there is a need.
