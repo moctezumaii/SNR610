@@ -11,7 +11,7 @@ This is a "longer" assignment. But the next one will be shorter. You can take as
 
 You can download the quarto document (from Canvas) and use it to answer the questions, copy code, modify code, etc.
 
-# Remember!
+## Remember!
 
 ::: callout-note
 If you are comfortable with R basics, you can write the code for this exercise directly into Quarto. To add extra code chunks, write this symbols: \`\`\`{r}, if you are still not comfortable with R, I recommend for the time being you open a new file and copy and paste the code there, and run it. You can submit this as a qmd file or as an r-script. Whatever you feel more comfortable with at the moment (.qmd + .html preferred)
