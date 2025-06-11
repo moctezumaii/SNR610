@@ -2,6 +2,6 @@
 bibliography: references.bib
 ---
 
-# Readings 2 {.unnumbered}
+# Supplementary Readings {.unnumbered}
 
 Please Read Chapter 6 of [@ward2024].

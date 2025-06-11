@@ -1,4 +1,4 @@
-# This book {.unnumbered}
+# Welcome! {.unnumbered}
 
 ### Introduction to Statistical Analysis in Agriculture and the Natural Resources
 

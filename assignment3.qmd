@@ -1,6 +1,6 @@
 ## Linear Models
 
-So far we have run a linear model with no covariates (also known as a one-sample t-test):
+So far we have run a categorical linear model with no covariates (also known as a one-sample t-test):
 
 $$
 \begin{split}y_i & \sim \beta_0 + \epsilon_i \\

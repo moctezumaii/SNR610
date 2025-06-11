@@ -1,0 +1,57 @@
+---
+bibliography: references.bib
+---
+
+# Introduction to Models
+
+## What is a model?
+
+A model is a simplification (or abstraction) of reality that helps us describe, understand or predict a system. Statistical models, help us describe relationships among variables. Which allows us to describe systems, and more specifically, it allows us to do:
+
+-   Inference
+
+-   Prediction
+
+-   Exploration
+
+Because biological systems have uncertainty, we need models in order to answer hypotheses.
+
+## The Lego models
+
+### Notre-Dame
+
+Take for example, the following lego model:
+
+![Notre Dame model.](img/lm/notre.jpg)
+
+That Lego model was obtained from <https://www.nytimes.com/2024/06/01/world/europe/lego-notre-dame-cathedral.html>. It clearly represents reality. But it obviously is NOT the real Notre-Dame. Most importantly, some things are obviously wrong. Some details are missing, the trees look different, the color is off, the aging doesnt show, it is missing windows, and bells, and many other things.
+
+However, if you showed this to someone that has never seen the real Notre-Dame Cathedral, they would have a very good idea of what it looks like.
+
+In biology and other sciences we rarely have access to the real buildings. We only have access to the Lego models. So, we derive our understanding of the natural world, from a series of Lego models that represent different hypothesis. Some are very complex and intricate, some are very simple, some are very hard to understand. Some try to show you the shape of a building, others the usefulness, others, the colors, and others how future real buildings might look like. But most importantly, they are all wrong. One way or another.
+
+Because we do not have access to the real world buildings, and we only have access to the Lego models, it is important to know that 1- all models are wrong, 2- some of them are useful, and 3- it is important to know why they are wrong. This is the basis for George Box's quote:
+
+::: callout-note
+## George Box and Norman Drapper said
+
+"Remember that **all models are wrong**: the practical questions is how wrong do they have to be to not be useful" [@box1987]
+
+Remember, all of your models (ANOVAS, Linear Models, etc) will be wrong! But they can still be useful!
+:::
+
+::: callout-tip
+## Think about it 🧠
+
+You have an activity, in which a group of people are trying to recreate a house (think, a typical suburban American house).
+
+A group of 20 people are given a bag with 30 simple pieces of Lego and are asked to build a typical suburban American house. They have to use all pieces.
+
+A group of 20 people are given a bag with 20,000 pieces of Lego. Some are very unique pieces. They are also asked to build a typical suburban American house.
+
+Think about the following:
+
+1\) Which of the two groups will have higher bias (difference between reality and model)?
+
+2\) Which will have higher variance (differences among models)?
+:::
