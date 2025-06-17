@@ -331,7 +331,9 @@ For Windows, you can search documents, or you can look at the latest downloads o
 
 When we read a datafile, we need to create an "R object". We can do it this way:
 
-$$ \underbrace{data}_{Object\; name} \; \; \; \underbrace{<-}_{arrow} \; \; \underbrace{read.csv('~C:/.../eel.csv')}_{Data} $$
+$$ \underbrace{data}_{Object\; name} \; \; \; \underbrace{<-}_{arrow} \; \; \underbrace{read.csv}_{function} \underbrace{('~C:/.../eel.csv')}_{Data\;location} $$
+
+Object name is the name you are giving to the new object you are creating. `read.csv` is the function, you can also use `read_csv` from package `readR`
 
 You can also do the following to import data into r:
 

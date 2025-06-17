@@ -656,7 +656,8 @@ Again, no problem if you can’t figure it out. By the end of the semester, you 
 <p>For mac, open Finder, click to the folder where you saved your data, find your file, right-click (or ctrl-click) it, and then click on GetInfo.</p>
 <p>For Windows, you can search documents, or you can look at the latest downloads on your browser.</p>
 <p>When we read a datafile, we need to create an “R object”. We can do it this way:</p>
-<p><span class="math display">\[ \underbrace{data}_{Object\; name} \; \; \; \underbrace{&lt;-}_{arrow} \; \; \underbrace{read.csv('~C:/.../eel.csv')}_{Data} \]</span></p>
+<p><span class="math display">\[ \underbrace{data}_{Object\; name} \; \; \; \underbrace{&lt;-}_{arrow} \; \; \underbrace{read.csv}_{function} \underbrace{('~C:/.../eel.csv')}_{Data\;location} \]</span></p>
+<p>Object name is the name you are giving to the new object you are creating. <code>read.csv</code> is the function, you can also use <code>read_csv</code> from package <code>readR</code></p>
 <p>You can also do the following to import data into r:</p>
 <ol type="1">
 <li><p>You can change your working directory, to the folder where your data is located, and then you don’t have to write the flepath. Check this website: <a href="https://dzchilds.github.io/eda-for-bio/working-directories-and-data-files.html" class="uri">https://dzchilds.github.io/eda-for-bio/working-directories-and-data-files.html</a> <span class="citation" data-cites="childs">(<a href="references.html#ref-childs" role="doc-biblioref">Childs 2024</a>)</span></p></li>
