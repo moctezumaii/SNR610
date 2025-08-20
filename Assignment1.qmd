@@ -297,6 +297,12 @@ Now, let's work on some real data.
 
 ## Reading data into R
 
+::: callout-tip
+## Projects
+
+If you create a project (which you should for this class), then you can ownload all the files in the **same directory** as the project. And you won't need to write the whole directory
+:::
+
 You can import data of various formats into R; they include data tables in the form of `.dbf`, `.csv`, and `.xlsx` files or even spatial data such as vectors `.shp` or rasters `.nc`.
 
 But the most common type of data files imported into R are probably`.csv` files.
