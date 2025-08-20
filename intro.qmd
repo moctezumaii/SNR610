@@ -92,7 +92,7 @@ head(data)
 
 So, we have data on three types of butterflies: Viceroy, Monarch, and Queen:
 
-![The three types of Butterflies that we have data on.](img/assignment1/butterflies.png){alt="The three types of Butterflies that we have data on."}
+![The three types of Butterflies that we have data on.](img/assignment1/butterflies.png)
 
 We have data on forewing area, number of parasites, species, and status. For status we have numbers 1, 2, and 3, which represent the following:
 

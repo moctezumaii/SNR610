@@ -489,7 +489,7 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 410.1626</code></pre>
+<pre><code>[1] 409.5249</code></pre>
 </div>
 </div>
 <p>We are going to simulate taking a sample of size 40. It is actually pretty straightforward to take a sample:</p>
@@ -580,7 +580,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.162562292838 is included within the confidence interval. LCI: 386.178997565945 UCI: 424.15313590566"</code></pre>
+<pre><code>[1] "Nice! The real parameter 409.524899291664 is included within the confidence interval. LCI: 384.449609497654 UCI: 422.420857845061"</code></pre>
 </div>
 </div>
 <p>In class I mentioned examples in which I would sample the same population multiple times. Let’s do that, let’s start by taking a second sample and estimating the confidence interval:</p>
@@ -597,7 +597,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.162562292838 is included within the confidence interval. LCI: 392.946187743908 UCI: 429.912073409114"</code></pre>
+<pre><code>[1] "Nice! The real parameter 409.524899291664 is included within the confidence interval. LCI: 390.447461767448 UCI: 422.941568416538"</code></pre>
 </div>
 </div>
 <p>Run the code again for sample 3</p>
@@ -658,7 +658,7 @@ UpperCI = \overline{y} + 1.96SE
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(inclusive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 95</code></pre>
+<pre><code>[1] 92</code></pre>
 </div>
 </div>
 <p>That’s it! It will give you the number of “successes”.</p>
