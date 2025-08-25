@@ -1,6 +1,12 @@
-# Assignment 1  {.unnumbered}
+# Assignment 1 {.unnumbered}
 
 To create a new quarto file, go to File \> New File \> Quarto Document \> Write a title and your name \> Create.
+
+::: callout-important
+## IMPORTANT!!!
+
+You should not answer these questions until you have completed the @sec-ass1 section
+:::
 
 Make sure the header has the following information, with the following header (this will make it pretty, and upload all the information):
 
@@ -20,9 +26,9 @@ You can copy and paste it.
 
 1.  Create a new Quarto file (html). This is the file that you will upload to Canvas.
 2.  Write an explanation of what you think a statistical model is
-3.  Inside the Quarto file, using a code chunk, load the dataset, and then remove the first column `X` as we did earlier.
+3.  Inside the Quarto file, using a code chunk, load the dataset, and then remove the first column `X` as we did earlier. This was explained in @sec-ass1
 4.  Look at the whole dataset
-5.  If you did your plot in R, try to embed it using code. If you used a different software option (or drew it), upload it to canvas as an independent file.
+5.  In @sec-ass1 you were asked to think about a plot. If you did your plot in R, try to embed it using code. If you used a different software option (or drew it), upload it to canvas as an independent file.
 :::
 
 ::: callout-warning
