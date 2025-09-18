@@ -107,10 +107,6 @@ y \sim \beta_0+\beta_1x_1+ \\
 \end{split}                 
 $$ Woah! That is a lot. You only have to write the equations for three models, just be sure to udnerstand where they are coming from! Now, let's run the model:
 
-$$
-\frac{123}{200}
-$$
-
 ```{r}
 model10<-lm(KgDMHA~Water*Salinity*Nitrogen*Pests*Graze,data = grasslanddata)
 #summary(model10)

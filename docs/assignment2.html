@@ -363,7 +363,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignment2_intro.html">The Central Limit Theorem and confidence intervals</a></li><li class="breadcrumb-item"><a href="./assignment2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring the CLT</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring the CLT</span></h1>
+<h1 class="title"><span id="sec-ass2" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring the CLT</span></span></h1>
 </div>
 
 
@@ -380,8 +380,7 @@ window.Quarto = {
 </header>
 
 
-<p>The applet on <a href="https://collinn.github.io/sbi/ch7.html#central-limit-theorem">Ward and Nolte’s book</a> <span class="citation" data-cites="ward2024">(<a href="references.html#ref-ward2024" role="doc-biblioref">Ward and Nolte 2024</a>)</span> is a great example of the central limit theorem. If you still have questions about this topic I recommend you check the applet on section 6.3 and the one on section 7.2.</p>
-<p>We are going to do a little experiment regarding the Central Limit Theorem and confidence intervals. We are going to:</p>
+<p>The applet on <a href="https://collinn.github.io/sbi/ch7.html#central-limit-theorem">Ward and Nolte’s book</a> <span class="citation" data-cites="ward2024">(<a href="references.html#ref-ward2024" role="doc-biblioref">Ward and Nolte 2024</a>)</span> is a great example of the central limit theorem. If you still have questions about this topic I recommend you check the applet on section 6.3 and the one on section 7.2. going to do a little experiment regarding the Central Limit Theorem and confidence intervals. We are going to:</p>
 <ol type="1">
 <li>Simulate a population. This population can be anything, and can have any distribution.</li>
 <li>Take a sample of size n = 30</li>
@@ -489,7 +488,7 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 410.0425</code></pre>
+<pre><code>[1] 411.2215</code></pre>
 </div>
 </div>
 <p>We are going to simulate taking a sample of size 40. It is actually pretty straightforward to take a sample:</p>
@@ -580,7 +579,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.042450492415 is included within the confidence interval. LCI: 394.72465690494 UCI: 435.074442015222"</code></pre>
+<pre><code>[1] "Nice! The real parameter 411.221494154718 is included within the confidence interval. LCI: 385.852953013245 UCI: 423.878248779597"</code></pre>
 </div>
 </div>
 <p>In class I mentioned examples in which I would sample the same population multiple times. Let’s do that, let’s start by taking a second sample and estimating the confidence interval:</p>
@@ -597,7 +596,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.042450492415 is included within the confidence interval. LCI: 395.374400451107 UCI: 432.313833954888"</code></pre>
+<pre><code>[1] "Nice! The real parameter 411.221494154718 is included within the confidence interval. LCI: 399.060325892303 UCI: 435.172957332046"</code></pre>
 </div>
 </div>
 <p>Run the code again for sample 3</p>
@@ -929,7 +928,7 @@ Residual standard error: 2.095 on 20 degrees of freedom</code></pre>
 </div>
 <p>What is different in this case?</p>
 <p>In this case, we can actually interpret the intercept. Try to include an interpretation of the intercept estimate and P-value as part of question 4.</p>
-<p>If you run the test using this alternative way, the t value of the intercept actually corresponds to the t value of a t-test. Essentially, r is running a t-test. Hopefully, this is the way you will be running t-tests in the future. In this case -5.33 is lower than the critical value. What does that mean?</p>
+<p>If you run the test using this alternative way, the t value of the intercept actually corresponds to the t value of a t-test. Essentially, r is running a t-test. Hopefully, this is the way you will be running t-tests in the future. In this case the absolute value of t (t=-1.55) is lower than the critical value. What does that mean?</p>
 </section>
 <section id="traditional-way" class="level3" data-number="3.0.2">
 <h3 data-number="3.0.2" class="anchored" data-anchor-id="traditional-way"><span class="header-section-number">3.0.2</span> Traditional way</h3>
@@ -948,10 +947,10 @@ t = \frac{\bar{y} - \mu_0}{\frac{s}{\sqrt{n}}} \ \ \ \ \ \text{where} \ \ \ \ \ 
 </div>
 <p>3- Calculate t statistic</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>t_stat <span class="ot">&lt;-</span> (y_bar <span class="sc">-</span> <span class="dv">21</span>)<span class="sc">/</span>se_y</span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>t_stat <span class="ot">&lt;-</span> (y_bar <span class="sc">-</span> <span class="fl">20.2</span>)<span class="sc">/</span>se_y</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>t_stat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -3.307546</code></pre>
+<pre><code>[1] -1.557466</code></pre>
 </div>
 </div>
 <p>And that’s it!</p>
@@ -964,7 +963,7 @@ t = \frac{\bar{y} - \mu_0}{\frac{s}{\sqrt{n}}} \ \ \ \ \ \text{where} \ \ \ \ \ 
 </div>
 </div>
 <p>and you are done. Again, the linear model function does the same :)</p>
-<p>Now, we can also run a ttest using the <code>t.test</code> function</p>
+<p>Now, we can also run a t-test using the <code>t.test</code> function</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1185,6 +1184,29 @@ ratio of variances
 <section id="challenge" class="level4" data-number="4.1.0.1">
 <h4 data-number="4.1.0.1" class="anchored" data-anchor-id="challenge"><span class="header-section-number">4.1.0.1</span> Challenge</h4>
 <p>You are going to flip a <strong>fair</strong> coin 10,000,000 times. However, if you get lucky and get 20 <strong>straight</strong> tails, you get to stop flipping a coin (and you get 10 extra credit points!) You need the record in which throw you got the 20th straight tail, and print it. If you are able to do all of this, you get the credit!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>end<span class="ot">&lt;-</span><span class="dv">20</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="dv">10000000</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fl">0.5</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>success<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span>(<span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">==</span><span class="dv">1</span>){</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>   success<span class="ot">&lt;-</span>success<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(success)</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a> } <span class="cf">else</span>{</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>   success<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(success)</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(success <span class="sc">==</span> end){</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(i)</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2657413</code></pre>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

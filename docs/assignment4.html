@@ -465,9 +465,6 @@ y \sim \beta_0+\beta_1x_1+ \\
 \beta_{24}x_2x_4x_5+\beta_{25}x_3x_4x_5+\beta_{26}x_1x_2x_3x_4+\\ \beta_{27}x_1x_2x_3x_5+\beta_{28}x_1x_2x_4x_5+\\ \beta_{29}x_1x_3x_4x_5+\beta_{30}x_2x_3x_4x_5+\beta_{31}x_1x_2x_3x_4x_5  
 \end{split}                 
 \]</span> Woah! That is a lot. You only have to write the equations for three models, just be sure to udnerstand where they are coming from! Now, let’s run the model:</p>
-<p><span class="math display">\[
-\frac{123}{200}
-\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model10<span class="ot">&lt;-</span><span class="fu">lm</span>(KgDMHA<span class="sc">~</span>Water<span class="sc">*</span>Salinity<span class="sc">*</span>Nitrogen<span class="sc">*</span>Pests<span class="sc">*</span>Graze,<span class="at">data =</span> grasslanddata)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(model10)</span></span>
@@ -875,8 +872,8 @@ Resampling: Cross-Validated (10 fold)
 Summary of sample sizes: 900, 900, 900, 900, 900, 900, ... 
 Resampling results:
 
-  RMSE      Rsquared  MAE     
-  956.7665  0.396475  771.6746
+  RMSE      Rsquared   MAE     
+  957.9743  0.3983003  772.1889
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>

@@ -1,4 +1,4 @@
-# Intro to R, Projects, and Quarto  {#sec-ass1}
+# Intro to R, Projects, and Quarto {#sec-ass1}
 
 Introduction to R, Projects, and Quarto.
 
