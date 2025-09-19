@@ -31,6 +31,7 @@ book:
   appendices:
     - installation_instructions.qmd
     - Datawrangling.qmd
+    - r-shiny_example.qmd
   navbar:
     search: true
     background: light

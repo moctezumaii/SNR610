@@ -1,0 +1,104 @@
+# Shiny App Example
+
+## Step 1
+
+Install the shiny package
+
+Install it by copying (top right corner) the following code and paste it in the console
+
+```{r eval=F}
+install.packages("shiny")
+```
+
+## Step 2 Run the app
+
+You will
+
+1- Go to File
+
+2- Select new file \> shiny web app \> name it Normal \> accept
+
+3- DELETE EVERYTHING
+
+4- Paste the following:
+
+```{r eval=F}
+# download the shiny package in order to run this in your computer
+
+library(shiny)
+
+# Define UI for application that draws a histogram
+shinyApp(
+  
+  ui = fluidPage(
+    titlePanel("Mean and Standard Deviation"),
+    mainPanel(
+          column(4, wellPanel(
+          sliderInput("mean", "Mean Blue Distribution:",
+                      min = -5, max = 5, value = 0, step = 1)
+        ),
+        
+        wellPanel(
+          sliderInput("sd", "SD Blue distribution:",
+                      min = 0.5, max = 5, value = 2, step = .25)
+        ),
+        
+        wellPanel(
+          checkboxInput("header", "Two graphs", TRUE)
+        ), 
+        
+        wellPanel(
+          sliderInput("mean2", "Mean Red Distribution:",
+                      min = -5, max = 5, value = 2, step = 1)
+        ),
+        wellPanel(
+          sliderInput("sd2", "SD Red Distribution:",
+                      min = 0.5, max = 5, value = 2, step = .25)
+        )
+        ),
+        column(8,
+               plotOutput('curves'),
+               
+               br(),
+               br()
+               
+        )
+      
+    )
+  ),
+  
+  server = function(input, output, session) {
+    # Create a random name for the log file
+    
+    
+    
+    
+    # This observer adds an entry to the log file every time
+    # input$n changes.
+    x <- seq(-20, 20, 0.01)
+    maxvalue <- reactive({
+      
+      max(c(dnorm(x, input$mean, input$sd),dnorm(x, input$mean2, input$sd2)))
+    })
+    
+#    redvalsm<-reactive({
+#      if(input$header==1){
+#        input$mean2
+#        } else NA
+#    })
+    
+    output$curves <- renderPlot({
+      plot(NULL, xlim=c(-20,20), ylim=c(0, maxvalue()),  ylab = 'Probability', xlab = 'X',
+           main = "Two Normal Distributions" )
+      curve(dnorm(x, input$mean, input$sd), from = -20, to = 20, lwd = 4,
+            col = 'steelblue',add=T)
+      if(input$header==1){
+      curve(dnorm(x, input$mean2, input$sd2), add = TRUE, lwd = 4, col = 'tomato')
+      }
+      
+    })
+    
+    
+  }
+)
+```
