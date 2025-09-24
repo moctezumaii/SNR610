@@ -125,25 +125,25 @@ While some of the plots might not look great, in reality this is how most data l
 
 Now that we ran it, we can run all of the other models, make sure to follow the outlined steps
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='hide'}
 model1<-lm(KgDMHA~1,data = grasslanddata)
 summary(model1)
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, results='hide', warning=FALSE}
 library(ggplot2)
 
-ggplot(grasslanddata, aes(x=1,y=KgDMHA))+
-  geom_point(alpha=0.01)+
-   geom_boxplot(alpha=0.1,color=gray(0.9,0.1),width=0.1) +
-  geom_violin(fill=gray(0.9,0.1),color="black")+
-  stat_summary(fun.y=mean, geom="point", shape=20, size=2, color="red", fill="red")+
-  stat_summary(fun.data = mean_se,  
-                 geom = "errorbar",width=0.4) +
-  theme_classic()
+#ggplot(grasslanddata, aes(x=1,y=KgDMHA))+
+#  geom_point(alpha=0.01)+
+#   geom_boxplot(alpha=0.1,color=gray(0.9,0.1),width=0.1) +
+#  geom_violin(fill=gray(0.9,0.1),color="black")+
+#  stat_summary(fun.y=mean, geom="point", shape=20, size=2, color="red", fill="red")+
+#  stat_summary(fun.data = mean_se,  
+#                 geom = "errorbar",width=0.4) +
+#  theme_classic()
 ```
 
-```{r echo=FALSE}
+```{r echo=FALSE, , results='hide'}
 model2<-lm(KgDMHA~Water, data=grasslanddata)
 summary(model2)
 ```
@@ -156,18 +156,16 @@ predictedmodel2<-predict.lm(model2,grasslanddata,interval = "co")
 grasslanddata2<-cbind(grasslanddata,predictedmodel2)
 ```
 
-```{r echo=FALSE}
-ggplot(data=grasslanddata2,aes(y=KgDMHA, x=Water, ymin=lwr,ymax=upr ))+
-  geom_point()+
-  geom_line(aes(y=fit))+
-  geom_ribbon(alpha=0.2)+
-  theme_classic()
+```{r echo=FALSE, results='hide'}
+#ggplot(data=grasslanddata2,aes(y=KgDMHA, x=Water, ymin=lwr,ymax=upr ))+
+#  geom_point()+
+#  geom_line(aes(y=fit))+
+#  geom_ribbon(alpha=0.2)+
+#  theme_classic()
 
 ```
 
-Model 6
-
-```{r echo=FALSE}
+```{r echo=FALSE, results='hide'}
 model6<-lm(KgDMHA~Graze+Pests, data=grasslanddata)
 summary(model6)
 ```
@@ -177,12 +175,12 @@ predictedmodel6<-predict.lm(model6,grasslanddata,interval = "co")
 grasslanddata6<-cbind(grasslanddata,predictedmodel6)
 ```
 
-```{r echo=FALSE, eval=FALSE}
-ggplot(data=grasslanddata6,aes(y=KgDMHA, x=Gra, ymin=lwr,ymax=upr, color=Pests, shape=Pests ))+
-  geom_point()+
-  geom_line(aes(y=fit))+
-  geom_ribbon(alpha=0.2)+
-  theme_classic()
+```{r echo=FALSE, eval=FALSE, results='hide'}
+#ggplot(data=grasslanddata6,aes(y=KgDMHA, x=Gra, ymin=lwr,ymax=upr, color=Pests, shape=Pests ))+
+#  geom_point()+
+#  geom_line(aes(y=fit))+
+#  geom_ribbon(alpha=0.2)+
+#  theme_classic()
 ```
 
 ::: callout-warning
@@ -363,7 +361,7 @@ AIC(model)
 5\) Use the following equation:
 
 $$
-RMSE = \sqrt{\frac{\sum(y_i-\hat{y}_i^2)}{n}}   
+RMSE = \sqrt{\frac{\sum(y_i-\hat{y}_i)^2}{n}}   
 $$
 
 RMSE is the root mean square error. Essentially, a measure of the distance between predictor and observation.

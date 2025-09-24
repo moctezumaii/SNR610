@@ -514,97 +514,6 @@ y \sim \beta_0+\beta_1x_1+ \\
 </div>
 <p>While some of the plots might not look great, in reality this is how most data looks like. In this case values over 8,000 kgs and under 5,000 kgs are rare, which makes the variance seem smaller in those values. However, it is usually pretty obvious when you need to transform your data and we will work on that later. In this case, we are meeting the assumptions, so we can run linear models without any transformations.</p>
 <p>Now that we ran it, we can run all of the other models, make sure to follow the outlined steps</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = KgDMHA ~ 1, data = grasslanddata)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3792.2  -854.7   -17.2   847.3  4500.8 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   5972.2       38.9   153.5   &lt;2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1230 on 999 degrees of freedom</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `fun.y` argument of `stat_summary()` is deprecated as of ggplot2 3.3.0.
-ℹ Please use the `fun` argument instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = KgDMHA ~ Water, data = grasslanddata)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3210.3  -705.0   -15.5   782.0  3821.6 
-
-Coefficients:
-             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 1.020e+03  3.050e+02   3.344 0.000856 ***
-Water       7.094e-03  4.340e-04  16.344  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 1093 on 998 degrees of freedom
-Multiple R-squared:  0.2112,    Adjusted R-squared:  0.2104 
-F-statistic: 267.1 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="assignment4_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Model 6</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = KgDMHA ~ Graze + Pests, data = grasslanddata)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--2556.9  -629.3    22.9   608.7  2854.6 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 8508.848    105.262   80.83  &lt; 2e-16 ***
-Graze        -57.008      2.446  -23.31  &lt; 2e-16 ***
-Pestslow     844.351    112.874    7.48 1.62e-13 ***
-Pestsmost   -892.254     62.145  -14.36  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 909 on 996 degrees of freedom
-Multiple R-squared:  0.4557,    Adjusted R-squared:  0.4541 
-F-statistic:   278 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
-</div>
-</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -766,11 +675,11 @@ AIC_c = AIC +\frac{2K(K+1)}{n-K-1}
 \]</span></p>
 <p>First save all the models in a list. I have some sample code here, but do it with your models (you already run them!)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>CandidateModels<span class="ot">&lt;-</span><span class="fu">list</span>(<span class="st">"null"</span><span class="ot">=</span>model1,<span class="st">"model2"</span><span class="ot">=</span>model2...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>CandidateModels<span class="ot">&lt;-</span><span class="fu">list</span>(<span class="st">"null"</span><span class="ot">=</span>model1,<span class="st">"model2"</span><span class="ot">=</span>model2...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, download and load the <code>AICcmodavg</code> package, and run:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>selectionTable <span class="ot">&lt;-</span> <span class="fu">aictab</span>(<span class="at">cand.set =</span> CandidateModels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>selectionTable <span class="ot">&lt;-</span> <span class="fu">aictab</span>(<span class="at">cand.set =</span> CandidateModels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And that’s it! What model or models are best? This is super easy to run!</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -826,12 +735,12 @@ Assignment question 7:
 <p>2) With the training dataset, run each of the three models. You should obtain an output for each model</p>
 <p>3) Obtain an AICc value for each of the three models.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>4) In the test dataset, add three new columns called predictmodel1, predictmodel2, precitmodel3. Populate the columns with the predicted values based on each of the three models you ran. You can use the coefficients, or the predict function to obtain those values. It’s easiest to use the <code>predict.lm</code> function. Let me know if you need help with this! Or check the last assignment!</p>
 <p>5) Use the following equation:</p>
 <p><span class="math display">\[
-RMSE = \sqrt{\frac{\sum(y_i-\hat{y}_i^2)}{n}}   
+RMSE = \sqrt{\frac{\sum(y_i-\hat{y}_i)^2}{n}}   
 \]</span></p>
 <p>RMSE is the root mean square error. Essentially, a measure of the distance between predictor and observation.</p>
 <p>Estimate RMSE for EACH of the three models. Lower RMSE is better!</p>
@@ -853,20 +762,20 @@ RMSE = \sqrt{\frac{\sum(y_i-\hat{y}_i^2)}{n}}
 <p>The point is, you are testing your model in data that was not used to develop the model. Does that make sense? If not, wait until Monday or raise your hand! :)</p>
 <p>It is easy to do:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'caret' was built under R version 4.3.3</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: lattice</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ctrl <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method=</span> <span class="st">'cv'</span>, <span class="at">number=</span> <span class="dv">10</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>abiotic <span class="ot">&lt;-</span> <span class="fu">train</span>(KgDMHA<span class="sc">~</span> Water <span class="sc">+</span> Salinity <span class="sc">+</span> Nitrogen, <span class="at">data=</span> grasslanddata, <span class="at">trControl=</span> ctrl,<span class="at">method=</span><span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ctrl <span class="ot">&lt;-</span> <span class="fu">trainControl</span>(<span class="at">method=</span> <span class="st">'cv'</span>, <span class="at">number=</span> <span class="dv">10</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>abiotic <span class="ot">&lt;-</span> <span class="fu">train</span>(KgDMHA<span class="sc">~</span> Water <span class="sc">+</span> Salinity <span class="sc">+</span> Nitrogen, <span class="at">data=</span> grasslanddata, <span class="at">trControl=</span> ctrl,<span class="at">method=</span><span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can get the RMSE for each model using:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(abiotic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(abiotic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Regression 
 
@@ -879,14 +788,14 @@ Summary of sample sizes: 900, 900, 900, 900, 900, 900, ...
 Resampling results:
 
   RMSE      Rsquared   MAE     
-  958.9236  0.3971689  772.4743
+  956.3563  0.3984257  771.4731
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>
 </div>
 <p>And we can get the predictive values from the training set using:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(abiotic<span class="sc">$</span>finalModel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(abiotic<span class="sc">$</span>finalModel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
