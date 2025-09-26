@@ -1,5 +1,7 @@
 project:
   type: book
+  resources:
+    - slides/*
   output-dir: docs
 
 book:
@@ -28,6 +30,7 @@ book:
     - assignment4.qmd
     - assignment5.qmd
     - references.qmd
+    - Slideshows.qmd
   appendices:
     - installation_instructions.qmd
     - Datawrangling.qmd

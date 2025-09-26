@@ -1,0 +1,11 @@
+# Slideshows
+
+[Poisson Distribution slideshow](slides/GLM_Poisson.html)
+
+Overdispersion and zero inflation
+
+[Review of Linear models](slides/GLM_Poisson2.html)
+
+Mixed Effects Models
+
+Generalized Additive Models

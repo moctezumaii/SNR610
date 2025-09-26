@@ -43,7 +43,7 @@ Here is a table with the link functions for both Binomial and Poisson distributi
 Save it somewhere important!
 
 | Distribution | link name | link equation | inverse link eq | link function R | inverse link in R |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | Binomial | logit | $\mu = log(\frac{p}{1-p})$ | $p= \frac{e^\mu}{1+e^\mu}$ | `qlogis()` | `plogis()` |
 | Poisson | log | $\mu = log(\lambda)$ | $\lambda = e^\mu$ | `log()` | `exp()` |
 
