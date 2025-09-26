@@ -297,8 +297,8 @@ Y_i \sim some \ distribution(\mu_i)
 <section id="distribution" class="slide level2">
 <h2>Distribution</h2>
 <p>Transformations will linearize the data, but if the response variable has a differentt distribution around the model than normal, then a glm is the way to go:</p>
-<p><img data-src=".\img/slides/pois1.png"></p>
-<p><img data-src=".\img/slides/pois2.png"></p>
+<p><img data-src="../img/slides/pois1.png"></p>
+<p><img data-src="../img/slides/pois2.png"></p>
 </section>
 <section id="we-can-do-a-glm" class="slide level2">
 <h2>We can do a glm!</h2>
@@ -354,16 +354,16 @@ glm(formula = y ~ x, family = poisson, data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.136768   0.038501   29.53   &lt;2e-16 ***
-x           0.335726   0.004911   68.37   &lt;2e-16 ***
+(Intercept) 1.140439   0.037638   30.30   &lt;2e-16 ***
+x           0.335539   0.004937   67.96   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 6324.83  on 299  degrees of freedom
-Residual deviance:  226.47  on 298  degrees of freedom
-AIC: 1621.4
+    Null deviance: 5954.47  on 299  degrees of freedom
+Residual deviance:  276.13  on 298  degrees of freedom
+AIC: 1641.5
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -406,16 +406,16 @@ glm(formula = y ~ x, family = poisson, data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.136768   0.038501   29.53   &lt;2e-16 ***
-x           0.335726   0.004911   68.37   &lt;2e-16 ***
+(Intercept) 1.140439   0.037638   30.30   &lt;2e-16 ***
+x           0.335539   0.004937   67.96   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 6324.83  on 299  degrees of freedom
-Residual deviance:  226.47  on 298  degrees of freedom
-AIC: 1621.4
+    Null deviance: 5954.47  on 299  degrees of freedom
+Residual deviance:  276.13  on 298  degrees of freedom
+AIC: 1641.5
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -478,7 +478,7 @@ Y_i \sim Poisson(\lambda_i)
 <section id="distributions" class="slide level2">
 <h2>Distributions</h2>
 
-<img data-src=".\img/slides/dist.png" class="r-stretch"></section>
+<img data-src="../img/slides/dist.png" class="r-stretch"></section>
 <section id="normal-distribution" class="slide level2">
 <h2>Normal Distribution</h2>
 <ul>
@@ -530,19 +530,19 @@ Y_i \sim Poisson(\lambda_i)
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0 0 0 0 0 0 0 0 1 0</code></pre>
+<pre><code> [1] 0 0 0 0 1 0 0 0 0 0</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 0 1 1 1 0 1 0 1</code></pre>
+<pre><code> [1] 1 1 0 1 0 0 0 1 0 0</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+<pre><code> [1] 1 1 0 1 1 1 1 1 1 0</code></pre>
 </div>
 </div>
 </section>
@@ -563,16 +563,16 @@ glm(formula = y ~ x, family = poisson(link = "log"), data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.136768   0.038501   29.53   &lt;2e-16 ***
-x           0.335726   0.004911   68.37   &lt;2e-16 ***
+(Intercept) 1.140439   0.037638   30.30   &lt;2e-16 ***
+x           0.335539   0.004937   67.96   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 6324.83  on 299  degrees of freedom
-Residual deviance:  226.47  on 298  degrees of freedom
-AIC: 1621.4
+    Null deviance: 5954.47  on 299  degrees of freedom
+Residual deviance:  276.13  on 298  degrees of freedom
+AIC: 1641.5
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>

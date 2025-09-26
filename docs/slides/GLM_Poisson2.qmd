@@ -328,7 +328,7 @@ emmeans::contrast(a,"pairwise")
 
 `anova` compares variance. Is the variance between groups higher than within groups?
 
-![](/img/slides/inference1.png)
+![](../img/slides/inference1.png)
 
 ## Interactive
 
@@ -513,7 +513,7 @@ Site
 
 -   While we usually think Poisson, it has an important assumption: $Var(y_i) = \lambda\_i$
 
-![](/img/slides/pois.png)
+![](../img/slides/pois.png)
 
 ## How to check for overdispersion?
 

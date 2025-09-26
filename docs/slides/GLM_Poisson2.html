@@ -259,7 +259,7 @@ y = mx + b = b + mx
 <p><span class="math display">\[
 \begin{align}
 \mu_i &amp; = \beta_0 + \beta_1x_{1,i} \\
-y_i &amp; ~ N(mean = \mu_i, var=\sigma^2)
+y_i &amp; \sim N(mean = \mu_i, var=\sigma^2)
 \end{align}
 \]</span></p>
 </section>
@@ -305,8 +305,8 @@ y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\
 Reproductive \ effort_i \sim \beta_0 + \beta_1Food \ availability_i + \epsilon_i \\
 \]</span></p>
 </section>
-<section id="so-what-about-linear-models-3" class="slide level2">
-<h2>So, what about linear models?</h2>
+<section id="intercept-and-slope-in-linear-models" class="slide level2">
+<h2>Intercept and Slope in Linear Models</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -329,8 +329,10 @@ Multiple R-squared:  0.9893,    Adjusted R-squared:  0.9891
 F-statistic:  5636 on 1 and 61 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>Intercept: 0.895</p>
-<p>Slope: 1.194</p>
+<ul>
+<li class="fragment"><p>Intercept: 0.895</p></li>
+<li class="fragment"><p>Slope: 1.194</p></li>
+</ul>
 <p><span class="math display">\[
 \begin{split}
 y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\
@@ -341,13 +343,20 @@ y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\
 <section id="results" class="slide level2">
 <h2>Results</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 13%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Coefficient1</th>
+<th>Coefficient</th>
 <th>Estimate</th>
-<th>Col3</th>
-<th>Col4</th>
-<th>Col5</th>
+<th>Std. Error</th>
+<th>t-value (test)</th>
+<th>p-value</th>
 </tr>
 </thead>
 <tbody>
@@ -386,11 +395,11 @@ y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\
 </colgroup>
 <thead>
 <tr class="header">
-<th>Coefficient1</th>
+<th>Coefficient</th>
 <th>Estimate</th>
 <th>Std. Error</th>
 <th>t-value (test)</th>
-<th>Col5</th>
+<th>p-value</th>
 </tr>
 </thead>
 <tbody>
@@ -411,9 +420,11 @@ y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\
 </tbody>
 </table>
 <p><span class="math display">\[ \begin{split} y_i &amp; \sim \beta_0 + \beta_1x_i + \epsilon_i \\ \text{where } \epsilon &amp; \sim normal(0,\sigma) \end{split} \]</span></p>
-<p>Test:</p>
-<p>Ho: Coefficient == 0</p>
-<p>Ha Coefficient != 0</p>
+<ul>
+<li class="fragment"><p>Test:</p></li>
+<li class="fragment"><p>Ho: Coefficient == 0</p></li>
+<li class="fragment"><p>Ha Coefficient != 0</p></li>
+</ul>
 </section>
 <section id="how-about-this-one" class="slide level2">
 <h2>How about this one:</h2>
@@ -606,7 +617,7 @@ P value adjustment: tukey method for comparing a family of 3 estimates </code></
 <h2>statistical inference</h2>
 <p><code>anova</code> compares variance. Is the variance between groups higher than within groups?</p>
 
-<img data-src="images/clipboard-4150061290.png" class="r-stretch"></section>
+<img data-src="../img/slides/inference1.png" class="r-stretch"></section>
 <section id="interactive" class="slide level2">
 <h2>Interactive</h2>
 
@@ -3491,27 +3502,7 @@ logistic(\pi_i)  = \beta_0 + \beta_1 x_{1,i}+ \beta_2 x_{2,i} + \beta_3 x_{3,i}+
 </tbody>
 </table>
 </section>
-<section id="categorical" class="slide level2">
-<h2>Categorical</h2>
-
-<img data-src="images/clipboard-1773874490.png" class="r-stretch"></section>
 <section id="section" class="slide level2">
-<h2></h2>
-
-<img data-src="images/clipboard-2685946074.png" class="r-stretch"></section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-
-<img data-src="images/clipboard-2466917050.png" class="r-stretch"></section>
-<section id="this-weeks-lab" class="slide level2">
-<h2>This week’s lab</h2>
-<ul>
-<li class="fragment"><p>Create your own assignment</p></li>
-<li class="fragment"><p>I have been reviewing assignments, and I will meet with some of you to go over some concepts</p></li>
-<li class="fragment"><p>Next week: repeated measures, pseudoreplication, mixed models</p></li>
-</ul>
-</section>
-<section id="section-2" class="slide level2">
 <h2></h2>
 </section>
 <section id="logistic-regression-assumptions" class="slide level2">
@@ -3528,7 +3519,7 @@ logistic(\pi_i)  = \beta_0 + \beta_1 x_{1,i}+ \beta_2 x_{2,i} + \beta_3 x_{3,i}+
 <li class="fragment"><p>While we usually think Poisson, it has an important assumption: <span class="math inline">\(Var(y_i) = \lambda\_i\)</span></p></li>
 </ul>
 
-<img data-src="images/clipboard-202474714.png" class="r-stretch"></section>
+<img data-src="../img/slides/pois.png" class="r-stretch"></section>
 <section id="how-to-check-for-overdispersion" class="slide level2">
 <h2>How to check for overdispersion?</h2>
 <p>Package: performance</p>
@@ -3568,307 +3559,15 @@ logistic(\pi_i)  = \beta_0 + \beta_1 x_{1,i}+ \beta_2 x_{2,i} + \beta_3 x_{3,i}+
 <section id="next-classes" class="slide level2">
 <h2>Next classes</h2>
 <ul>
-<li class="fragment"><p>Mixed effects models</p></li>
 <li class="fragment"><p>Repeated measures</p></li>
 <li class="fragment"><p>zero inflation</p></li>
 <li class="fragment"><p>Other models</p></li>
 </ul>
 </section>
-<section id="question-1" class="slide level2">
-<h2>Question 1</h2>
-<p>Interested in the concentration of mercury in Lake Michigan</p>
+<section id="section-1" class="slide level2">
+<h2></h2>
 
-<img data-src="images/clipboard-3586888397.png" class="r-stretch"><ul>
-<li class="fragment"><p>We use code to randomly select 4 sites</p></li>
-<li class="fragment"><p>At each site we set up a net</p></li>
-<li class="fragment"><p>Return later and test Hg concentration of each fish</p></li>
-</ul>
 </section>
-<section id="question-1-1" class="slide level2">
-<h2>Question 1:</h2>
-<ul>
-<li class="fragment"><p>What is the experimental unit?</p></li>
-<li class="fragment"><p>What is the response variable?</p></li>
-<li class="fragment"><p>Where is sampling coming from or being introduced?</p></li>
-<li class="fragment"><div>
-<p><img data-src="images/clipboard-859519992.png"></p>
-</div></li>
-<li class="fragment"><p>What do we care about?</p></li>
-</ul>
-</section>
-<section id="question-2" class="slide level2">
-<h2>Question 2:</h2>
-<ul>
-<li class="fragment"><p>We are testing infection prevalence in turkeys 🦃</p></li>
-<li class="fragment"><p>We trap multiple individuals from a flock, and test them all 🦃</p></li>
-<li class="fragment"><p>We do this for multiple flocks</p></li>
-<li class="fragment"><p>What is introducing variance?</p></li>
-</ul>
-</section>
-<section id="question-3" class="slide level2">
-<h2>Question 3</h2>
-<ul>
-<li class="fragment"><p>We are testing the effects of a new drug on mice</p></li>
-<li class="fragment"><p>You have 100 🐁. And three groups: control, dose 1 and dose 2</p></li>
-<li class="fragment"><p>You measure their heartbeat pre-trial, 5 weeks post trial, and 10 weeks post trial</p></li>
-<li class="fragment"><p>Do we care about individual 🐭 or the general effect of the drug?</p></li>
-</ul>
-</section>
-<section id="question-4" class="slide level2">
-<h2>Question 4</h2>
-
-<img data-src="images/clipboard-2338429704.png" class="r-stretch"><ul>
-<li class="fragment"><p>Each color represents a different feeding treatment.</p></li>
-<li class="fragment"><p>Samples are taken daily</p></li>
-</ul>
-</section>
-<section id="experiments" class="slide level2 scrollable">
-<h2>Experiments</h2>
-<ol type="1">
-<li class="fragment">Fish and Hg. <strong>Research question</strong>: Should we limit consumption of fish over a certain size</li>
-<li class="fragment">Infection prevalence in turkeys: <strong>Research question</strong>: You are estimating the probability of an individual being infected to be used as a section on a demographic model?</li>
-<li class="fragment">Mice. <strong>Research question</strong>:Is the drug affecting the mice heart rate?</li>
-<li class="fragment">Salmon: Does energy availability (food), affects the activity of the ATPase enzime?</li>
-</ol>
-</section>
-<section id="experiments-1" class="slide level2">
-<h2>Experiments : 🎣 🦃 🐁🐟</h2>
-<p>For each experiment answer:</p>
-<ul>
-<li class="fragment"><p>How would you analyze the data</p></li>
-<li class="fragment"><p>Are they breaking any assumptions?</p></li>
-<li class="fragment"><p>What is the individual unit, and what is the experimental unit</p></li>
-<li class="fragment"><p>What is the response variable</p></li>
-<li class="fragment"><p>Where is the variance coming from?</p></li>
-</ul>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example 1:</h2>
-<p>In the first example, we are looking at the relationship between size and Hg concentration, in order to know whether to publish a consumption advisory for fish over a certain size. So, far, we have looked at examples in which our sampling is “random”</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>      size       Hg ind
-1 48.39452 1.492752   1
-2 51.86921 1.361018   2
-3 56.25563 1.599050   3
-4 37.48446 1.306688   4
-5 54.68110 1.558177   5
-6 56.43291 1.633961   6</code></pre>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>Could we simply look at it as</p></li>
-<li class="fragment"><p><span class="math display">\[
-Hg_i \sim \beta_0 + \beta_1 + \epsilon
-\]</span></p></li>
-</ul>
-</section>
-<section id="example-1-1" class="slide level2">
-<h2>Example 1:</h2>
-<p>But now the data looks like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>       size        Hg region ind
-1  48.39452 1.4927521      A   1
-2  51.86921 1.3610180      A   2
-3  56.25563 1.5990504      A   3
-25 33.57015 0.8787450      B  25
-26 36.07026 1.0922504      B  26
-27 34.83098 0.8561926      B  27
-56 56.24725 1.2529632      C  56
-57 56.72645 1.3395589      C  57
-80 57.15673 1.1560370      D  80
-81 52.42772 0.9928414      D  81</code></pre>
-</div>
-</div>
-<p>How do we analyze it?</p>
-</section>
-<section id="so-far-we-have-looked-at-linear-models-or-glms" class="slide level2">
-<h2>So far we have looked at linear models (or glms)</h2>
-<ul>
-<li class="fragment"><p><span class="math display">\[
-\underbrace{E[y_i]}_{\text{expected value}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic}
-\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[
-y_i \sim \underbrace{N(mean=E[y_i], var=\sigma^2)}_{stochastic}
-\]</span></p></li>
-<li class="fragment"><p>Same as:</p></li>
-<li class="fragment"><p><span class="math display">\[
-y_i = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \ + \underbrace{\epsilon}_{stachastic}
-\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[\epsilon \sim nomral(0,\sigma) \]</span></p></li>
-</ul>
-</section>
-<section id="linear-model" class="slide level2">
-<h2>linear model</h2>
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"><p><span class="math display">\[ \underbrace{E[y_i]}_{\text{expected value}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \]</span></p>
-<p><span class="math display">\[ y_i \sim \underbrace{N(mean=E[y_i], var=\sigma^2)}_{stochastic} \]</span></p>
-</section>
-<section id="do-an-equation-in-which-we-introduce-the-effects-of-net" class="slide level2">
-<h2>Do an equation in which we introduce the effects of net</h2>
-</section>
-<section id="mixed-model" class="slide level2">
-<h2>Mixed model</h2>
-<p>In a mixed model we <strong>introduce</strong> stochastic effects to the “deterministic component”.</p>
-<p>In this case:</p>
-<ul>
-<li class="fragment"><p><span class="math display">\[
-\underbrace{E[y_i]}_{\text{expected value}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... beta_mx_{m,i}}_{deterministic}
-\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[
-y_i \sim \underbrace{N(mean=E[y_i], var=\sigma^2)}_{stochastic}
-\]</span></p></li>
-<li class="fragment"><p>Same as:</p></li>
-<li class="fragment"><p><span class="math display">\[
-y_i \sim \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \ + \underbrace{\epsilon}_{stachastic}
-\]</span></p></li>
-<li class="fragment"><p>They all are deterministic (are a single value!)</p></li>
-</ul>
-</section>
-<section id="mixed-model-1" class="slide level2">
-<h2>Mixed model</h2>
-<p>When we talk about the stochastic portion of a model:</p>
-<ul>
-<li class="fragment"><span class="math display">\[
-y_i \sim \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \ + \underbrace{\epsilon}_{stachastic}
-\]</span></li>
-<li class="fragment">What is introducing the variance?</li>
-<li class="fragment">Is the variance (or observation error) independent?</li>
-<li class="fragment">In a mixed model, what is introducing the variance?</li>
-<li class="fragment">🎣 🦃 🐁🐟</li>
-</ul>
-</section>
-<section id="mixed-model-2" class="slide level2">
-<h2>Mixed model</h2>
-<p>Think… how do we introduce that variance?</p>
-<p><span class="math display">\[
-y_i \sim \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \ + \underbrace{\epsilon}_{stachastic}
-\]</span></p>
-<ul>
-<li class="fragment"><p>Think for a moment on this specific question: 🐟</p></li>
-<li class="fragment"><p><span class="math display">\[
-y_i \sim \underbrace{\beta_0 + \beta_1x_{1,i}}_{deterministic} + \underbrace{\epsilon}_{stachastic}
-\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[
-Hg_i \sim \underbrace{\beta_0 + \beta_1size_{i}}_{deterministic} + \underbrace{\epsilon}_{stachastic}
-\]</span></p></li>
-<li class="fragment"><p><span class="math display">\[ \epsilon \sim N(0,\sigma)\]</span></p></li>
-</ul>
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
-<section id="the-variance-can-affect-the-slope-the-intercept-or-both" class="slide level2">
-<h2>The variance can affect the slope, the intercept, or both</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-30-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<p>What is the problem with this? We can actually do a linear model</p>
-<ul>
-<li class="fragment"><strong>But remember!</strong> there might be some effect of the locations where nets were placed</li>
-</ul>
-</div></div>
-</section>
-<section id="plotting-the-data-as-a-linear-model" class="slide level2">
-<h2>Plotting the data as a linear model</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">You might think this is all good… but</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>So… we do a <strong>mixed model!</strong> Where we introduce the variance from the site</p></li>
-<li class="fragment"><p>But… why don’t we simply add site as a covariate?</p></li>
-<li class="fragment"><p>You will be tasked with answering this on your next assignment!</p></li>
-</ul>
-</section>
-<section id="the-variance-can-affect-the-slope-the-intercept-or-both-1" class="slide level2">
-<h2>The variance can affect the slope, the intercept, or both</h2>
-<ul>
-<li class="fragment"><p>Random effects introduce variance.</p></li>
-<li class="fragment"><p>It can introduce varianceto the intercept or to the slope</p></li>
-</ul>
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-33-1.png" width="960" class="r-stretch"></section>
-<section id="mixed-model-3" class="slide level2">
-<h2>Mixed model</h2>
-<ul>
-<li class="fragment"><p><span class="math display">\[
-Hg_i \sim \beta_0 + \beta_1size_{i} + \epsilon
-\]</span></p></li>
-<li class="fragment"><p>i individuals, j sites (4)</p></li>
-<li class="fragment"><p><span class="math display">\[
-Hg_i \sim \underbrace{(\beta_0 +\underbrace{\gamma_j}_{\text{Random intercept}})}_{intercept} + \underbrace{\beta_1size_{i}}_{slope} +\underbrace{\epsilon}_\text{ind var}
-\]</span></p></li>
-<li class="fragment"><p>Variance comes from random “selection” of fish within a net</p></li>
-<li class="fragment"><p>Variance comes from random “selection” of sites</p></li>
-</ul>
-</section>
-<section id="mixed-model-4" class="slide level2">
-<h2>Mixed model</h2>
-<p>This is the result of a mixed model:</p>
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-34-1.png" width="960" class="r-stretch"></section>
-<section id="mixed-effects-model-output" class="slide level2">
-<h2>Mixed effects model output</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> Family: gaussian  ( identity )
-Formula:          Hg ~ size + (1 | region)
-Data: HgDat_df
-
-     AIC      BIC   logLik deviance df.resid 
-  -152.5   -142.7     80.2   -160.5       81 
-
-Random effects:
-
-Conditional model:
- Groups   Name        Variance Std.Dev.
- region   (Intercept) 0.029512 0.17179 
- Residual             0.007181 0.08474 
-Number of obs: 85, groups:  region, 4
-
-Dispersion estimate for gaussian family (sigma^2): 0.00718 
-
-Conditional model:
-             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 0.3338357  0.0925572   3.607  0.00031 ***
-size        0.0180997  0.0008263  21.903  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-</div>
-</div>
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-36-1.png" width="960" class="r-stretch"></section>
-<section id="output" class="slide level2">
-<h2>Output</h2>
-
-
-<img data-src="GLM_Poisson2_files/figure-revealjs/unnamed-chunk-37-1.png" width="960" class="r-stretch"></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

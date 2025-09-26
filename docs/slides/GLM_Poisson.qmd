@@ -5,6 +5,8 @@ format:
     incremental: true   
     scrollable: true
     chalkboard: true
+resources:
+  - "../img/slides/*"
 execute:
   tidy: true
 ---
@@ -193,9 +195,9 @@ ggplot(datpred,aes(x=x,y=logy,ymin=lwr,ymax=upr))+
 
 Transformations will linearize the data, but if the response variable has a differentt distribution around the model than normal, then a glm is the way to go:
 
-![](/img/slides/pois1.png)
+![](../img/slides/pois1.png)
 
-![](/img/slides/pois2.png)
+![](../img/slides/pois2.png)
 
 ## We can do a glm!
 
@@ -419,7 +421,7 @@ ggplot(datpred2,aes(x=x,y=y,ymin=exp(fit-2*se.fit),ymax=exp(fit+2*se.fit)))+
 
 ## Distributions
 
-![](/img/slides/dist.png)
+![](../img/slides/dist.png)
 
 ## Normal Distribution
 
