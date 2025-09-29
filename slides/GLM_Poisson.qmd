@@ -58,7 +58,7 @@ dat<-data.frame(x,y)
 ggplot(dat,aes(x=x,y=y))+
   geom_point()+
   xlab("flow")+
-  ylab("N (fish)")+
+  ylab("log (N (fish))")+
   ggtitle("Fish passage \n N of fish")+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5))
@@ -183,6 +183,7 @@ datpred<-cbind(dat,predictedmodel)
 ```{r}
 ggplot(datpred,aes(x=x,y=logy,ymin=lwr,ymax=upr))+
   geom_point()+
+  geom_line(aes(y=fit),lwd=2)+
   geom_ribbon(alpha=0.5)+
   xlab("flow")+
   ylab("N (fish)")+
@@ -207,7 +208,7 @@ This a Poisson distribution... why?
 
 -   Counts
 
--   It could also be negative binomial, zero-inflated, etc... but in this case it is binomial!
+-   It could also be negative binomial, zero-inflated, etc... but in this case it is Poisson!
 
 ## We can do a glm!
 
@@ -419,6 +420,20 @@ ggplot(datpred2,aes(x=x,y=y,ymin=exp(fit-2*se.fit),ymax=exp(fit+2*se.fit)))+
   theme(plot.title = element_text(hjust=0.5))
 ```
 
+## Model summary interpretation
+
+```{r echo=TRUE}
+summary(model)
+```
+
+::: notes
+TALK ABOUT dispersion here!!!!!
+:::
+
+## What if this happens?
+
+![](../img/slides/predicted.png)
+
 ## Distributions
 
 ![](../img/slides/dist.png)
@@ -464,6 +479,25 @@ ggplot(df, aes(x = x, y = y, fill = lambda)) +
   theme_classic()
 ```
 
+## Poisson distributions
+
+```{r echo=TRUE, fig.width=8, fig.height=4}
+x <- seq(0, 50, by = 1)
+df <- data.frame(y = c(dpois(x, lambda = 1),dpois(x, lambda = 5), dpois(x, lambda = 20), dpois(x, lambda = 30)),
+                 x = x,
+                 lambda = factor(rep(c( "lambda = 1", "lambda = 5", "lambda = 20", "lambda = 30"), each = length(x)),
+                                 levels = c("lambda = 1", "lambda = 5", "lambda = 20", "lambda = 30")))
+ggplot(df, aes(x = x, y = y, fill = lambda)) +
+  geom_col(alpha = 0.75, color = "grey", linewidth = 0.1, position = "dodge") +
+  scale_y_continuous("Probability density") +
+  scale_x_continuous("y") +
+  scale_fill_discrete(labels = c(expression(paste(lambda, "= 1")),
+                                  expression(paste(lambda, "= 5")), 
+                                 expression(paste(lambda, "= 20")), 
+                                 expression(paste(lambda, "= 30"))))+
+  theme_classic()
+```
+
 ## Binomial distributions
 
 The binomial distribution is also a discrete probability distribution with support from 0 to $N$. It is often used to model count data where there is an upper limit (e.g., \# of heads from $N$ coin flips)
@@ -482,7 +516,23 @@ df <- data.frame(y = c(dbinom(x, size = 5, prob = 0.25), dbinom(x, size = 10, pr
 ggplot(df, aes(x = x, y = y, fill = as.factor(lambda) )) +
   geom_col(alpha = 0.75, color = "grey", linewidth = 0.1, position = "dodge") +
   scale_y_continuous("Probability density") +
-  scale_x_continuous("Number of successes") 
+  scale_x_continuous("Number of successes") +
+  theme_classic()
+
+```
+
+## Binomial distributions
+
+```{r echo=TRUE, fig.width=8, fig.height=4}
+x <- seq(0, 40, by = 1)
+df <- data.frame(y = c(dbinom(x, size = 5, prob = 0.25), dbinom(x, size = 10, prob = 0.8), dbinom(x, size = 20, prob = 0.5), dbinom(x, size = 35, prob = 0.8)),
+                 x = x,
+                 lambda = rep(c("N = 5, p = 0.25", "N = 10, p = 0.8", "N = 20, p = 0.5", "N = 35, p = 0.8"), each = length(x)))
+ggplot(df, aes(x = x, y = y, fill = as.factor(lambda) )) +
+  geom_col(alpha = 0.75, color = "grey", linewidth = 0.1, position = "dodge") +
+  scale_y_continuous("Probability density") +
+  scale_x_continuous("Number of successes") +
+  theme_classic()
 
 ```
 
