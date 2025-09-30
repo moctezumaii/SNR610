@@ -2,7 +2,7 @@
 
 [Poisson Distribution slideshow](slides/GLM_Poisson.html)
 
-Overdispersion and zero inflation
+[Overdispersion and zero inflation](slides/zeroinflation.html)
 
 [Review of Linear models](slides/GLM_Poisson2.html)
 

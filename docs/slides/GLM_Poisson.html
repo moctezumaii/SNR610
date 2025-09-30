@@ -354,16 +354,16 @@ glm(formula = y ~ x, family = poisson, data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.185886   0.038360   30.91   &lt;2e-16 ***
-x           0.331293   0.004945   66.99   &lt;2e-16 ***
+(Intercept) 1.157064   0.039741   29.11   &lt;2e-16 ***
+x           0.333274   0.005041   66.11   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 5987.92  on 299  degrees of freedom
-Residual deviance:  304.11  on 298  degrees of freedom
-AIC: 1720.2
+    Null deviance: 6085.01  on 299  degrees of freedom
+Residual deviance:  317.32  on 298  degrees of freedom
+AIC: 1747.8
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -406,16 +406,16 @@ glm(formula = y ~ x, family = poisson, data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.185886   0.038360   30.91   &lt;2e-16 ***
-x           0.331293   0.004945   66.99   &lt;2e-16 ***
+(Intercept) 1.157064   0.039741   29.11   &lt;2e-16 ***
+x           0.333274   0.005041   66.11   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 5987.92  on 299  degrees of freedom
-Residual deviance:  304.11  on 298  degrees of freedom
-AIC: 1720.2
+    Null deviance: 6085.01  on 299  degrees of freedom
+Residual deviance:  317.32  on 298  degrees of freedom
+AIC: 1747.8
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -453,7 +453,7 @@ Y_i \sim Poisson(\lambda_i)
 <span id="cb10-3"><a href=""></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>fit),<span class="at">lwd=</span><span class="dv">1</span>)<span class="sc">+</span></span>
 <span id="cb10-4"><a href=""></a>    <span class="fu">geom_ribbon</span>(<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
 <span id="cb10-5"><a href=""></a>  <span class="fu">xlab</span>(<span class="st">"flow"</span>)<span class="sc">+</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="fu">ylab</span>(<span class="st">"(N fish)"</span>)<span class="sc">+</span></span>
+<span id="cb10-6"><a href=""></a>  <span class="fu">ylab</span>(<span class="st">"log(N fish)"</span>)<span class="sc">+</span></span>
 <span id="cb10-7"><a href=""></a>  <span class="fu">ggtitle</span>(<span class="st">"Fish passage </span><span class="sc">\n</span><span class="st"> N of fish"</span>)<span class="sc">+</span></span>
 <span id="cb10-8"><a href=""></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
 <span id="cb10-9"><a href=""></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,7 +468,7 @@ Y_i \sim Poisson(\lambda_i)
 <span id="cb11-3"><a href=""></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">exp</span>(fit)),<span class="at">lwd=</span><span class="dv">1</span>)<span class="sc">+</span></span>
 <span id="cb11-4"><a href=""></a>    <span class="fu">geom_ribbon</span>(<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
 <span id="cb11-5"><a href=""></a>  <span class="fu">xlab</span>(<span class="st">"flow"</span>)<span class="sc">+</span></span>
-<span id="cb11-6"><a href=""></a>  <span class="fu">ylab</span>(<span class="st">"log (N fish)"</span>)<span class="sc">+</span></span>
+<span id="cb11-6"><a href=""></a>  <span class="fu">ylab</span>(<span class="st">"(N fish)"</span>)<span class="sc">+</span></span>
 <span id="cb11-7"><a href=""></a>  <span class="fu">ggtitle</span>(<span class="st">"Fish passage </span><span class="sc">\n</span><span class="st"> N of fish"</span>)<span class="sc">+</span></span>
 <span id="cb11-8"><a href=""></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
 <span id="cb11-9"><a href=""></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -486,16 +486,16 @@ glm(formula = y ~ x, family = poisson(link = "log"), data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.185886   0.038360   30.91   &lt;2e-16 ***
-x           0.331293   0.004945   66.99   &lt;2e-16 ***
+(Intercept) 1.157064   0.039741   29.11   &lt;2e-16 ***
+x           0.333274   0.005041   66.11   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 5987.92  on 299  degrees of freedom
-Residual deviance:  304.11  on 298  degrees of freedom
-AIC: 1720.2
+    Null deviance: 6085.01  on 299  degrees of freedom
+Residual deviance:  317.32  on 298  degrees of freedom
+AIC: 1747.8
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -608,19 +608,19 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0 0 0 1 0 0 1 0 1 0</code></pre>
+<pre><code> [1] 0 0 0 0 0 0 0 0 0 0</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 0 1 0 0 0 0 1 1 0</code></pre>
+<pre><code> [1] 1 0 1 1 0 0 1 0 1 1</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">p =</span> <span class="fl">0.9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 1 1 1 1 0 0 1 1</code></pre>
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
 </div>
 </div>
 </section>
@@ -641,16 +641,16 @@ glm(formula = y ~ x, family = poisson(link = "log"), data = dat)
 
 Coefficients:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 1.185886   0.038360   30.91   &lt;2e-16 ***
-x           0.331293   0.004945   66.99   &lt;2e-16 ***
+(Intercept) 1.157064   0.039741   29.11   &lt;2e-16 ***
+x           0.333274   0.005041   66.11   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
-    Null deviance: 5987.92  on 299  degrees of freedom
-Residual deviance:  304.11  on 298  degrees of freedom
-AIC: 1720.2
+    Null deviance: 6085.01  on 299  degrees of freedom
+Residual deviance:  317.32  on 298  degrees of freedom
+AIC: 1747.8
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
