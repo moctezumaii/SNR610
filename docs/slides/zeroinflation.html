@@ -24,7 +24,7 @@
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
       width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
@@ -126,12 +126,12 @@
     }
     .reveal .footnotes ol {
       counter-reset: ol;
-      list-style-type: none; 
+      list-style-type: none;
       margin-left: 0;
     }
     .reveal .footnotes ol li:before {
       counter-increment: ol;
-      content: counter(ol) ". "; 
+      content: counter(ol) ". ";
     }
     .reveal .footnotes ol li > p:first-child {
       display: inline-block;
@@ -173,19 +173,19 @@
     .reveal .slide > img.r-stretch.quarto-figure-center {
       display: block;
       margin-left: auto;
-      margin-right: auto; 
+      margin-right: auto;
     }
     .reveal .slide > img.stretch.quarto-figure-left,
     .reveal .slide > img.r-stretch.quarto-figure-left  {
       display: block;
       margin-left: 0;
-      margin-right: auto; 
+      margin-right: auto;
     }
     .reveal .slide > img.stretch.quarto-figure-right,
     .reveal .slide > img.r-stretch.quarto-figure-right  {
       display: block;
       margin-left: auto;
-      margin-right: 0; 
+      margin-right: 0;
     }
   </style>
 </head>
@@ -222,7 +222,7 @@
 <li class="fragment"><p>These can also have zero inflation and overdispersion</p></li>
 <li class="fragment"><p>Then we will talk about GAM’s. Very important topic!</p></li>
 <li class="fragment"><p>Some classes for plotting, and data management</p></li>
-<li class="fragment"><p>No class this Friday, but I will be in my office from ~10 to 3 pm</p></li>
+
 </ul>
 </section>
 <section id="poisson-distribution" class="slide level2">
@@ -398,9 +398,9 @@ Call:
 glm(formula = sat ~ color, family = "poisson", data = crabs)
 
 Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.4069     0.1429   9.848  &lt; 2e-16 ***
-color2       -0.2146     0.1536  -1.397 0.162487    
+color2       -0.2146     0.1536  -1.397 0.162487
 color3       -0.6061     0.1750  -3.464 0.000532 ***
 color4       -0.6913     0.2065  -3.348 0.000814 ***
 ---
@@ -460,11 +460,11 @@ Call:
 glm(formula = sat ~ color, family = "quasipoisson", data = crabs)
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
+            Estimate Std. Error t value Pr(&gt;|t|)
 (Intercept)   1.4069     0.2655   5.299  3.6e-07 ***
-color2       -0.2146     0.2855  -0.751   0.4534    
-color3       -0.6061     0.3252  -1.864   0.0641 .  
-color4       -0.6913     0.3838  -1.801   0.0734 .  
+color2       -0.2146     0.2855  -0.751   0.4534
+color3       -0.6061     0.3252  -1.864   0.0641 .
+color4       -0.6913     0.3838  -1.801   0.0734 .
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -487,9 +487,9 @@ Call:
 glm(formula = sat ~ color, family = "poisson", data = crabs)
 
 Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.4069     0.1429   9.848  &lt; 2e-16 ***
-color2       -0.2146     0.1536  -1.397 0.162487    
+color2       -0.2146     0.1536  -1.397 0.162487
 color3       -0.6061     0.1750  -3.464 0.000532 ***
 color4       -0.6913     0.2065  -3.348 0.000814 ***
 ---
@@ -511,11 +511,11 @@ Call:
 glm(formula = sat ~ color, family = "quasipoisson", data = crabs)
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
+            Estimate Std. Error t value Pr(&gt;|t|)
 (Intercept)   1.4069     0.2655   5.299  3.6e-07 ***
-color2       -0.2146     0.2855  -0.751   0.4534    
-color3       -0.6061     0.3252  -1.864   0.0641 .  
-color4       -0.6913     0.3838  -1.801   0.0734 .  
+color2       -0.2146     0.2855  -0.751   0.4534
+color3       -0.6061     0.3252  -1.864   0.0641 .
+color4       -0.6913     0.3838  -1.801   0.0734 .
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -536,7 +536,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <pre><code>Analysis of Deviance Table (Type II tests)
 
 Response: sat
-      LR Chisq Df Pr(&gt;Chisq)  
+      LR Chisq Df Pr(&gt;Chisq)
 color   6.8469  3    0.07694 .
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -623,15 +623,15 @@ QAIC = \frac{-2 * log-likelihood}{\hat{c}} + 2 * K
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-glm.nb(formula = sat ~ color, data = crabs, init.theta = 0.8018786143, 
+glm.nb(formula = sat ~ color, data = crabs, init.theta = 0.8018786143,
     link = log)
 
 Coefficients:
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.4069     0.3526   3.990 6.61e-05 ***
-color2       -0.2146     0.3750  -0.572    0.567    
-color3       -0.6061     0.4036  -1.502    0.133    
-color4       -0.6913     0.4508  -1.533    0.125    
+color2       -0.2146     0.3750  -0.572    0.567
+color3       -0.6061     0.4036  -1.502    0.133
+color4       -0.6913     0.4508  -1.533    0.125
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -643,8 +643,8 @@ AIC: 772.3
 
 Number of Fisher Scoring iterations: 1
 
-              Theta:  0.802 
-          Std. Err.:  0.136 
+              Theta:  0.802
+          Std. Err.:  0.136
 
  2 x log-likelihood:  -762.296 </code></pre>
 </div>
@@ -687,7 +687,7 @@ Number of Fisher Scoring iterations: 1
 <pre><code>Analysis of Deviance Table (Type II tests)
 
 Response: sat
-      LR Chisq Df Pr(&gt;Chisq)    
+      LR Chisq Df Pr(&gt;Chisq)
 color   23.653  3  2.952e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -751,25 +751,25 @@ Call:
 hurdle(formula = sat ~ color, data = crabs)
 
 Pearson residuals:
-    Min      1Q  Median      3Q     Max 
--1.3218 -0.9542 -0.1097  0.6348  4.3573 
+    Min      1Q  Median      3Q     Max
+-1.3218 -0.9542 -0.1097  0.6348  4.3573
 
 Count model coefficients (truncated poisson with log link):
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.6902     0.1446  11.688   &lt;2e-16 ***
-color2       -0.1894     0.1558  -1.216   0.2242    
-color3       -0.3890     0.1794  -2.168   0.0302 *  
-color4        0.1690     0.2083   0.811   0.4171    
+color2       -0.1894     0.1558  -1.216   0.2242
+color3       -0.3890     0.1794  -2.168   0.0302 *
+color4        0.1690     0.2083   0.811   0.4171
 Zero hurdle model coefficients (binomial with logit link):
-            Estimate Std. Error z value Pr(&gt;|z|)  
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.0986     0.6667   1.648   0.0994 .
-color2       -0.1226     0.7053  -0.174   0.8620  
-color3       -0.7309     0.7338  -0.996   0.3192  
+color2       -0.1226     0.7053  -0.174   0.8620
+color3       -0.7309     0.7338  -0.996   0.3192
 color4       -1.8608     0.8087  -2.301   0.0214 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Number of iterations in BFGS optimization: 11 
+Number of iterations in BFGS optimization: 11
 Log-likelihood: -369.5 on 8 Df</code></pre>
 </div>
 </div>
@@ -785,27 +785,27 @@ Call:
 hurdle(formula = sat ~ color, data = crabs, dist = "negbin")
 
 Pearson residuals:
-     Min       1Q   Median       3Q      Max 
--1.12222 -0.86733 -0.09559  0.55308  3.79647 
+     Min       1Q   Median       3Q      Max
+-1.12222 -0.86733 -0.09559  0.55308  3.79647
 
 Count model coefficients (truncated negbin with log link):
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.6684     0.2109   7.910 2.57e-15 ***
-color2       -0.1998     0.2257  -0.885    0.376    
-color3       -0.4124     0.2543  -1.622    0.105    
-color4        0.1763     0.3100   0.569    0.570    
+color2       -0.1998     0.2257  -0.885    0.376
+color3       -0.4124     0.2543  -1.622    0.105
+color4        0.1763     0.3100   0.569    0.570
 Log(theta)    1.6463     0.3696   4.454 8.43e-06 ***
 Zero hurdle model coefficients (binomial with logit link):
-            Estimate Std. Error z value Pr(&gt;|z|)  
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.0986     0.6667   1.648   0.0994 .
-color2       -0.1226     0.7053  -0.174   0.8620  
-color3       -0.7309     0.7338  -0.996   0.3192  
+color2       -0.1226     0.7053  -0.174   0.8620
+color3       -0.7309     0.7338  -0.996   0.3192
 color4       -1.8608     0.8087  -2.301   0.0214 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Theta: count = 5.1879
-Number of iterations in BFGS optimization: 20 
+Number of iterations in BFGS optimization: 20
 Log-likelihood: -359.6 on 9 Df</code></pre>
 </div>
 </div>
@@ -836,30 +836,30 @@ Call:
 zeroinfl(formula = sat ~ color | ., data = crabs)
 
 Pearson residuals:
-    Min      1Q  Median      3Q     Max 
--1.7392 -0.7983 -0.3146  0.6155  4.5387 
+    Min      1Q  Median      3Q     Max
+-1.7392 -0.7983 -0.3146  0.6155  4.5387
 
 Count model coefficients (poisson with log link):
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.6897     0.1448  11.670   &lt;2e-16 ***
-color2       -0.1889     0.1560  -1.211   0.2259    
-color3       -0.3793     0.1784  -2.126   0.0335 *  
-color4        0.1692     0.2084   0.812   0.4169    
+color2       -0.1889     0.1560  -1.211   0.2259
+color3       -0.3793     0.1784  -2.126   0.0335 *
+color4        0.1692     0.2084   0.812   0.4169
 
 Zero-inflation model coefficients (binomial with logit link):
-              Estimate Std. Error z value Pr(&gt;|z|)  
+              Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)  8.8735573  3.8819151   2.286   0.0223 *
-crab        -0.0004505  0.0037863  -0.119   0.9053  
-weight      -0.8315211  0.7196025  -1.156   0.2479  
-width       -0.2815991  0.1957250  -1.439   0.1502  
-color2       0.0674027  0.8005044   0.084   0.9329  
-color3       0.4444279  0.8687349   0.512   0.6089  
+crab        -0.0004505  0.0037863  -0.119   0.9053
+weight      -0.8315211  0.7196025  -1.156   0.2479
+width       -0.2815991  0.1957250  -1.439   0.1502
+color2       0.0674027  0.8005044   0.084   0.9329
+color3       0.4444279  0.8687349   0.512   0.6089
 color4       1.5955897  0.9455045   1.688   0.0915 .
-spine       -0.2234416  0.2564196  -0.871   0.3835  
+spine       -0.2234416  0.2564196  -0.871   0.3835
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Number of iterations in BFGS optimization: 22 
+Number of iterations in BFGS optimization: 22
 Log-likelihood: -356.4 on 12 Df</code></pre>
 </div>
 </div>
@@ -874,32 +874,32 @@ Call:
 zeroinfl(formula = sat ~ color | ., data = crabs, dist = "negbin")
 
 Pearson residuals:
-    Min      1Q  Median      3Q     Max 
--1.4036 -0.7258 -0.2650  0.5328  3.7532 
+    Min      1Q  Median      3Q     Max
+-1.4036 -0.7258 -0.2650  0.5328  3.7532
 
 Count model coefficients (negbin with log link):
-            Estimate Std. Error z value Pr(&gt;|z|)    
+            Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)   1.6671     0.2083   8.005 1.19e-15 ***
-color2       -0.1947     0.2226  -0.875    0.382    
-color3       -0.3817     0.2487  -1.535    0.125    
-color4        0.1769     0.3056   0.579    0.563    
+color2       -0.1947     0.2226  -0.875    0.382
+color3       -0.3817     0.2487  -1.535    0.125
+color4        0.1769     0.3056   0.579    0.563
 Log(theta)    1.7103     0.3643   4.695 2.67e-06 ***
 
 Zero-inflation model coefficients (binomial with logit link):
-              Estimate Std. Error z value Pr(&gt;|z|)  
+              Estimate Std. Error z value Pr(&gt;|z|)
 (Intercept)  9.0946460  4.0865995   2.225   0.0260 *
-crab        -0.0006212  0.0040847  -0.152   0.8791  
-weight      -0.9176722  0.7669885  -1.196   0.2315  
-width       -0.2843510  0.2056865  -1.382   0.1668  
-color2       0.0371842  0.8735382   0.043   0.9660  
-color3       0.4690976  0.9405064   0.499   0.6179  
+crab        -0.0006212  0.0040847  -0.152   0.8791
+weight      -0.9176722  0.7669885  -1.196   0.2315
+width       -0.2843510  0.2056865  -1.382   0.1668
+color2       0.0371842  0.8735382   0.043   0.9660
+color3       0.4690976  0.9405064   0.499   0.6179
 color4       1.6792645  1.0120373   1.659   0.0971 .
-spine       -0.2411114  0.2773722  -0.869   0.3847  
+spine       -0.2411114  0.2773722  -0.869   0.3847
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Theta = 5.5304 
-Number of iterations in BFGS optimization: 26 
+Theta = 5.5304
+Number of iterations in BFGS optimization: 26
 Log-likelihood: -346.9 on 13 Df</code></pre>
 </div>
 </div>
@@ -941,7 +941,7 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
   <script src="zeroinflation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="zeroinflation_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="zeroinflation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
-  
+
 
   <script src="zeroinflation_files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="zeroinflation_files/libs/revealjs/plugin/search/search.js"></script>
@@ -964,7 +964,7 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,
- 
+
         // Display controls in the bottom right corner
         controls: false,
 
@@ -1142,7 +1142,7 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
         ]
       });
     </script>
-    
+
 
     <script>
 
@@ -1166,13 +1166,13 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
 
         }
 
-    
+
 
         function fireSlideChanged(previousSlide, currentSlide) {
 
           fireSlideEnter();
 
-    
+
 
           // dispatch for shiny
 
@@ -1194,7 +1194,7 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
 
         }
 
-    
+
 
         // hookup for slidy
 
@@ -1210,13 +1210,13 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
 
         }
 
-    
+
 
       })();
 
     </script>
 
-    
+
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1237,14 +1237,14 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
           toggleBodyColorMode(bsSheetEl);
         }
       }
-      toggleBodyColorPrimary();  
+      toggleBodyColorPrimary();
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
       });
       const isCodeAnnotation = (el) => {
         for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
+          if (clz.startsWith('code-annotation-')) {
             return true;
           }
         }
@@ -1264,11 +1264,11 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
           button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
+          tooltip = new bootstrap.Tooltip(button,
+            { trigger: "manual",
               customClass: "code-copy-button-tooltip",
               offset: [0, -8]});
-          tooltip.show();    
+          tooltip.show();
         }
         setTimeout(function() {
           if (tooltip) {
@@ -1346,7 +1346,7 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
         }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
-        window.tippy(el, config); 
+        window.tippy(el, config);
       }
       const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
       for (var i=0; i<noterefs.length; i++) {
@@ -1403,6 +1403,6 @@ Poissonglm  4 972.67     250.53      1      1 -482.22</code></pre>
       }
     });
     </script>
-    
+
 
 </body></html>
