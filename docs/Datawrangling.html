@@ -382,14 +382,14 @@ div.csl-indent {
 <p>The tidyverse is an opinionated <a href="#0">collection of R packages</a>&nbsp;designed for data science. All packages share an underlying design philosophy, grammar, and data structures. The tidyverse is “opinionated” in that it is fairly rigid about input types and output types, and most functions are designed to accomplish one specific task. This makes it easier for users to avoid some of the sneakier bugs that are hard to notice (for example: different output types of the apply functions). It also tends to make analyses more reproducible.</p>
 <p>The packages are:</p>
 <ol type="1">
-<li>ggplot2: You have been using this already!</li>
-<li>dplyr: In my mind the most important package in the tidyverse. Plenty of tools</li>
-<li>tidyr: Make tidy data:&nbsp;every variable goes in a column, and every column is a variable</li>
-<li>readr: I rarely use this one, but you can read csv’s and other dataframes into “tibbles” (tidy’s idea of a data frame)</li>
-<li>purrr: Provides a set of tools for working with vectors and functions</li>
-<li>tibble: Modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not</li>
-<li>stringr: Helps when working with strings (aka words and letters)</li>
-<li>forcats: Solves some issues with factors and provides tools to work with them (remember, a factor is a “grouping variable”</li>
+<li><code>ggplot2</code> You have been using this already!</li>
+<li><code>dplyr</code> In my mind the most important package in the tidyverse. It has plenty of tools</li>
+<li><code>tidyr</code> Make tidy data:&nbsp;every variable goes in a column, and every column is a variable</li>
+<li><code>readr</code> I rarely use this one, but you can read csv’s and other dataframes into “tibbles” (tidy’s idea of a data frame)</li>
+<li><code>purrr</code> Provides a set of tools for working with vectors and functions</li>
+<li><code>tibble</code> Modern re-imagining of the data frame, keeping what time has proven to be effective, and throwing out what it has not</li>
+<li><code>stringr</code> Helps when working with strings (aka words and letters)</li>
+<li><code>forcats</code> Solves some issues with factors and provides tools to work with them (remember, a factor is a “grouping variable”</li>
 </ol>
 <p>You can install all of them using the following:</p>
 <div class="cell">
@@ -422,7 +422,7 @@ If you want to force <code>r</code> to use the function in the package <code>car
 </section>
 <section id="my-thoughts" class="level2" data-number="B.2">
 <h2 data-number="B.2" class="anchored" data-anchor-id="my-thoughts"><span class="header-section-number">B.2</span> My thoughts</h2>
-<p>Before continuing I do want to admit to the fact that I generally prefer a combination of baseR and the tidyverse, and I will continue supplying code in <code>baseR</code>. I also really enjoy using <code>data.table</code> which is faster and has some great functionality, and I recommend you check it out after you master tidy. However, I do recognize that a majority of users prefer the tidyverse, and have fully transitioned to using it.</p>
+<p>Before continuing I do want to admit to the fact that I generally prefer a combination of <code>baseR</code> and the <code>tidyverse</code>, and I will continue supplying code in <code>baseR</code>. I also really enjoy using <code>data.table</code> which is faster and has some great functionality, and I recommend you check it out after you master tidy. However, I do recognize that a majority of users prefer the tidyverse, and have fully transitioned to using it.</p>
 <p>Particularly, most users find that the syntax can be easier to understand and write, as it is written from left to right (instead of inside-out). You are free to use any package or any syntax that works best for you.</p>
 <p>While early in the semester I had some sections in which I expected you to run some specific code (with the idea of showcasing some of <code>baseR</code> syntax), going forward the focus will be in the results. If you identify the analysis needed, and you do it, it will be correct! No matter hoe you get there!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -444,14 +444,14 @@ Tibble, data.frame, what’s the difference?
 <p>There are three main parts for data analysis:</p>
 <ol type="1">
 <li>Managing (or Wrangling) the data</li>
-<li>Analyzing it (vi visualization and modeling)</li>
+<li>Analyzing it (via visualization and modeling)</li>
 <li>Communicating the results</li>
 </ol>
 <p>I like this figure from the <strong>first edition</strong> of R for Data Science: <a href="https://r4ds.had.co.nz/index.html" class="uri">https://r4ds.had.co.nz/index.html</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/wrangling/wrang.png" class="img-fluid figure-img"></p>
-<figcaption>Data wrangling (read R for Data Science)</figcaption>
+<figcaption>Data wrangling (read R for Data Science) <span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
 <p>We have been working on visualizing and modeling data (mostly modeling though). Now, we need to focus on <em>wrangling</em> data.</p>
@@ -604,7 +604,7 @@ read.csv vs read_csv
 <p>So, there are two main differences. <code>tidy</code> reads “left to right”, so, you filter the data, and the mutate it. But maybe the main difference is the use of a piping operator <code>%&gt;%</code>.</p>
 <p>R pipes are a way to chain multiple operations together in a concise and expressive way. They are so popular thar <code>R</code> introduced them to their base use as: <code>|&gt;</code>.</p>
 <p>Now, imagine you want to</p>
-<p>1) add the widthm column to the original dataset</p>
+<p>1) add the <code>widthm</code> column to the original dataset</p>
 <p>2) estimate all of the following for each of the three species <strong>and</strong> each of the columns:</p>
 <p>Mean, median, maximum value, and minimum value.</p>
 <p>That seems like a lot of coding using <code>baseR</code>! However, using pipes and the powerful dplyr, we can do the following:</p>
@@ -629,7 +629,7 @@ read.csv vs read_csv
 <section id="wide-and-long-data" class="level3" data-number="B.3.3">
 <h3 data-number="B.3.3" class="anchored" data-anchor-id="wide-and-long-data"><span class="header-section-number">B.3.3</span> Wide and long data</h3>
 <p>One of the most important transformation is changing your data from wide to long format (or long to wide).</p>
-<p>While we generally have this structure in our data:</p>
+<p>We generally have this structure in our data:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/wrangling/vov.png" class="img-fluid figure-img"></p>
@@ -644,7 +644,7 @@ read.csv vs read_csv
 <figcaption>Wide and Long data</figcaption>
 </figure>
 </div>
-<p>Both can be useful! And we can go back and from using R.</p>
+<p>Both can be useful! And we can go back and from using R. Download the tree dataset from Canvas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>tree<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/trees.csv"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tree)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -685,7 +685,8 @@ read.csv vs read_csv
 </div>
 </div>
 <p>Easy! This will be useful for you in the future!</p>
-<p><strong>Please read careful before starting to work on the assignment:</strong> For this week’s assignment, you need to go to: <a href="https://bookdown.org/jgscott/DSGI/data-wrangling.html" class="uri">https://bookdown.org/jgscott/DSGI/data-wrangling.html</a> and read chapter 6. Reality is, this “tutorial” and this book as well as the <em>R for Data Science</em> book are better written and have better information than what I could do for this class, and I think it will be more useful to you!. <strong>If you are new</strong> to <code>R</code> <strong>and the</strong> <code>tidyverse</code> your assignment I recommend you open a new r script and follow the “tutorial”. You can ask me questions. The assignment will be to just let me know in Canvas whether you like this way (or baseR) better. <strong>If you are experienced</strong> in tidy, and you know the basics, then, I recommend you read chapter 17 <a href="https://bookdown.org/jgscott/DSGI/probability-models.html" class="uri">https://bookdown.org/jgscott/DSGI/probability-models.html</a>. (Actually, everyone should read it, if you have time). If you understand probability, then you understand statistics, whether they are frequentist, Bayesian, multivariate, etc. You can also read any other chapter if you find it more useful. Your assignment is telling me what chapter you worked on.</p>
+<p><strong>Please read careful before starting to work on the assignment:</strong> For this week’s assignment, you need to go to: <a href="https://bookdown.org/jgscott/DSGI/data-wrangling.html" class="uri">https://bookdown.org/jgscott/DSGI/data-wrangling.html</a> and read chapter 6. Reality is, this “tutorial” (and this book) are better written and have better information than what I could do for this lecture. I also think it will be more useful to you!. <strong>If you are new</strong> to <code>R</code> <strong>and the</strong> <code>tidyverse</code> I recommend you open a new r script and follow the “tutorial”. You can ask me questions. The assignment will be to just let me know in Canvas whether you like this way (or baseR) better. <strong>If you are experienced</strong> in tidy, and you know the basics, then, I recommend you skip Chapter 6 and read chapter 17 <a href="https://bookdown.org/jgscott/DSGI/probability-models.html" class="uri">https://bookdown.org/jgscott/DSGI/probability-models.html</a>. (Actually, everyone should read it at some point, if you have time).</p>
+<p>If you understand probability, then you understand statistics, whether they are frequentist, Bayesian, multivariate, etc. You can also read any other chapter if you find it more useful. Your assignment is telling me what chapter you worked on.</p>
 <hr>
 
 

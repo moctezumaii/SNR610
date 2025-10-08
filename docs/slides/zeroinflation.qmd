@@ -40,8 +40,6 @@ library(readr)
 
 -   Some classes for plotting, and data management
 
--   No class this Friday, but I will be in my office from \~10 to 3 pm
-
 ## Poisson distribution
 
 ```{r fig.width=8, fig.height=4}
@@ -353,7 +351,7 @@ Potential solutions are:
 
 ## Negative binomial
 
-```{r}
+```{r echo=TRUE}
 library(MASS)
 glm3<-glm.nb(sat~color,data=crabs)
 summary(glm3)
