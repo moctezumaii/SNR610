@@ -31,6 +31,7 @@ book:
     - assignment4.qmd
     - assignment5.qmd
     - overdispersion.qmd
+    - mixedmfish.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:

@@ -4,8 +4,8 @@
 
 [Overdispersion and zero inflation](slides/zeroinflation.html)
 
-[Review of Linear models](slides/GLM_Poisson2.html)
+[Review of Linear models and mixed effects part 1](slides/GLM_Poisson2.html)
 
-Mixed Effects Models
+[Mixed Effects Models](slides/mixedmodels_part_2_.html)
 
 Generalized Additive Models
