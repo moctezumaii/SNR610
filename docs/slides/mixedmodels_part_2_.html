@@ -24,7 +24,7 @@
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
       width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
@@ -126,12 +126,12 @@
     }
     .reveal .footnotes ol {
       counter-reset: ol;
-      list-style-type: none;
+      list-style-type: none; 
       margin-left: 0;
     }
     .reveal .footnotes ol li:before {
       counter-increment: ol;
-      content: counter(ol) ". ";
+      content: counter(ol) ". "; 
     }
     .reveal .footnotes ol li > p:first-child {
       display: inline-block;
@@ -173,19 +173,19 @@
     .reveal .slide > img.r-stretch.quarto-figure-center {
       display: block;
       margin-left: auto;
-      margin-right: auto;
+      margin-right: auto; 
     }
     .reveal .slide > img.stretch.quarto-figure-left,
     .reveal .slide > img.r-stretch.quarto-figure-left  {
       display: block;
       margin-left: 0;
-      margin-right: auto;
+      margin-right: auto; 
     }
     .reveal .slide > img.stretch.quarto-figure-right,
     .reveal .slide > img.r-stretch.quarto-figure-right  {
       display: block;
       margin-left: auto;
-      margin-right: 0;
+      margin-right: 0; 
     }
   </style>
   <script src="mixedmodels_part_2__files/libs/quarto-diagram/mermaid.min.js"></script>
@@ -212,7 +212,7 @@
 <section id="back-to-our-example" class="slide level2">
 <h2>Back to our example</h2>
 
-<img data-src="../img/mixed/map.png" width="365" class="r-stretch"></section>
+<img data-src="../img/mixed/map.png" width="416" class="r-stretch"></section>
 <section id="back-to-our-example-1" class="slide level2">
 <h2>Back to our example</h2>
 <ul>
@@ -251,18 +251,18 @@ Call:
 lm(formula = Hg ~ size, data = HgDat_df)
 
 Residuals:
-     Min       1Q   Median       3Q      Max
--0.28712 -0.13507 -0.05476  0.10644  0.35471
+     Min       1Q   Median       3Q      Max 
+-0.28712 -0.13507 -0.05476  0.10644  0.35471 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)
+            Estimate Std. Error t value Pr(&gt;|t|)    
 (Intercept) 0.781644   0.084717   9.227 1.98e-13 ***
 size        0.020017   0.002067   9.682 3.16e-14 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1874 on 65 degrees of freedom
-Multiple R-squared:  0.5905,    Adjusted R-squared:  0.5843
+Multiple R-squared:  0.5905,    Adjusted R-squared:  0.5843 
 F-statistic: 93.75 on 1 and 65 DF,  p-value: 3.165e-14</code></pre>
 </div>
 </div>
@@ -389,21 +389,21 @@ Hg_{ij} \sim \underbrace{(\beta_0 +\underbrace{\gamma_j}_{\text{Random intercept
 Formula:          Hg ~ size + (1 | region)
 Data: HgDat_df
 
-     AIC      BIC   logLik deviance df.resid
-  -177.1   -168.3     92.6   -185.1       63
+     AIC      BIC   logLik deviance df.resid 
+  -177.1   -168.3     92.6   -185.1       63 
 
 Random effects:
 
 Conditional model:
  Groups   Name        Variance Std.Dev.
- region   (Intercept) 0.032847 0.18124
- Residual             0.002688 0.05184
+ region   (Intercept) 0.032847 0.18124 
+ Residual             0.002688 0.05184 
 Number of obs: 67, groups:  region, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00269
+Dispersion estimate for gaussian family (sigma^2): 0.00269 
 
 Conditional model:
-             Estimate Std. Error z value Pr(&gt;|z|)
+             Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 0.8357038  0.0937058    8.92   &lt;2e-16 ***
 size        0.0186742  0.0005839   31.98   &lt;2e-16 ***
 ---
@@ -459,21 +459,21 @@ Grouping factor -&gt; region</p></li>
 Formula:          Hg ~ size + (1 | region)
 Data: HgDat_df
 
-     AIC      BIC   logLik deviance df.resid
-  -177.1   -168.3     92.6   -185.1       63
+     AIC      BIC   logLik deviance df.resid 
+  -177.1   -168.3     92.6   -185.1       63 
 
 Random effects:
 
 Conditional model:
  Groups   Name        Variance Std.Dev.
- region   (Intercept) 0.032847 0.18124
- Residual             0.002688 0.05184
+ region   (Intercept) 0.032847 0.18124 
+ Residual             0.002688 0.05184 
 Number of obs: 67, groups:  region, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00269
+Dispersion estimate for gaussian family (sigma^2): 0.00269 
 
 Conditional model:
-             Estimate Std. Error z value Pr(&gt;|z|)
+             Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 0.8357038  0.0937058    8.92   &lt;2e-16 ***
 size        0.0186742  0.0005839   31.98   &lt;2e-16 ***
 ---
@@ -520,22 +520,22 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 Formula:          Hg ~ size + (1 + size | region)
 Data: HgDat2_df
 
-     AIC      BIC   logLik deviance df.resid
-  -153.4   -138.4     82.7   -165.4       83
+     AIC      BIC   logLik deviance df.resid 
+  -153.4   -138.4     82.7   -165.4       83 
 
 Random effects:
 
 Conditional model:
- Groups   Name        Variance  Std.Dev. Corr
- region   (Intercept) 2.765e-02 0.166290
-          size        8.865e-05 0.009415 0.30
- Residual             6.287e-03 0.079291
+ Groups   Name        Variance  Std.Dev. Corr 
+ region   (Intercept) 2.765e-02 0.166290      
+          size        8.865e-05 0.009415 0.30 
+ Residual             6.287e-03 0.079291      
 Number of obs: 89, groups:  region, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00629
+Dispersion estimate for gaussian family (sigma^2): 0.00629 
 
 Conditional model:
-            Estimate Std. Error z value Pr(&gt;|z|)
+            Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 1.157873   0.089296  12.967  &lt; 2e-16 ***
 size        0.034451   0.004772   7.219 5.23e-13 ***
 ---
@@ -603,8 +603,8 @@ Grouping factor -&gt; region</p></li>
 Formula:          Hg ~ size + (0 + size | region)
 Data: HgDat2_df
 
-     AIC      BIC   logLik deviance df.resid
-  -158.4   -148.8     83.2   -166.4       79
+     AIC      BIC   logLik deviance df.resid 
+  -158.4   -148.8     83.2   -166.4       79 
 
 Random effects:
 
@@ -614,10 +614,10 @@ Conditional model:
  Residual      6.441e-03 0.080256
 Number of obs: 83, groups:  region, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00644
+Dispersion estimate for gaussian family (sigma^2): 0.00644 
 
 Conditional model:
-            Estimate Std. Error z value Pr(&gt;|z|)
+            Estimate Std. Error z value Pr(&gt;|z|)    
 (Intercept) 1.021430   0.031578   32.35   &lt;2e-16 ***
 size        0.019400   0.001817   10.68   &lt;2e-16 ***
 ---
@@ -625,18 +625,209 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 </section>
-<section id="example" class="slide level2 scrollable">
+<section id="we-dont-do-this" class="slide level2">
+<h2>We don’t do this</h2>
+<ul>
+<li class="fragment"><p><span class="math inline">\(E(Hg_i) = \beta_0 + \beta_1*size_{i}\)</span></p></li>
+<li class="fragment"><p>Pseudoreplication</p></li>
+<li class="fragment"><p><span class="math inline">\(E(Hg_i) = \beta_0 + \beta_1size_{i} + \beta_2 site2_i + \beta_3 site3_i + \beta_4 site4_i\)</span></p></li>
+<li class="fragment"><p>We don’t care about the specific sites… we want whole population-wide!</p></li>
+</ul>
+</section>
+<section id="what-do-we-want-to-know" class="slide level2">
+<h2>What do we want to know?</h2>
+<ul>
+<li class="fragment"><p>Mercury concentration population-wide</p></li>
+<li class="fragment"><p>Variance introduces by placement of the nets</p></li>
+<li class="fragment"><p><span class="math display">\[ Hg_{ij} \sim \underbrace{(\beta_0 +\underbrace{\gamma_j}_{\text{Random intercept}})}_{intercept} + \underbrace{(\beta_1+\underbrace{\psi_j}_{\text{Random  slope}})size_{i}}_{slope} +\underbrace{\epsilon}_\text{ind var} \]</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\gamma_j \sim Normal(0,\sigma_\gamma)\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\psi_j \sim Normal(0,\sigma_\psi)\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\epsilon \sim Normal(0,\sigma)\)</span></p></li>
+</ul>
+</section>
+<section id="glms" class="slide level2">
+<h2>GLM’s</h2>
+
+<img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment">How many assumptions does it break?</li>
+</ul>
+</section>
+<section id="glms-1" class="slide level2 scrollable">
+<h2>Glm’s</h2>
+<p>What do Glm’s do?</p>
+<ol type="1">
+<li class="fragment">Transform the response to linear</li>
+<li class="fragment">Have a different distribution of the residuals</li>
+</ol>
+<p>If normal:</p>
+<ul>
+<li class="fragment"><p><span class="math display">\[
+\underbrace{E[y_i]}_{\text{expected value}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic}
+\]</span></p></li>
+<li class="fragment"><p><span class="math display">\[ y_i \sim \underbrace{N(mean=E[y_i], var=\sigma^2)}_{stochastic} \]</span></p></li>
+<li class="fragment"><p>Poisson glm:</p></li>
+<li class="fragment"><p><span class="math display">\[ \underbrace{log(\lambda)}_{\text{link function}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \]</span></p>
+<p><span class="math display">\[ y_i \sim \underbrace{Poisson(\lambda)}_{stochastic} \]</span></p></li>
+<li class="fragment"><p>Negative Binomial glm:</p></li>
+<li class="fragment"><p><span class="math display">\[ \underbrace{log(\lambda)}_{\text{link function}} = \underbrace{\beta_0 + \beta_1x_{1,i} + ... \beta_mx_{m,i}}_{deterministic} \]</span></p>
+<p><span class="math display">\[ y_i \sim \underbrace{NB(\mu,\theta)}_{stochastic} \]</span></p></li>
+<li class="fragment"><p><span class="math inline">\(variance = \frac{\theta}{\mu+\theta}\)</span></p></li>
+</ul>
+</section>
+<section id="glms-2" class="slide level2">
+<h2>GLM’s</h2>
+<div class="columns">
+<div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="glms-3" class="slide level2">
+<h2>GLM’s</h2>
+
+<img data-src="../img/mixed/plot1.png" class="r-stretch"></section>
+<section id="glms-4" class="slide level2">
+<h2>GLM’s</h2>
+
+<img data-src="../img/slides/pois.png" class="r-stretch"></section>
+<section id="glms-5" class="slide level2">
+<h2>GLM’s</h2>
+
+<img data-src="../img/mixed/plot.png" class="r-stretch"></section>
+<section id="mixed-models" class="slide level2">
+<h2>Mixed models</h2>
+
+<img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><p>If we set all random effects to zero, we get population mean, and predicted value for a random individual</p>
+</section>
+<section id="mixed-effects" class="slide level2">
+<h2>Mixed effects</h2>
+<p><img data-src="../img/mixed/map.png" width="349"></p>
+<p>Set nets on each of those sites</p>
+<ul>
+<li class="fragment">Measure 50, 43, 67, and 90 fish. For number of parasites OR presence of parasites?</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="generalized-linear-mixed-effects-models" class="slide level2">
+<h2>Generalized linear mixed effects models</h2>
+<ul>
+<li class="fragment"><p>Linear portion of the Mixed effects models have a deterministic and stochastic component</p></li>
+<li class="fragment"><p>Count data</p></li>
+<li class="fragment"><p>Binary data (1, 0)</p></li>
+</ul>
+</section>
+<section id="glmms" class="slide level2">
+<h2>GLMM’s</h2>
+<ul>
+<li class="fragment"><p>How can we run mixed effects models?</p></li>
+<li class="fragment"><p>Easy way: Add random effects to the linear predictor, leading to generalized linear mixed effect models</p></li>
+<li class="fragment"><p>Essentially, you have two sources of variation</p></li>
+<li class="fragment"><p>One is normally dsitributed, the other one is distributed according to a different distribution</p></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>A poisson glm:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(log(\lambda) = \beta_0 + \beta_1x_i\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(y_i \sim Poisson(\lambda)\)</span></p></li>
+<li class="fragment"><p>A glmm: Poisson-normal</p></li>
+<li class="fragment"><p><span class="math inline">\(log(\lambda) = (\beta_0+\gamma) + (\beta_1+\psi)x_{ij}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\gamma \sim N(0,\sigma_\gamma)\)</span> , <span class="math inline">\(\psi\sim N(0,\sigma_\psi)\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(y_i \sim Poisson(\lambda)\)</span></p></li>
+</ul>
+</section>
+<section id="parameter-interpretation" class="slide level2">
+<h2>Parameter interpretation</h2>
+<ul>
+<li class="fragment"><p>Not easy to interpret!</p></li>
+<li class="fragment"><p>In random effects if we set all random effects to 0, then we estimate the mean for a “typical” individual</p></li>
+<li class="fragment"><p>“typical means subject, site, individual, etc.”</p></li>
+<li class="fragment"><p>The variances are in different distributions</p></li>
+<li class="fragment"><p>Typical individual does not equal “population average response”</p></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="../img/mixed/plot2.png" class="r-stretch"><p>Both curves are not lining up</p>
+<ul>
+<li class="fragment">Due to non-logit transformations (random effects are normal)</li>
+</ul>
+</section>
+<section id="interpreting-data" class="slide level2">
+<h2>Interpreting data</h2>
+
+<img data-src="../img/mixed/plot3.png" class="r-stretch"><ul>
+<li class="fragment">Individual response curves (black), the response curve for a typical individual with random effects at zeroes,&nbsp;and the population mean response curve (blue) and on the logit and probability scales</li>
+</ul>
+</section>
+<section id="in-other-words" class="slide level2">
+<h2>In other words</h2>
+<ul>
+<li class="fragment"><p>A glmm: Poisson-normal</p></li>
+<li class="fragment"><p><span class="math inline">\(log(\lambda) = (\beta_0+\gamma) + (\beta_1+\psi)x_{ij}\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\gamma \sim N(0,\sigma_\gamma)\)</span> , <span class="math inline">\(\psi\sim N(0,\sigma_\psi)\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(y_i \sim Poisson(\lambda)\)</span></p></li>
+<li class="fragment"><p>Because of non linearity if we set <span class="math inline">\(\gamma\)</span> and <span class="math inline">\(\psi\)</span> to 0’s, the end result will be different than if we get the mean of the overall response</p></li>
+</ul>
+</section>
+<section id="take-away" class="slide level2">
+<h2>Take away</h2>
+<p>If you do glmm’s be very careful about interpretation</p>
+<ul>
+<li class="fragment">In general, transforming data can be risky</li>
+</ul>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions?</h2>
+<ul>
+<li class="fragment"><p>Package <code>GLMMadaptive</code> estimates marginal means</p></li>
+<li class="fragment"><p>How can we run mixed effects models?</p></li>
+<li class="fragment"><p>Easy way: Add random effects to the linear predictor, leading to generalized linear mixed effect models</p></li>
+<li class="fragment"><p>Hard way: Generalized Estimating Equations</p></li>
+<li class="fragment"><p><a href="https://fw8051statistics4ecologists.netlify.app/gee" class="uri">https://fw8051statistics4ecologists.netlify.app/gee</a></p></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+</section>
+<section id="example-2" class="slide level2 scrollable">
 <h2>Example</h2>
 <ol type="1">
 <li class="fragment">Zuur, A., Ieno, E. N., Walker, N., Saveliev, A. A. &amp; Smith, G. M. Mixed Effects Models and Extensions in Ecology with R. (Springer New York, 2009).</li>
 </ol>
-
-<img data-src="images/clipboard-4184349654.png" class="r-stretch"><p><a href="https://www.highstat.com/" class="uri">https://www.highstat.com/</a></p>
+<p><a href="https://www.highstat.com/" class="uri">https://www.highstat.com/</a></p>
 </section>
 <section id="rikz-data" class="slide level2">
 <h2>RIKZ data</h2>
 
-<img data-src="images/clipboard-1492194561.png" class="r-stretch"></section>
+<img data-src="../img/mixed/files.png" class="r-stretch"></section>
 <section id="rikz-data-1" class="slide level2">
 <h2>RIKZ data</h2>
 <ul>
@@ -675,7 +866,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
   E --&gt; R(site 3)
   E --&gt; S(site 4)
   E --&gt; T(site 5)
-
+ 
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -713,7 +904,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
   E --&gt; R(site 3)
   E --&gt; S(site 4)
   E --&gt; T(site 5)
-
+ 
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -755,14 +946,14 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <section id="the-data" class="slide level2">
 <h2>The data</h2>
 
-<img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
 <section id="the-data-1" class="slide level2">
 <h2>The data</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-22-1.png" style="width:80.0%" height="350"></p>
+<p><img data-src="mixedmodels_part_2__files/figure-revealjs/unnamed-chunk-27-1.png" style="width:80.0%" height="350"></p>
 </figure>
 </div>
 </div>
@@ -842,10 +1033,10 @@ Mod4 9 217.81       6.87   0.02   1.00 -97.33</code></pre>
 <pre><code>Analysis of Deviance Table (Type II Wald chisquare tests)
 
 Response: Richness
-               Chisq Df Pr(&gt;Chisq)
+               Chisq Df Pr(&gt;Chisq)    
 NAP          51.7328  1  6.359e-13 ***
 Exposure     55.4525  2  9.092e-13 ***
-NAP:Exposure  3.5604  2     0.1686
+NAP:Exposure  3.5604  2     0.1686    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -859,10 +1050,10 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <pre><code>Analysis of Deviance Table (Type II Wald chisquare tests)
 
 Response: Richness
-               Chisq Df Pr(&gt;Chisq)
+               Chisq Df Pr(&gt;Chisq)    
 NAP          51.7328  1  6.359e-13 ***
 Exposure     55.4525  2  9.092e-13 ***
-NAP:Exposure  3.5604  2     0.1686
+NAP:Exposure  3.5604  2     0.1686    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -921,7 +1112,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
 <h2>Other steps?</h2>
 <p>Check assumptions (if normal)</p>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 
 </section>
@@ -941,7 +1132,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
   <script src="mixedmodels_part_2__files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="mixedmodels_part_2__files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="mixedmodels_part_2__files/libs/revealjs/plugin/quarto-support/support.js"></script>
-
+  
 
   <script src="mixedmodels_part_2__files/libs/revealjs/plugin/notes/notes.js"></script>
   <script src="mixedmodels_part_2__files/libs/revealjs/plugin/search/search.js"></script>
@@ -964,7 +1155,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,
-
+ 
         // Display controls in the bottom right corner
         controls: false,
 
@@ -1142,7 +1333,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
         ]
       });
     </script>
-
+    
 
     <script>
 
@@ -1166,13 +1357,13 @@ Evidence ratio between models 'Mod2' and 'Mod1':
 
         }
 
-
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
 
           fireSlideEnter();
 
-
+    
 
           // dispatch for shiny
 
@@ -1194,7 +1385,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
 
         }
 
-
+    
 
         // hookup for slidy
 
@@ -1210,13 +1401,13 @@ Evidence ratio between models 'Mod2' and 'Mod1':
 
         }
 
-
+    
 
       })();
 
     </script>
 
-
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1237,14 +1428,14 @@ Evidence ratio between models 'Mod2' and 'Mod1':
           toggleBodyColorMode(bsSheetEl);
         }
       }
-      toggleBodyColorPrimary();
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);
       });
       const isCodeAnnotation = (el) => {
         for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {
+          if (clz.startsWith('code-annotation-')) {                     
             return true;
           }
         }
@@ -1264,11 +1455,11 @@ Evidence ratio between models 'Mod2' and 'Mod1':
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
           button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button,
-            { trigger: "manual",
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
               customClass: "code-copy-button-tooltip",
               offset: [0, -8]});
-          tooltip.show();
+          tooltip.show();    
         }
         setTimeout(function() {
           if (tooltip) {
@@ -1346,7 +1537,7 @@ Evidence ratio between models 'Mod2' and 'Mod1':
         }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
-        window.tippy(el, config);
+        window.tippy(el, config); 
       }
       const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
       for (var i=0; i<noterefs.length; i++) {
@@ -1403,6 +1594,6 @@ Evidence ratio between models 'Mod2' and 'Mod1':
       }
     });
     </script>
-
+    
 
 </body></html>
