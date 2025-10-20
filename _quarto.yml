@@ -31,7 +31,10 @@ book:
     - assignment4.qmd
     - assignment5.qmd
     - overdispersion.qmd
-    - mixedmfish.qmd
+    - part: mixed.qmd
+      chapters:
+        - mixedmfish.qmd
+        - glmmmodelsanswers.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – FWF 610</title>
+<title>8&nbsp; Mixed Models in glmmTMB – FWF 610 </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Assignment1.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./mixedmfish.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -159,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mixed.html">Mixed Effects Models</a></li><li class="breadcrumb-item"><a href="./glmmmodelsanswers.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,13 +208,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Assignment1.html" class="sidebar-item-text sidebar-link">
@@ -268,11 +297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./mixed.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Mixed Effects Models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mixedmfish.html" class="sidebar-item-text sidebar-link">
@@ -281,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glmmmodelsanswers.html" class="sidebar-item-text sidebar-link">
+  <a href="./glmmmodelsanswers.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></span></a>
   </div>
 </li>
@@ -338,16 +367,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome-to-week-1" id="toc-welcome-to-week-1" class="nav-link active" data-scroll-target="#welcome-to-week-1">Welcome to week 1</a>
+  <li><a href="#how-to-run-a-model-in-glmmtmb" id="toc-how-to-run-a-model-in-glmmtmb" class="nav-link active" data-scroll-target="#how-to-run-a-model-in-glmmtmb"><span class="header-section-number">8.1</span> How to run a model in glmmTMB</a>
   <ul class="collapse">
-  <li><a href="#r-projects" id="toc-r-projects" class="nav-link" data-scroll-target="#r-projects">R Projects</a></li>
-  <li><a href="#statistics-refresher" id="toc-statistics-refresher" class="nav-link" data-scroll-target="#statistics-refresher">Statistics refresher</a></li>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data exploration</a></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential statistics</a></li>
-  <li><a href="#plotting" id="toc-plotting" class="nav-link" data-scroll-target="#plotting">Plotting</a></li>
-  <li><a href="#probability" id="toc-probability" class="nav-link" data-scroll-target="#probability">Probability</a></li>
-  <li><a href="#this-is-your-file-now" id="toc-this-is-your-file-now" class="nav-link" data-scroll-target="#this-is-your-file-now">This is your file now!</a></li>
-  <li><a href="#friday" id="toc-friday" class="nav-link" data-scroll-target="#friday">Friday</a></li>
+  <li><a href="#model-1" id="toc-model-1" class="nav-link" data-scroll-target="#model-1"><span class="header-section-number">8.1.1</span> Model 1:</a></li>
+  <li><a href="#model-2" id="toc-model-2" class="nav-link" data-scroll-target="#model-2"><span class="header-section-number">8.1.2</span> Model 2</a></li>
+  <li><a href="#model-3" id="toc-model-3" class="nav-link" data-scroll-target="#model-3"><span class="header-section-number">8.1.3</span> Model 3</a></li>
+  <li><a href="#model-4" id="toc-model-4" class="nav-link" data-scroll-target="#model-4"><span class="header-section-number">8.1.4</span> Model 4:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -355,9 +380,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mixed.html">Mixed Effects Models</a></li><li class="breadcrumb-item"><a href="./glmmmodelsanswers.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></h1>
 </div>
 
 
@@ -374,169 +399,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This section will introduce you to</p>
-<ul>
-<li><p>Program R</p></li>
-<li><p>Projects</p></li>
-<li><p>Quarto</p></li>
-<li><p>Models</p></li>
-</ul>
-<p>We will also discuss multiple important concepts!</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Did you take ANSC/PLSC 571 with me in Spring 2025?</p>
-<p>Then, some of the activities/assignments in the first three weeks will seem pretty similar! This is OK! Take this as a time to reinforce the knowledge, and we will move to different topics soon!</p>
-</div>
-</div>
-<section id="welcome-to-week-1" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-week-1">Welcome to week 1</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are reading this file before class, it may not make a lot of sense to you. That’s OK! We will go through it on the first class. More importantly, you will learn more about R on Friday.</p>
-</div>
-</div>
-<p>Before we get into the weeds of data analysis, coding, and R, we should remember some basics! On Friday we will learn (or refresh) some basic R skills! If you have a lot of experience in R, just hang in there, we will get more and more complex topics as we go on! If you’re brand new, also hang in there, this may seem overwhelming and very time consuming. It will get easier!</p>
-<p>We will figure out theory and coding as we go. For all assignments, we will use Quarto. It allows you to write some neat reports while using code and plots.</p>
-<section id="r-projects" class="level3">
-<h3 class="anchored" data-anchor-id="r-projects">R Projects</h3>
-<p>We will learn more about projects during class. We will have our first R assignment this Friday. For the time being, just trust me, and let’s do the following:</p>
+<section id="how-to-run-a-model-in-glmmtmb" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="how-to-run-a-model-in-glmmtmb"><span class="header-section-number">8.1</span> How to run a model in glmmTMB</h2>
+<p>Mixed effects models in glmmTMB. How do we run them?</p>
+<p>We have both fixed and mixed effects models in glmmTMB. In this specific example, we are trying to run 4 models to figure out which random effects to use in our model selection step. The first step is to run 4 models, each with the same fixed effects, but different random effects.</p>
+<p>Here is how you run those models in r:</p>
+<p><span id="eq-model2"><span class="math display">\[
+\underbrace{model2}_{\text{Model Name}}&lt;- \underbrace{glmmTMB}_{\text{function for mixed effects models}} (\underbrace{\text{Richness~NAP*Exposure}}_{\text{Fixed effects}} \underbrace{+ (1|Beach)}_{Random effects}, data = rikz, \underbrace{family = poisson}_{Distribution})
+\tag{8.1}\]</span></span></p>
+<p>In our example we are LEAVING FIXED EFFECTS THE SAME. THEY ARE ALWAYS Richness~Nap*Exposure.</p>
+<p>However, we are exploring 4 random effects:</p>
 <ol type="1">
-<li><p>Open R Studio, go to file &gt; new project &gt; new directory &gt; new project</p></li>
-<li><p>Name it SNR610, and use a directory that makes sense to you</p></li>
-<li><p>Download the SNR610_W1_notes.qmd and the .csv files from CANVAS IN THE NEWLY CREATED PROJECT DIRECTORY</p></li>
+<li>No random effects</li>
+<li>Random intercept (model 2, the one showed above)</li>
+<li>Random slope</li>
+<li>Random intercept and random slope</li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are working on this before class, you can (and should) stop now</p>
-</div>
-</div>
-</section>
-<section id="statistics-refresher" class="level3">
-<h3 class="anchored" data-anchor-id="statistics-refresher">Statistics refresher</h3>
-<p>Open R and make sure SNR 610 project is opened. Then open the SNR610_W1_notes.qmd file in R. We will continue there!</p>
-<p>First of, we will discuss some topics.</p>
-<p>I want you to take notes in the .qmd document</p>
-<p>What is statistics?</p>
-<p>What is a population and a sample? Give examples</p>
-<p>Data</p>
-<p>Variable and observation</p>
-<p>Types of data:</p>
-<p>Categorical: Nominal and Ordinal</p>
-<p>Numerical: Discrete and Continuous</p>
-<p>Now, let’s go back to the html file and follow the instructions to explore some different types of data.</p>
-</section>
-<section id="data-exploration" class="level3">
-<h3 class="anchored" data-anchor-id="data-exploration">Data exploration</h3>
-<p>Download and read the butterfly file.</p>
-<div>
-<p>If you are comfortable with R basics, you can write the code for this exercise directly into Quarto. To add extra code chunks, write this symbols: ```{r}, if you are not comfortable with R, I recommend for the time being you open a new file and copy and paste the code there, and run it}</p>
-</div>
-<p>To read data, we use the following line:</p>
+<p>Let’s run each model.</p>
+<section id="model-1" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="model-1"><span class="header-section-number">8.1.1</span> Model 1:</h3>
+<p>The no random effects model is:</p>
+<p><span class="math display">\[
+log(ERichness) \sim \beta_0 + \beta_1 (NAP)_i + \beta_2 Exposure2_i ...
+\]</span></p>
+<p><span class="math display">\[
+Richness_i \sim Poisson(ERichness)_i
+\]</span></p>
+<p>And the code to run it is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"data/ButterflyData.csv"</span>, <span class="at">stringsAsFactors =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>model1<span class="ot">&lt;-</span><span class="fu">glmmTMB</span>(Richness<span class="sc">~</span>NAP<span class="sc">*</span>Exposure, <span class="at">data =</span> rikz, <span class="at">family =</span> poisson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This only works if the file is in the current working directory. Make sure you download the file to the projects folder!</p>
-<p>Let’s look at some of the data, the head command shows us the top 5 rows:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  X Species Status Nparasites ForewingArea
-1 1 Viceroy      1          2     964.8420
-2 2 Monarch      3          0    1064.9463
-3 3 Viceroy      2          2    1087.6290
-4 4 Viceroy      2          3    1025.4572
-5 5 Monarch      2          1     986.7462
-6 6 Viceroy      2          2    1029.7973</code></pre>
-</div>
-</div>
-<p>So, we have data on three types of butterflies: Viceroy, Monarch, and Queen:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/assignment1/butterflies.png" class="img-fluid figure-img"></p>
-<figcaption>The three types of Butterflies that we have data on.</figcaption>
-</figure>
-</div>
-<p>We have data on forewing area, number of parasites, species, and status. For status we have numbers 1, 2, and 3, which represent the following:</p>
-<p>1: poor</p>
-<p>2: OK</p>
-<p>3: Good</p>
-<p>What types of variables are there? Identify each variable type. What are the variables and what are the observations?</p>
-<p>Let’s look at the structure of the file:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   134 obs. of  5 variables:
- $ X           : int  1 2 3 4 5 6 7 8 9 10 ...
- $ Species     : Factor w/ 3 levels "Monarch","Queen",..: 3 1 3 3 1 3 1 3 3 1 ...
- $ Status      : int  1 3 2 2 2 2 3 2 2 2 ...
- $ Nparasites  : int  2 0 2 3 1 2 1 4 1 3 ...
- $ ForewingArea: num  965 1065 1088 1025 987 ...</code></pre>
-</div>
-</div>
-<p>Note that this data is a bit messy. We will learn how to clean data during the semester. But this is closer to what your data will look like initially!</p>
-<p>What is a factor?</p>
-<p>Should any other variable be a factor?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Status<span class="ot">&lt;-</span><span class="fu">as.factor</span>(data<span class="sc">$</span>Status)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>What is a factor?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You can look at the whole dataset using the following:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Look at the data. Do you think there is an effect of # of parasites on wing growth? Do you think different species have different sizes? How can we tell?</p>
+<p>It has no random effect… so, it’s just run as a simple glm.</p>
 </section>
-<section id="inferential-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="inferential-statistics">Inferential statistics</h3>
-<p>We can use inferential statistics to answer these questions! But why? What are inferential statistics, and what is special about inferential statistics? Discuss</p>
-<p>Thoughts:</p>
-<p>More on that next week.</p>
+<section id="model-2" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="model-2"><span class="header-section-number">8.1.2</span> Model 2</h3>
+<p>The random intercept model is:</p>
+<p><span class="math display">\[ log(ERichness) \sim (\beta_0 + \gamma_j) + \beta_1 (NAP)_i + \beta_2 Exposure2_i ...  \]</span></p>
+<p><span class="math display">\[ Richness_i \sim Poisson(ERichness)_i \]</span></p>
+<p>And the way to introduce than randomness <span class="math inline">\(\gamma_j\)</span> is:</p>
+<p><span class="math display">\[
+\underbrace{model2}_{\text{Model Name}}&lt;- \underbrace{glmmTMB}_{\text{function for mixed effects models}} (\underbrace{\text{Richness~NAP*Exposure}}_{\text{Fixed effects}} \underbrace{+ (1|Beach)}_{Random effects}, data = rikz, \underbrace{family = poisson}_{Distribution})
+\]</span></p>
+<p>or:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model2<span class="ot">&lt;-</span><span class="fu">glmmTMB</span>(Richness<span class="sc">~</span>NAP<span class="sc">*</span>Exposure <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Beach), <span class="at">data =</span> rikz, <span class="at">family =</span> poisson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you see the equation, we need to estimate one gamma for each beach. That is why we use (1|Beach).</p>
 </section>
-<section id="plotting" class="level3">
-<h3 class="anchored" data-anchor-id="plotting">Plotting</h3>
-<p>Look at the data. Usually the best exploratory analysis is a visual one. We will learn about plotting during the course. We will learn about good plots, bad plots, and how to use R and ggplot to make some publication level plots.</p>
-<p>For the purposes of this exercises, I want you to think about what type of plot you ant to make, and attempt to make it. You can use R, you can use excel, you can try to draw it. You can work in teams, but try to work mostly by yourself. We will revisit this dataset at the end of the course, and you will plot it again. Hopefully this will show some of the learning you have obtained!</p>
+<section id="model-3" class="level3" data-number="8.1.3">
+<h3 data-number="8.1.3" class="anchored" data-anchor-id="model-3"><span class="header-section-number">8.1.3</span> Model 3</h3>
+<p>Random slope:</p>
+<p><span class="math display">\[ log(ERichness) \sim \beta_0 + (\beta_1 * \psi_j * NAP_i )+ \beta_2 Exposure2_i ...  \]</span></p>
+<p><span class="math display">\[ Richness_i \sim Poisson(ERichness)_i \]</span></p>
+<p>Here, there is a random slope (<span class="math inline">\(\psi_j\)</span>), and it affects NAP. Exposure is categorical, so, it doesn’t hav a slope. This is how we run it:</p>
+<p><span class="math display">\[
+\underbrace{model3}_{\text{Model Name}}&lt;- \underbrace{glmmTMB}_{\text{function for mixed effects models}} (\underbrace{\text{Richness~NAP*Exposure}}_{\text{Fixed effects}} \underbrace{+ (0+NAP|Beach)}_{Random effects}, data = rikz, \underbrace{family = poisson}_{Distribution})
+\]</span></p>
+<p>Here, we don’t want it to estimate random intercepts, hence the 0. However, we want it to estimate random slopes, so, that’s why we ass NAP</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model3<span class="ot">&lt;-</span><span class="fu">glmmTMB</span>(Richness<span class="sc">~</span>NAP<span class="sc">*</span>Exposure <span class="sc">+</span> (<span class="dv">0</span><span class="sc">+</span>NAP<span class="sc">|</span>Beach), <span class="at">data =</span> rikz, <span class="at">family =</span> poisson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="probability" class="level3">
-<h3 class="anchored" data-anchor-id="probability">Probability</h3>
-<p>To understand inferential statistics, we need to understand probability.</p>
-<p>Discuss and write a definition for probability:</p>
-<p>What is a probability distribution? Give one example</p>
-</section>
-<section id="this-is-your-file-now" class="level3">
-<h3 class="anchored" data-anchor-id="this-is-your-file-now">This is your file now!</h3>
-<p>Go to the top of the file, and replace the “author” name for yours. Try to Render the file, it will hopefully work and have all your notes :)</p>
-</section>
-<section id="friday" class="level3">
-<h3 class="anchored" data-anchor-id="friday">Friday</h3>
-<p>Introduction to R, Projects, and Quarto.</p>
+<section id="model-4" class="level3" data-number="8.1.4">
+<h3 data-number="8.1.4" class="anchored" data-anchor-id="model-4"><span class="header-section-number">8.1.4</span> Model 4:</h3>
+<p>Random slope and intercept:</p>
+<p><span class="math display">\[ log(ERichness) \sim (\beta_0 + \gamma_j) + (\beta_1 * \psi_j * NAP_i )+ \beta_2 Exposure2_i ...  \]</span></p>
+<p><span class="math display">\[ Richness_i \sim Poisson(ERichness)_i \]</span></p>
+<p>Here, there is a random slope (<span class="math inline">\(\psi_j\)</span>) and random intercept (<span class="math inline">\(\gamma_i\)</span>). This is how we run it:</p>
+<p><span class="math display">\[
+\underbrace{model4}_{\text{Model Name}}&lt;- \underbrace{glmmTMB}_{\text{function for mixed effects models}} (\underbrace{\text{Richness~NAP*Exposure}}_{\text{Fixed effects}} \underbrace{+ (1+NAP|Beach)}_{Random effects}, data = rikz, \underbrace{family = poisson}_{Distribution})
+\]</span></p>
+<p>Or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model4<span class="ot">&lt;-</span><span class="fu">glmmTMB</span>(Richness<span class="sc">~</span>NAP<span class="sc">*</span>Exposure <span class="sc">+</span> (<span class="dv">1</span><span class="sc">+</span>NAP<span class="sc">|</span>Beach), <span class="at">data =</span> rikz, <span class="at">family =</span> poisson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
@@ -962,13 +898,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Welcome!">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome!</span>
+      <a href="./mixedmfish.html" class="pagination-link" aria-label="Example of mixed effects models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Assignment1.html" class="pagination-link" aria-label="Intro to R, Projects, and Quarto">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R, Projects, and Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

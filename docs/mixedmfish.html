@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./overdispersion.html" rel="prev">
+<link href="./glmmmodelsanswers.html" rel="next">
+<link href="./mixed.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -188,7 +188,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mixedmfish.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mixed.html">Mixed Effects Models</a></li><li class="breadcrumb-item"><a href="./mixedmfish.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -293,12 +293,29 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zero inflation and overdispersion</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mixed Effects Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mixedmfish.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glmmmodelsanswers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -308,18 +325,18 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Slideshows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_instructions.html" class="sidebar-item-text sidebar-link">
@@ -363,7 +380,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./mixed.html">Mixed Effects Models</a></li><li class="breadcrumb-item"><a href="./mixedmfish.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></h1>
 </div>
@@ -422,7 +439,7 @@ Simulating data
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">rpois</span>(<span class="dv">1</span>,<span class="dv">50</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 41</code></pre>
+<pre><code>[1] 50</code></pre>
 </div>
 </div>
 <p>Where n is the number of fish we got. You can run that line multiple times and see that we get a different number each time!</p>
@@ -432,12 +449,13 @@ Simulating data
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>size<span class="ot">&lt;-</span><span class="fu">runif</span>(n,<span class="dv">20</span>,<span class="dv">60</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 35.52581 58.90115 45.76726 23.36182 34.70602 56.11507 32.95195 50.63433
- [9] 34.42712 28.91901 42.12036 56.66960 40.73468 30.54601 29.34368 54.30843
-[17] 49.44823 47.36351 30.41583 34.44251 25.00075 49.89889 45.54394 30.19300
-[25] 37.23034 43.28073 39.88597 34.12191 26.96661 31.84932 22.00470 59.09054
-[33] 48.76840 35.19517 42.69069 54.23024 31.63286 29.46605 58.79457 24.17974
-[41] 57.37176</code></pre>
+<pre><code> [1] 30.15638 23.69323 46.35992 35.95692 54.83494 53.75989 58.31741 37.92783
+ [9] 34.67679 32.84552 50.41486 26.53031 47.30388 42.66987 25.30711 36.23621
+[17] 27.02865 46.83560 30.22018 41.09290 32.70455 56.27743 38.13270 23.89075
+[25] 57.55221 43.81278 24.82721 24.17215 49.55056 48.80062 54.69318 25.81609
+[33] 21.52668 40.60189 49.66522 37.18696 53.67137 42.64182 20.25462 24.87571
+[41] 54.75188 21.38860 46.96892 56.70412 48.40340 26.56173 41.19224 53.74568
+[49] 56.32843 50.77901</code></pre>
 </div>
 </div>
 <p>Finally, let’s simulate the mercury concentration. It is dependent on the size of the fish. Let’s remember the linear model equation.</p>
@@ -476,19 +494,19 @@ Call:
 lm(formula = Hg ~ size, data = df1)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--0.111820 -0.039133  0.003988  0.041442  0.139970 
+     Min       1Q   Median       3Q      Max 
+-0.19885 -0.04598  0.00802  0.05306  0.11739 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 0.4589624  0.0350907   13.08 7.68e-16 ***
-size        0.0195395  0.0008432   23.17  &lt; 2e-16 ***
+(Intercept) 0.4741088  0.0335476   14.13   &lt;2e-16 ***
+size        0.0180315  0.0008003   22.53   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.06005 on 39 degrees of freedom
-Multiple R-squared:  0.9323,    Adjusted R-squared:  0.9305 
-F-statistic: 536.9 on 1 and 39 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.06734 on 48 degrees of freedom
+Multiple R-squared:  0.9136,    Adjusted R-squared:  0.9118 
+F-statistic: 507.6 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -595,12 +613,12 @@ Simulating Data 2
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(HgDat_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      size        Hg region
-1 35.52581 1.1392653      A
-2 58.90115 1.7025574      A
-3 45.76726 1.2941241      A
-4 23.36182 0.9245525      A
-5 34.70602 1.0296217      A
-6 56.11507 1.5038698      A</code></pre>
+1 30.15638 0.9464704      A
+2 23.69323 0.8670403      A
+3 46.35992 1.3173363      A
+4 35.95692 1.0825311      A
+5 54.83494 1.5620296      A
+6 53.75989 1.4924343      A</code></pre>
 </div>
 </div>
 <p>Before we continue, I recommend you open the Hg_Dat dataframe and explore it.</p>
@@ -615,21 +633,21 @@ lm(formula = Hg ~ size + region, data = HgDat_df)
 
 Residuals:
       Min        1Q    Median        3Q       Max 
--0.199531 -0.046969 -0.005906  0.058691  0.198420 
+-0.218058 -0.047420  0.000622  0.054734  0.192350 
 
 Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.5282796  0.0233756  22.600  &lt; 2e-16 ***
-size         0.0178109  0.0004962  35.897  &lt; 2e-16 ***
-regionB      0.0078728  0.0154429   0.510    0.611    
-regionC     -0.0091691  0.0163654  -0.560    0.576    
-regionD      0.0948834  0.0170751   5.557 8.48e-08 ***
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.4690805  0.0228071  20.567  &lt; 2e-16 ***
+size        0.0181566  0.0005004  36.285  &lt; 2e-16 ***
+regionB     0.0548165  0.0152693   3.590 0.000422 ***
+regionC     0.0169729  0.0156151   1.087 0.278449    
+regionD     0.1199181  0.0155677   7.703  7.4e-13 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.07857 on 205 degrees of freedom
-Multiple R-squared:  0.8724,    Adjusted R-squared:  0.8699 
-F-statistic: 350.4 on 4 and 205 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.07605 on 188 degrees of freedom
+Multiple R-squared:  0.8776,    Adjusted R-squared:  0.875 
+F-statistic:   337 on 4 and 188 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>and plot the data:</p>
@@ -712,22 +730,22 @@ Formula:          Hg ~ size + (1 | net)
 Data: HgDatmixed
 
      AIC      BIC   logLik deviance df.resid 
-  -450.4   -437.1    229.2   -458.4      200 
+  -443.0   -429.6    225.5   -451.0      207 
 
 Random effects:
 
 Conditional model:
  Groups   Name        Variance Std.Dev.
- net      (Intercept) 0.019847 0.14088 
- Residual             0.005589 0.07476 
-Number of obs: 204, groups:  net, 4
+ net      (Intercept) 0.008401 0.09166 
+ Residual             0.006373 0.07983 
+Number of obs: 211, groups:  net, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00559 
+Dispersion estimate for gaussian family (sigma^2): 0.00637 
 
 Conditional model:
              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 0.4740483  0.0731189    6.48 8.98e-11 ***
-size        0.0181913  0.0004669   38.96  &lt; 2e-16 ***
+(Intercept) 0.5220891  0.0500301   10.44   &lt;2e-16 ***
+size        0.0181849  0.0004733   38.42   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -821,16 +839,16 @@ Assignment question 4
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Regression 
 
-204 samples
+211 samples
   2 predictor
 
 No pre-processing
 Resampling: Cross-Validated (10 fold) 
-Summary of sample sizes: 183, 184, 184, 184, 184, 184, ... 
+Summary of sample sizes: 190, 191, 190, 190, 189, 188, ... 
 Resampling results:
 
-  RMSE        Rsquared   MAE       
-  0.07491795  0.9167101  0.06144222
+  RMSE       Rsquared   MAE       
+  0.0807478  0.8908563  0.06351173
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>
@@ -1263,13 +1281,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./overdispersion.html" class="pagination-link" aria-label="Zero inflation and overdispersion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zero inflation and overdispersion</span></span>
+      <a href="./mixed.html" class="pagination-link" aria-label="Mixed Effects Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Mixed Effects Models</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./glmmmodelsanswers.html" class="pagination-link" aria-label="Mixed Models in glmmTMB">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

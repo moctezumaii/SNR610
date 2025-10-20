@@ -313,12 +313,29 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Zero inflation and overdispersion</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mixed Effects Models</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mixedmfish.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Example of mixed effects models</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glmmmodelsanswers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mixed Models in glmmTMB</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -328,18 +345,18 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Slideshows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_instructions.html" class="sidebar-item-text sidebar-link">
@@ -512,7 +529,7 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 409.9601</code></pre>
+<pre><code>[1] 411.0047</code></pre>
 </div>
 </div>
 <p>We are going to simulate taking a sample of size 40. It is actually pretty straightforward to take a sample:</p>
@@ -603,7 +620,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 409.960094354309 is included within the confidence interval. LCI: 378.685160001523 UCI: 417.557899479041"</code></pre>
+<pre><code>[1] "Nice! The real parameter 411.00468953279 is included within the confidence interval. LCI: 391.601593510484 UCI: 428.053521133195"</code></pre>
 </div>
 </div>
 <p>In class I mentioned examples in which I would sample the same population multiple times. Let’s do that, let’s start by taking a second sample and estimating the confidence interval:</p>
@@ -620,7 +637,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 409.960094354309 is included within the confidence interval. LCI: 404.321788619006 UCI: 437.907044516269"</code></pre>
+<pre><code>[1] "Nice! The real parameter 411.00468953279 is included within the confidence interval. LCI: 399.151617639919 UCI: 434.306919201703"</code></pre>
 </div>
 </div>
 <p>Run the code again for sample 3</p>
@@ -1228,7 +1245,7 @@ ratio of variances
 <span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2149070</code></pre>
+<pre><code>[1] 1697664</code></pre>
 </div>
 </div>
 
