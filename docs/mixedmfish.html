@@ -355,6 +355,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Shiny App Example</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FunctionsinR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -439,7 +445,7 @@ Simulating data
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">rpois</span>(<span class="dv">1</span>,<span class="dv">50</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 50</code></pre>
+<pre><code>[1] 55</code></pre>
 </div>
 </div>
 <p>Where n is the number of fish we got. You can run that line multiple times and see that we get a different number each time!</p>
@@ -449,13 +455,13 @@ Simulating data
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>size<span class="ot">&lt;-</span><span class="fu">runif</span>(n,<span class="dv">20</span>,<span class="dv">60</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 30.15638 23.69323 46.35992 35.95692 54.83494 53.75989 58.31741 37.92783
- [9] 34.67679 32.84552 50.41486 26.53031 47.30388 42.66987 25.30711 36.23621
-[17] 27.02865 46.83560 30.22018 41.09290 32.70455 56.27743 38.13270 23.89075
-[25] 57.55221 43.81278 24.82721 24.17215 49.55056 48.80062 54.69318 25.81609
-[33] 21.52668 40.60189 49.66522 37.18696 53.67137 42.64182 20.25462 24.87571
-[41] 54.75188 21.38860 46.96892 56.70412 48.40340 26.56173 41.19224 53.74568
-[49] 56.32843 50.77901</code></pre>
+<pre><code> [1] 49.87155 29.62974 47.89031 25.58740 34.90356 34.66320 41.46268 35.35076
+ [9] 41.83368 35.53681 30.60637 56.98646 39.63399 41.67803 45.14488 32.21596
+[17] 27.49314 38.13788 51.06668 34.77129 40.95200 47.05304 40.01145 29.57112
+[25] 30.92041 49.05005 38.70482 41.77616 50.22559 44.49890 57.51058 39.59334
+[33] 50.33474 27.79457 55.22269 21.70427 21.96660 32.65681 59.71954 40.48436
+[41] 31.85954 33.68537 42.15371 38.95978 32.93862 26.17834 22.27264 20.05861
+[49] 52.09786 39.14462 58.56810 20.14141 33.94396 58.82431 55.44142</code></pre>
 </div>
 </div>
 <p>Finally, let’s simulate the mercury concentration. It is dependent on the size of the fish. Let’s remember the linear model equation.</p>
@@ -495,18 +501,18 @@ lm(formula = Hg ~ size, data = df1)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.19885 -0.04598  0.00802  0.05306  0.11739 
+-0.19021 -0.04767 -0.00100  0.06380  0.14464 
 
 Coefficients:
-             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 0.4741088  0.0335476   14.13   &lt;2e-16 ***
-size        0.0180315  0.0008003   22.53   &lt;2e-16 ***
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.509633   0.041351   12.32   &lt;2e-16 ***
+size        0.017732   0.001016   17.45   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.06734 on 48 degrees of freedom
-Multiple R-squared:  0.9136,    Adjusted R-squared:  0.9118 
-F-statistic: 507.6 on 1 and 48 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.08035 on 53 degrees of freedom
+Multiple R-squared:  0.8518,    Adjusted R-squared:  0.849 
+F-statistic: 304.7 on 1 and 53 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -613,12 +619,12 @@ Simulating Data 2
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(HgDat_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      size        Hg region
-1 30.15638 0.9464704      A
-2 23.69323 0.8670403      A
-3 46.35992 1.3173363      A
-4 35.95692 1.0825311      A
-5 54.83494 1.5620296      A
-6 53.75989 1.4924343      A</code></pre>
+1 49.87155 1.3753919      A
+2 29.62974 0.9502769      A
+3 47.89031 1.4834443      A
+4 25.58740 1.0929737      A
+5 34.90356 1.0757713      A
+6 34.66320 1.1735415      A</code></pre>
 </div>
 </div>
 <p>Before we continue, I recommend you open the Hg_Dat dataframe and explore it.</p>
@@ -633,21 +639,21 @@ lm(formula = Hg ~ size + region, data = HgDat_df)
 
 Residuals:
       Min        1Q    Median        3Q       Max 
--0.218058 -0.047420  0.000622  0.054734  0.192350 
+-0.200054 -0.052032  0.001877  0.054665  0.175903 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 0.4690805  0.0228071  20.567  &lt; 2e-16 ***
-size        0.0181566  0.0005004  36.285  &lt; 2e-16 ***
-regionB     0.0548165  0.0152693   3.590 0.000422 ***
-regionC     0.0169729  0.0156151   1.087 0.278449    
-regionD     0.1199181  0.0155677   7.703  7.4e-13 ***
+(Intercept) 0.5150126  0.0213146  24.162  &lt; 2e-16 ***
+size        0.0175955  0.0004749  37.053  &lt; 2e-16 ***
+regionB     0.0433173  0.0156918   2.761  0.00632 ** 
+regionC     0.0060116  0.0148534   0.405  0.68612    
+regionD     0.0887978  0.0147215   6.032 7.88e-09 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.07605 on 188 degrees of freedom
-Multiple R-squared:  0.8776,    Adjusted R-squared:  0.875 
-F-statistic:   337 on 4 and 188 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.07648 on 197 degrees of freedom
+Multiple R-squared:  0.8813,    Adjusted R-squared:  0.8789 
+F-statistic: 365.8 on 4 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>and plot the data:</p>
@@ -730,22 +736,22 @@ Formula:          Hg ~ size + (1 | net)
 Data: HgDatmixed
 
      AIC      BIC   logLik deviance df.resid 
-  -443.0   -429.6    225.5   -451.0      207 
+  -418.5   -405.4    213.2   -426.5      190 
 
 Random effects:
 
 Conditional model:
  Groups   Name        Variance Std.Dev.
- net      (Intercept) 0.008401 0.09166 
- Residual             0.006373 0.07983 
-Number of obs: 211, groups:  net, 4
+ net      (Intercept) 0.046637 0.21596 
+ Residual             0.005744 0.07579 
+Number of obs: 194, groups:  net, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00637 
+Dispersion estimate for gaussian family (sigma^2): 0.00574 
 
 Conditional model:
              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 0.5220891  0.0500301   10.44   &lt;2e-16 ***
-size        0.0181849  0.0004733   38.42   &lt;2e-16 ***
+(Intercept) 0.6884657  0.1098608    6.27 3.69e-10 ***
+size        0.0182702  0.0004819   37.92  &lt; 2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -839,16 +845,16 @@ Assignment question 4
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Regression 
 
-211 samples
+194 samples
   2 predictor
 
 No pre-processing
 Resampling: Cross-Validated (10 fold) 
-Summary of sample sizes: 190, 191, 190, 190, 189, 188, ... 
+Summary of sample sizes: 174, 177, 174, 174, 174, 176, ... 
 Resampling results:
 
-  RMSE       Rsquared   MAE       
-  0.0807478  0.8908563  0.06351173
+  RMSE        Rsquared   MAE       
+  0.07637067  0.9418728  0.06127849
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>

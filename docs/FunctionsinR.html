@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Central Limit Theorem and confidence intervals – FWF 610</title>
+<title>Appendix D — Functions – FWF 610</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assignment2.html" rel="next">
-<link href="./Readings1.html" rel="prev">
+<link href="./r-shiny_example.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +102,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -125,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignment2_intro.html">The Central Limit Theorem and confidence intervals</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation_instructions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./FunctionsinR.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -174,13 +236,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./assignment2_intro.html" class="sidebar-item-text sidebar-link active">
+            <a href="./assignment2_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Central Limit Theorem and confidence intervals</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignment2.html" class="sidebar-item-text sidebar-link">
@@ -267,13 +329,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation_instructions.html" class="sidebar-item-text sidebar-link">
@@ -294,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./FunctionsinR.html" class="sidebar-item-text sidebar-link">
+  <a href="./FunctionsinR.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
@@ -310,17 +372,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#remember" id="toc-remember" class="nav-link active" data-scroll-target="#remember">Remember!</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#writing-scripts-and-functions" id="toc-writing-scripts-and-functions" class="nav-link active" data-scroll-target="#writing-scripts-and-functions"><span class="header-section-number">D.1</span> Writing scripts and functions</a></li>
+  <li><a href="#create-a-script" id="toc-create-a-script" class="nav-link" data-scroll-target="#create-a-script"><span class="header-section-number">D.2</span> Create a script! 📜</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">D.3</span> Functions</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">D.4</span> Tasks</a>
+  <ul class="collapse">
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1"><span class="header-section-number">D.4.1</span> TASK 1 🖊️</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2"><span class="header-section-number">D.4.2</span> TASK 2 ✏️</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./installation_instructions.html">Appendices</a></li><li class="breadcrumb-item"><a href="./FunctionsinR.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The Central Limit Theorem and confidence intervals</h1>
+<h1 class="title">Appendix D — Functions</h1>
 </div>
 
 
@@ -337,49 +405,185 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this section we are going to learn the following:</p>
-<ol type="1">
-<li>Plotting and using ggplot. I commonly use ggplot, although still use “baseR” quite often to plot. But the reality is that the ggplot package <strong>is probably the best tool and package to plot in R.</strong> We will learn to make plots using ggplot and we will use it throughout the course.</li>
-<li>Data simulation.</li>
-<li>The central theorem and confidence intervals</li>
-<li>Introduction to linear models</li>
-</ol>
-<p>This is a “longer” assignment. But the next one will be shorter. You can take as long as you need on it 😃</p>
-<p>You can download the quarto document (from Canvas) and use it to answer the questions, copy code, modify code, etc.</p>
-<section id="remember" class="level2">
-<h2 class="anchored" data-anchor-id="remember">Remember!</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are comfortable with R basics, you can write the code for this exercise directly into Quarto. To add extra code chunks, write this symbols: ```{r}, if you are still not comfortable with R, I recommend for the time being you open a new file and copy and paste the code there, and run it. You can submit this as a qmd file or as an r-script. Whatever you feel more comfortable with at the moment (.qmd + .html preferred)</p>
-<p>You can also go to insert &gt; executable cell &gt; R and that should insert an r chunk</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Why is my data not loading?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure you download the data file, and also save the quarto file you’re working on in the class folder!</p>
-</div>
-</div>
+<section id="writing-scripts-and-functions" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="writing-scripts-and-functions"><span class="header-section-number">D.1</span> Writing scripts and functions</h2>
 </section>
-<section id="section" class="level1">
-<h1></h1>
+<section id="create-a-script" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="create-a-script"><span class="header-section-number">D.2</span> Create a script! 📜</h2>
+<p>It is usually better to create functions (at least initially) in a script rather than a Quarto document.</p>
+<p>Go to file &gt; new &gt; new file &gt; R script</p>
+<p>Do not do this in a Quarto document</p>
+</section>
+<p>So far we have been using Quarto to turn in our assignments. Quarto (and RMarkdown) are great for reports, to present code, and sometimes to have a nice, well commented analysis.</p>
+<p>However, more often than not, when working on our own code we write scripts in the console. That’s what we will do in today’s activity.</p>
+<section id="functions" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="functions"><span class="header-section-number">D.3</span> Functions</h2>
+<p>So far, we have been using “pre-built” functions. Functions that come in the R base package, and functions that come in some packages we run. Usually the functions look the following way:</p>
+<p><span class="math display">\[
+\underbrace{lm}_{function}\underbrace{(formula, data) }_{input}
+\]</span></p>
+<p>Good news! We can create our own functions. This can be super helpful, for things we run over and over again. It is also generally better to <em>soft code</em> than to <em>hard code</em>. This allows us to do that. We can make a function that will run a predetermined script. Here is an example of a function I just made. You can copy and paste it in your r source code window and run it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plus10<span class="ot">&lt;-</span><span class="cf">function</span>(n){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span>n<span class="sc">+</span><span class="dv">10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(n)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plus10</span>(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plus10</span>(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30</code></pre>
+</div>
+</div>
+<p>Can you guess what this function does?</p>
+<p><span class="math display">\[
+\underbrace{plus10}_{\text{name of function}} &lt;- function\underbrace{(n)}_{input}\text{\{}
+\]</span></p>
+<p><span class="math display">\[
+\underbrace{n&lt;-n+10}_{code}
+\]</span></p>
+<p><span class="math display">\[
+\underbrace{return(n)}_{\text{output}}\}
+\]</span></p>
+<p>Here is another function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lambplot<span class="ot">&lt;-</span> <span class="cf">function</span>(lambda1, lambda2, lambda3){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="fu">qpois</span>(<span class="fl">0.99</span>, <span class="fu">max</span>(<span class="fu">c</span>(lambda1,lambda2,lambda3)))<span class="sc">+</span><span class="dv">2</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   selectedDatap <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">dpois</span>(x2, lambda1))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  selectedDatap2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(x2, lambda2))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  selectedDatap3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">dpois</span>(x2, lambda3))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a> df<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">c</span>(selectedDatap,selectedDatap2,selectedDatap3),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                            <span class="at">x2 =</span> x2,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                            <span class="at">lambda =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda1), <span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda2), <span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda3)), <span class="at">each =</span> <span class="fu">length</span>(x2)),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">levels =</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda1), <span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda2), <span class="fu">paste</span>(<span class="st">"lambda = "</span>, lambda3))))</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a> aplot<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x =</span> x2<span class="fl">+0.5</span>, <span class="at">y =</span> y, <span class="at">fill =</span> lambda)) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">color =</span> <span class="st">"grey"</span>, <span class="at">linewidth =</span> <span class="fl">0.1</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="st">"Probability density"</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_classic</span>()</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(aplot,<span class="fu">paste</span>(<span class="st">"your selections were"</span>,lambda1, lambda2, <span class="st">"and"</span>, lambda3)))    </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can copy and paste it, and try to guess what it does.</p>
+<p>Try to run it with values of 1, 5, and 10. Once you understand what it does, let’s move on.</p>
+</section>
+<section id="tasks" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="tasks"><span class="header-section-number">D.4</span> Tasks</h2>
+<p>Now you have two tasks. These are just for class time. You can choose to do any or both</p>
+<p>CREATE THESE TASKS IN AN R-SCRIPT. NOT A QUARTO DOCUMENT!!!</p>
+<section id="task-1" class="level3" data-number="D.4.1">
+<h3 data-number="D.4.1" class="anchored" data-anchor-id="task-1"><span class="header-section-number">D.4.1</span> TASK 1 🖊️</h3>
+<section id="goal" class="level4" data-number="D.4.1.1">
+<h4 data-number="D.4.1.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">D.4.1.1</span> Goal</h4>
+<p>Write a function that simulates data for a linear relationship, fits a simple linear model to the data, and plots the results.</p>
+</section>
+<section id="description" class="level4" data-number="D.4.1.2">
+<h4 data-number="D.4.1.2" class="anchored" data-anchor-id="description"><span class="header-section-number">D.4.1.2</span> Description</h4>
+<p>Essentially, you will run the function with some inputs, and the output will be 1) a scatter plot with a line (showing the expected values; also known as trendline) with confidence interval, and 2) the model summary output. Let’s make it simple and have a simple linear model with a single continuous variable as the explanatory.</p>
+</section>
+<section id="parts-of-the-function" class="level4" data-number="D.4.1.3">
+<h4 data-number="D.4.1.3" class="anchored" data-anchor-id="parts-of-the-function"><span class="header-section-number">D.4.1.3</span> Parts of the function:</h4>
+<section id="inputs-your-function-must-take-these-as-arguments" class="level5" data-number="D.4.1.3.1">
+<h5 data-number="D.4.1.3.1" class="anchored" data-anchor-id="inputs-your-function-must-take-these-as-arguments"><span class="header-section-number">D.4.1.3.1</span> Inputs (your function must take these as arguments):</h5>
+<ul>
+<li><p><code>n</code>: number of observations (sample size)</p></li>
+<li><p><code>int</code>: intercept (β₀)</p></li>
+<li><p><code>slope</code>: slope (β₁)</p></li>
+<li><p><code>variance</code>: amount of random noise/variation around the line</p></li>
+</ul>
+</section>
+<section id="simulation-setup" class="level5" data-number="D.4.1.3.2">
+<h5 data-number="D.4.1.3.2" class="anchored" data-anchor-id="simulation-setup"><span class="header-section-number">D.4.1.3.2</span> Simulation setup:</h5>
+<ul>
+<li><p>Choose a continuous explanatory variable (x) that makes sense in your study system.</p></li>
+<li><p>Simulate the x values (based on n) — a normal or uniform distribution usually works well.</p></li>
+<li><p>Generate the response variable (y) using the linear equation: <span class="math display">\[y_i = \beta_0 + \beta_1 x_i + \epsilon_i \]</span></p></li>
+<li><p>The random error should come from a normal distribution with the variance you specify.The rnorm function asks for SD, not variance!</p></li>
+</ul>
+</section>
+<section id="model-fitting-and-prediction" class="level5" data-number="D.4.1.3.3">
+<h5 data-number="D.4.1.3.3" class="anchored" data-anchor-id="model-fitting-and-prediction"><span class="header-section-number">D.4.1.3.3</span> Model fitting and prediction:</h5>
+<ul>
+<li><p>Store the new data in a data frame (should have x and observed y)</p></li>
+<li><p>Fit a simple linear model (<code>lm</code>) using your simulated data</p></li>
+<li><p>Save the model summary</p></li>
+<li><p>Use the <code>predict()</code> function to estimate the predicted values (aka trendline).</p></li>
+<li><p>Use <code>interval = "prediction"</code> in the prediction, so you get confidence intervals around your estimates.</p></li>
+</ul>
+</section>
+<section id="plot" class="level5" data-number="D.4.1.3.4">
+<h5 data-number="D.4.1.3.4" class="anchored" data-anchor-id="plot"><span class="header-section-number">D.4.1.3.4</span> Plot:</h5>
+<ul>
+<li>Make a scatterplot of your data with the predicted line and confidence interval.</li>
+</ul>
+<!-- -->
+<ul>
+<li>Use <code>ggplot2</code> or base R (I recommend <code>ggplot2</code></li>
+</ul>
+</section>
+<section id="output" class="level5" data-number="D.4.1.3.5">
+<h5 data-number="D.4.1.3.5" class="anchored" data-anchor-id="output"><span class="header-section-number">D.4.1.3.5</span> Output:</h5>
+<p>After running your function, the output should <code>return()</code> a plot and a model summary.</p>
+</section>
+<section id="make-it-complex" class="level5" data-number="D.4.1.3.6">
+<h5 data-number="D.4.1.3.6" class="anchored" data-anchor-id="make-it-complex"><span class="header-section-number">D.4.1.3.6</span> Make it complex!</h5>
+<p>If you finish this function, you can make it more complex. Allow users to also add a categorical variable, the function should work whether the user inputs a categorical variable or not.</p>
+<p>Let users choose whether the effect is <strong>additive</strong> or <strong>interactive</strong>. Make sure the function still works even if no group is provided — in that case, it should behave like your simpler version.</p>
+</section>
+</section>
+</section>
+<section id="task-2" class="level3" data-number="D.4.2">
+<h3 data-number="D.4.2" class="anchored" data-anchor-id="task-2"><span class="header-section-number">D.4.2</span> TASK 2 ✏️</h3>
+<section id="goal-1" class="level4" data-number="D.4.2.1">
+<h4 data-number="D.4.2.1" class="anchored" data-anchor-id="goal-1"><span class="header-section-number">D.4.2.1</span> Goal</h4>
+<p>Simulate and compare two groups with different types of count data distributions:</p>
+<ul>
+<li><p>One group follows a Poisson distribution</p></li>
+<li><p>The other follows a Negative Binomial distribution</p></li>
+</ul>
+</section>
+<section id="steps" class="level4" data-number="D.4.2.2">
+<h4 data-number="D.4.2.2" class="anchored" data-anchor-id="steps"><span class="header-section-number">D.4.2.2</span> Steps:</h4>
+<section id="create-a-function" class="level5" data-number="D.4.2.2.1">
+<h5 data-number="D.4.2.2.1" class="anchored" data-anchor-id="create-a-function"><span class="header-section-number">D.4.2.2.1</span> 1. Create a function</h5>
+<ul>
+<li><p>Simulates count data for two groups</p></li>
+<li><p>Group 1 follows a <strong>Poisson distribution</strong></p></li>
+<li><p>Group 2 follows a <strong>Negative Binomial distribution</strong></p></li>
+</ul>
+<p>The following code should help you simulate a negative binomial distribution</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnbinom</span>(<span class="at">x=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">50</span>,<span class="at">size=</span>,<span class="at">mu=</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><code>mu</code> = the mean (expected value)</p></li>
+<li><p><code>size</code> = the dispersion parameter (<span class="math inline">\(\theta\)</span>), which controls the variance.</p></li>
+</ul>
+</section>
+<section id="visualize-the-two-distributions" class="level5" data-number="D.4.2.2.2">
+<h5 data-number="D.4.2.2.2" class="anchored" data-anchor-id="visualize-the-two-distributions"><span class="header-section-number">D.4.2.2.2</span> 2. Visualize the two distributions</h5>
+<p>Create a plot that shows the frequency or probability of different count values for each group. You might use <code>geom_bar()</code> or <code>geom_line()</code> depending on your preference</p>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -802,14 +1006,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Readings1.html" class="pagination-link" aria-label="Readings 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Readings 1</span>
+      <a href="./r-shiny_example.html" class="pagination-link" aria-label="Shiny App Example">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Shiny App Example</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./assignment2.html" class="pagination-link" aria-label="Exploring the CLT">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Exploring the CLT</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
