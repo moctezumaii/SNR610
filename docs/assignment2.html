@@ -433,7 +433,7 @@ window.Quarto = {
 </header>
 
 
-<p>The applet on <a href="https://collinn.github.io/sbi/ch7.html#central-limit-theorem">Ward and Nolte’s book</a> <span class="citation" data-cites="ward2024">(<a href="#ref-ward2024" role="doc-biblioref">Ward and Nolte 2024</a>)</span> is a great example of the central limit theorem. If you still have questions about this topic I recommend you check the applet on section 6.3 and the one on section 7.2. going to do a little experiment regarding the Central Limit Theorem and confidence intervals. We are going to:</p>
+<p>The applet on <a href="https://collinn.github.io/sbi/ch7.html#central-limit-theorem">Ward and Nolte’s book</a> <span class="citation" data-cites="ward2024">(<a href="references.html#ref-ward2024" role="doc-biblioref">Ward and Nolte 2024</a>)</span> is a great example of the central limit theorem. If you still have questions about this topic I recommend you check the applet on section 6.3 and the one on section 7.2. going to do a little experiment regarding the Central Limit Theorem and confidence intervals. We are going to:</p>
 <ol type="1">
 <li>Simulate a population. This population can be anything, and can have any distribution.</li>
 <li>Take a sample of size n = 30</li>
@@ -460,7 +460,7 @@ If you feel like you are falling behind
 <p>Let start</p>
 <section id="step-1-simulate-your-data" class="level4" data-number="2.0.0.1">
 <h4 data-number="2.0.0.1" class="anchored" data-anchor-id="step-1-simulate-your-data"><span class="header-section-number">2.0.0.1</span> Step 1: Simulate your data</h4>
-<p>This may be the most complicated step. We haven’t really talked about distributions, and you’re not expected to know this at this point. If you are not comfortable simulating your own data, I am providing some examples below. Choose the one you like the most, and use it to simulate your data. If you decide to use one of the provided examples, then you can skip this, and go directly to the <a href="#sec-examples" class="quarto-xref"><span class="quarto-unresolved-ref">sec-examples</span></a> section. If you want to simulate your own population, look at the examples.</p>
+<p>This may be the most complicated step. We haven’t really talked about distributions, and you’re not expected to know this at this point. If you are not comfortable simulating your own data, I am providing some examples below. Choose the one you like the most, and use it to simulate your data. If you decide to use one of the provided examples, then you can skip this, and go directly to the <a href="#sec-examples" class="quarto-xref"><span>Section 2.0.0.2</span></a> section. If you want to simulate your own population, look at the examples.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -541,7 +541,7 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 410.2283</code></pre>
+<pre><code>[1] 410.6106</code></pre>
 </div>
 </div>
 <p>We are going to simulate taking a sample of size 40. It is actually pretty straightforward to take a sample:</p>
@@ -632,7 +632,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Bummer! The real parameter 410.228337951217 is NOT included within the confidence interval. LCI: 378.38773742995 UCI: 409.383501530573"</code></pre>
+<pre><code>[1] "Nice! The real parameter 410.610649462957 is included within the confidence interval. LCI: 383.318773169682 UCI: 415.893332785471"</code></pre>
 </div>
 </div>
 <p>In class I mentioned examples in which I would sample the same population multiple times. Let’s do that, let’s start by taking a second sample and estimating the confidence interval:</p>
@@ -649,7 +649,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.228337951217 is included within the confidence interval. LCI: 404.265034032195 UCI: 438.598324139604"</code></pre>
+<pre><code>[1] "Nice! The real parameter 410.610649462957 is included within the confidence interval. LCI: 394.861403307653 UCI: 438.8621893792"</code></pre>
 </div>
 </div>
 <p>Run the code again for sample 3</p>
@@ -710,7 +710,7 @@ UpperCI = \overline{y} + 1.96SE
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(inclusive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 96</code></pre>
+<pre><code>[1] 92</code></pre>
 </div>
 </div>
 <p>That’s it! It will give you the number of “successes”.</p>
@@ -1257,12 +1257,12 @@ ratio of variances
 <span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2041500</code></pre>
+<pre><code>[1] 2777603</code></pre>
 </div>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-ward2024" class="csl-entry" role="listitem">
 Ward, Caitlin, and Collin Nolte. 2024. <em>An Intuitive, Interactive, Introduction to Biostatistics</em>. <a href="https://collinn.github.io/sbi/index.html#acknowledgements">https://collinn.github.io/sbi/index.html#acknowledgements</a>.
 </div>
