@@ -338,6 +338,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./gamassignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GAM’s vs GLM’s</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -345,7 +351,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Slideshows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -437,8 +443,8 @@ window.Quarto = {
 <p>In order to understand those models, you need to understand linear models.</p>
 <p>Also, so far we have been running a single model for each dataset. In today’s activity you will be tasked with running multiple models for a single dataset. And then comparing models using Maximum Likelihood. These will allow us to explore multiple models.</p>
 <p>Before continuing: while we have been running multiple models, we haven’t had time to stop and think about how <code>r</code> is computing the models. How does <code>r</code> finds a value for each coefficient <span class="math inline">\(\beta\)</span>? It has been using least squares to find these values. Essentially, it finds values of <span class="math inline">\(\beta\)</span> that minimizes the sum of squares of the differences between predicted and observed values. Think of it as finding the line that minimizes residuals! While these are very useful methods, they are not the only ones!</p>
-<p>We will start using some methods that use Likelihood. During Wednesday class we talked a bit about likelihood and probability. At this point you should be able to understand the difference between the two (even if you can’t describe it). If you find yourself using (or interested in using) Likelihood and Maximum Likelihood Methods, do yourself a favor and download the book by <a href="https://link.springer.com/book/10.1007/b97636">Burnham and Anderson: Model Selection and Multimodel Inference. Which is free to download through the University of Tennessee Libraries!</a> <span class="citation" data-cites="burnham2010">(<a href="references.html#ref-burnham2010" role="doc-biblioref">Burnham and Anderson 2010</a>)</span> It is the most useful book for multi-model inference!</p>
-<p>We will discuss the following paper next week: <span class="citation" data-cites="tredennick2021">(<a href="references.html#ref-tredennick2021" role="doc-biblioref">Tredennick et al. 2021</a>)</span> <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.3336">available here!</a></p>
+<p>We will start using some methods that use Likelihood. During Wednesday class we talked a bit about likelihood and probability. At this point you should be able to understand the difference between the two (even if you can’t describe it). If you find yourself using (or interested in using) Likelihood and Maximum Likelihood Methods, do yourself a favor and download the book by <a href="https://link.springer.com/book/10.1007/b97636">Burnham and Anderson: Model Selection and Multimodel Inference. Which is free to download through the University of Tennessee Libraries!</a> <span class="citation" data-cites="burnham2010">(<a href="#ref-burnham2010" role="doc-biblioref">Burnham and Anderson 2010</a>)</span> It is the most useful book for multi-model inference!</p>
+<p>We will discuss the following paper next week: <span class="citation" data-cites="tredennick2021">(<a href="#ref-tredennick2021" role="doc-biblioref">Tredennick et al. 2021</a>)</span> <a href="https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.3336">available here!</a></p>
 <p>While I am a huge proponent and user of AIC as an inferential method, the authors clearly disagree with me, and they make some very good points!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -828,8 +834,8 @@ Resampling: Cross-Validated (10 fold)
 Summary of sample sizes: 900, 900, 900, 900, 900, 900, ... 
 Resampling results:
 
-  RMSE      Rsquared   MAE     
-  957.5437  0.3935002  770.7788
+  RMSE      Rsquared  MAE    
+  956.0936  0.396878  770.812
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>
@@ -876,7 +882,7 @@ Assignment question 8:
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-burnham2010" class="csl-entry" role="listitem">
 Burnham, Kenneth P., and David Ray Anderson. 2010. <em>Model selection and multimodel inference: a practical information-theoretic approach</em>. 2. ed. New York, NY: Springer.
 </div>

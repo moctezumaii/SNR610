@@ -8,4 +8,4 @@
 
 [Mixed Effects Models](slides/mixedmodels_part_2_.html)
 
-Generalized Additive Models
+[Generalized Additive Models](slides/gams.html)

@@ -318,6 +318,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./gamassignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GAM’s vs GLM’s</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -325,7 +331,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Slideshows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -445,7 +451,7 @@ Simulating data
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">rpois</span>(<span class="dv">1</span>,<span class="dv">50</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 55</code></pre>
+<pre><code>[1] 45</code></pre>
 </div>
 </div>
 <p>Where n is the number of fish we got. You can run that line multiple times and see that we get a different number each time!</p>
@@ -455,13 +461,12 @@ Simulating data
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>size<span class="ot">&lt;-</span><span class="fu">runif</span>(n,<span class="dv">20</span>,<span class="dv">60</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 49.87155 29.62974 47.89031 25.58740 34.90356 34.66320 41.46268 35.35076
- [9] 41.83368 35.53681 30.60637 56.98646 39.63399 41.67803 45.14488 32.21596
-[17] 27.49314 38.13788 51.06668 34.77129 40.95200 47.05304 40.01145 29.57112
-[25] 30.92041 49.05005 38.70482 41.77616 50.22559 44.49890 57.51058 39.59334
-[33] 50.33474 27.79457 55.22269 21.70427 21.96660 32.65681 59.71954 40.48436
-[41] 31.85954 33.68537 42.15371 38.95978 32.93862 26.17834 22.27264 20.05861
-[49] 52.09786 39.14462 58.56810 20.14141 33.94396 58.82431 55.44142</code></pre>
+<pre><code> [1] 21.21605 30.31772 20.32543 26.30113 42.23325 22.27950 50.84712 48.93382
+ [9] 25.46860 57.56190 47.16769 33.67007 27.40494 52.59456 33.53886 51.69053
+[17] 46.50510 56.05996 44.05403 50.87872 20.30921 25.06565 39.34708 42.44529
+[25] 35.09541 20.34820 47.65298 32.10070 48.20678 54.65303 20.17939 20.65343
+[33] 58.47575 52.05733 24.82074 29.09579 52.77180 36.98999 28.62623 31.90552
+[41] 45.33570 26.15224 49.58344 40.64574 46.78166</code></pre>
 </div>
 </div>
 <p>Finally, let’s simulate the mercury concentration. It is dependent on the size of the fish. Let’s remember the linear model equation.</p>
@@ -500,19 +505,19 @@ Call:
 lm(formula = Hg ~ size, data = df1)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.19021 -0.04767 -0.00100  0.06380  0.14464 
+      Min        1Q    Median        3Q       Max 
+-0.162969 -0.060508 -0.001709  0.053101  0.186719 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 0.509633   0.041351   12.32   &lt;2e-16 ***
-size        0.017732   0.001016   17.45   &lt;2e-16 ***
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.5424153  0.0400529   13.54   &lt;2e-16 ***
+size        0.0175102  0.0009992   17.52   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.08035 on 53 degrees of freedom
-Multiple R-squared:  0.8518,    Adjusted R-squared:  0.849 
-F-statistic: 304.7 on 1 and 53 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.08173 on 43 degrees of freedom
+Multiple R-squared:  0.8772,    Adjusted R-squared:  0.8743 
+F-statistic: 307.1 on 1 and 43 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -619,12 +624,12 @@ Simulating Data 2
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(HgDat_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      size        Hg region
-1 49.87155 1.3753919      A
-2 29.62974 0.9502769      A
-3 47.89031 1.4834443      A
-4 25.58740 1.0929737      A
-5 34.90356 1.0757713      A
-6 34.66320 1.1735415      A</code></pre>
+1 21.21605 0.9812963      A
+2 30.31772 1.0398582      A
+3 20.32543 1.0850365      A
+4 26.30113 1.0232836      A
+5 42.23325 1.1925719      A
+6 22.27950 0.8605498      A</code></pre>
 </div>
 </div>
 <p>Before we continue, I recommend you open the Hg_Dat dataframe and explore it.</p>
@@ -639,21 +644,21 @@ lm(formula = Hg ~ size + region, data = HgDat_df)
 
 Residuals:
       Min        1Q    Median        3Q       Max 
--0.200054 -0.052032  0.001877  0.054665  0.175903 
+-0.274700 -0.045322  0.000243  0.046028  0.201547 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 0.5150126  0.0213146  24.162  &lt; 2e-16 ***
-size        0.0175955  0.0004749  37.053  &lt; 2e-16 ***
-regionB     0.0433173  0.0156918   2.761  0.00632 ** 
-regionC     0.0060116  0.0148534   0.405  0.68612    
-regionD     0.0887978  0.0147215   6.032 7.88e-09 ***
+(Intercept) 0.5107124  0.0216208  23.621  &lt; 2e-16 ***
+size        0.0183404  0.0004793  38.262  &lt; 2e-16 ***
+regionB     0.0200151  0.0155846   1.284    0.201    
+regionC     0.0012641  0.0150675   0.084    0.933    
+regionD     0.0788423  0.0174053   4.530 1.04e-05 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.07648 on 197 degrees of freedom
-Multiple R-squared:  0.8813,    Adjusted R-squared:  0.8789 
-F-statistic: 365.8 on 4 and 197 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 0.0772 on 192 degrees of freedom
+Multiple R-squared:  0.8851,    Adjusted R-squared:  0.8827 
+F-statistic: 369.9 on 4 and 192 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>and plot the data:</p>
@@ -736,22 +741,22 @@ Formula:          Hg ~ size + (1 | net)
 Data: HgDatmixed
 
      AIC      BIC   logLik deviance df.resid 
-  -418.5   -405.4    213.2   -426.5      190 
+  -427.8   -414.5    217.9   -435.8      197 
 
 Random effects:
 
 Conditional model:
  Groups   Name        Variance Std.Dev.
- net      (Intercept) 0.046637 0.21596 
- Residual             0.005744 0.07579 
-Number of obs: 194, groups:  net, 4
+ net      (Intercept) 0.005803 0.07618 
+ Residual             0.006203 0.07876 
+Number of obs: 201, groups:  net, 4
 
-Dispersion estimate for gaussian family (sigma^2): 0.00574 
+Dispersion estimate for gaussian family (sigma^2): 0.0062 
 
 Conditional model:
              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept) 0.6884657  0.1098608    6.27 3.69e-10 ***
-size        0.0182702  0.0004819   37.92  &lt; 2e-16 ***
+(Intercept) 0.3319645  0.0433475    7.66 1.89e-14 ***
+size        0.0182115  0.0004944   36.83  &lt; 2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -845,16 +850,16 @@ Assignment question 4
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Regression 
 
-194 samples
+201 samples
   2 predictor
 
 No pre-processing
 Resampling: Cross-Validated (10 fold) 
-Summary of sample sizes: 174, 177, 174, 174, 174, 176, ... 
+Summary of sample sizes: 181, 181, 181, 180, 181, 181, ... 
 Resampling results:
 
   RMSE        Rsquared   MAE       
-  0.07637067  0.9418728  0.06127849
+  0.07817135  0.8964143  0.06484844
 
 Tuning parameter 'intercept' was held constant at a value of TRUE</code></pre>
 </div>

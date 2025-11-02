@@ -2,6 +2,7 @@ project:
   type: book
   resources:
     - img/slides/*
+    - img/mixed/*
   output-dir: docs
 
 
@@ -35,6 +36,7 @@ book:
       chapters:
         - mixedmfish.qmd
         - glmmmodelsanswers.qmd
+    - gamassignment.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:
