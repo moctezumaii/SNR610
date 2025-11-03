@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="Bayesian_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Bayesian_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Bayesian_files/libs/quarto-html/popper.min.js"></script>
+<script src="Bayesian_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Bayesian_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Bayesian_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Bayesian_files/libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.37">
+
+  <meta name="author" content="SNR 610">
+  <title>Bayesian statistics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="Bayesian_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Bayesian_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="Bayesian_files/libs/revealjs/dist/theme/quarto-32e57118809187a82ccd535492b82cce.css">
+  <link href="Bayesian_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Bayesian_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Bayesian_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Bayesian_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Bayesian_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Bayesian_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <meta name="mermaid-theme" content="default">
+  <script src="Bayesian_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="Bayesian_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="Bayesian_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Bayesian statistics</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+SNR 610 
+</div>
+</div>
+</div>
+
+</section>
+<section id="today" class="slide level2">
+<h2>Today</h2>
+<p>Probability and Likelihood (step 1 out of 3)</p>
+</section>
+<section id="reminder" class="slide level2">
+<h2>Reminder</h2>
+<ul>
+<li class="fragment"><p>What is probability?</p></li>
+<li class="fragment"><p>Certainty that an event will happen</p></li>
+<li class="fragment"><p>Example:</p>
+<ul>
+<li class="fragment"><p>X = number of heads in 3 tosses</p></li>
+<li class="fragment"><p>x = exactly 2 heads</p></li>
+<li class="fragment"><p><span class="math inline">\(\theta=0.5\)</span> (probability)</p></li>
+<li class="fragment"><p><span class="math inline">\(P(X=x | \theta) = 3/8\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(P(\text{Number of heads in 3 tosses}= 2 | 0.5) = 3/8\)</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[HEADS] --&gt; B[HEADS]
+  A --&gt; C[TAILS]
+  B --&gt; D[HEADS]
+  B --&gt; E[TAILS]
+  C --&gt; F[HEADS]
+  C --&gt; G[TAILS]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">
+flowchart LR
+  A[TAILS] --&gt; B[HEADS]
+  A --&gt; C[TAILS]
+  B --&gt; D[HEADS]
+  B --&gt; E[TAILS]
+  C --&gt; F[HEADS]
+  C --&gt; G[TAILS]
+ 
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="probability" class="slide level2">
+<h2>Probability</h2>
+<ul>
+<li class="fragment"><p>3 tosses</p></li>
+<li class="fragment"><p>Probability of 1 head?</p></li>
+<li class="fragment"><p>Probability of 3 heads?</p></li>
+<li class="fragment"><p>Probability of 0 heads?</p></li>
+<li class="fragment"><p>We treat <span class="math inline">\(\theta\)</span> as fixed (0.5)</p></li>
+</ul>
+</section>
+<section id="probability-1" class="slide level2">
+<h2>Probability</h2>
+<p>We can actually estimate any probability as long as we know the parameters</p>
+<ul>
+<li class="fragment"><p>Binomial distribution parameters: n and p</p></li>
+<li class="fragment"><p>n is number of trials</p></li>
+<li class="fragment"><p><span class="math inline">\(P(X=x | \theta) = Y\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(P(successes = x | \text{p and n}) = Y\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(P(successes = 12 | \text{0.5 and 50}) = 0.0001078\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(P(successes \ge  57 | \text{0.5 and 100}) = 0.0966\)</span></p></li>
+<li class="fragment"><p>We use <code>dbinom</code>. Like this: <code>dbinom(x,n,p)</code> Example: <code>dbinom(12,50,0.5)</code></p></li>
+<li class="fragment"><p>For <span class="math inline">\(\ge\)</span> 57: <code>sum(dbinom(57:n,n,p))</code></p></li>
+</ul>
+</section>
+<section id="probability-2" class="slide level2">
+<h2>Probability</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.375</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.375</code></pre>
+</div>
+</div>
+</section>
+<section id="probability-3" class="slide level2">
+<h2>Probability</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.125 0.375 0.375 0.125</code></pre>
+</div>
+</div>
+
+<img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="probability-4" class="slide level2">
+<h2>Probability</h2>
+
+<img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="parameters-of-binomial" class="slide level2">
+<h2>Parameters of binomial</h2>
+<p>Probability and n!</p>
+</section>
+<section id="parameters-of-a-normal-distribution" class="slide level2">
+<h2>Parameters of a Normal distribution</h2>
+<p>Who can remember them?</p>
+<ul>
+<li class="fragment"><p>Mean and sd (or variance)</p></li>
+<li class="fragment"><p>For a population of males in the USA, these are the parameters:</p>
+<ul>
+<li class="fragment"><p><span class="math inline">\(\mu = 177.6cm\)</span></p></li>
+<li class="fragment"><p><span class="math inline">\(\sigma = 9.7cm\)</span></p></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>What is the probability of sampling a random man with a heigh of 172.85431 cm?</p></li>
+<li class="fragment"><p>What is the probability of sampling one random man and him being between 170 and 171 cm?</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">pnorm</span>(<span class="dv">171</span>,<span class="fl">177.7</span>,<span class="fl">9.7</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="dv">170</span>,<span class="fl">177.7</span>,<span class="fl">9.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03121851</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="normal-distribution" class="slide level2">
+<h2>Normal Distribution</h2>
+<p>By knowing the mean and sd we can plot any normal distibution</p>
+<p>We can estimate any probability as well</p>
+<p>Probability of observing X given the parameters</p>
+<ul>
+<li class="fragment"><span class="math inline">\(P ( 170 \le X \le 171) | \mu = 177.6, \sigma = 9.7)\)</span></li>
+</ul>
+</section>
+<section id="poisson-distribution" class="slide level2">
+<h2>Poisson Distribution</h2>
+<ul>
+<li class="fragment"><p>One parameter</p></li>
+<li class="fragment"><p><span class="math inline">\(\lambda\)</span></p></li>
+<li class="fragment"><p>Represents both mean and sd</p></li>
+<li class="fragment"><p>When <span class="math inline">\(\lambda = 7\)</span> what is the probability of seeing 5 hummingbirds visit a flower?</p></li>
+<li class="fragment"><p><span class="math inline">\(P(X=5|\lambda =7)\)</span></p></li>
+</ul>
+</section>
+<section id="poisson-distribution-1" class="slide level2">
+<h2>Poisson Distribution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">dpois</span>(<span class="dv">5</span>,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1277167</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">barplot</span>(<span class="fu">dpois</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">7</span>), <span class="at">names.arg =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">main=</span><span class="st">"number of hummingbirds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<section id="takeaway" class="slide level2">
+<h2>Takeaway</h2>
+<p>Probability: Chance of an event occuring</p>
+<ul>
+<li class="fragment"><p>Chance of data being something, given the parameters</p></li>
+<li class="fragment"><p>The parameters do not change. For example, for a p of 0.5 we can estimate the prob of 0, 1, 2… 100 heads out of 100</p></li>
+</ul>
+</section>
+<section id="question" class="slide level2">
+<h2>Question</h2>
+<p>Test your knowledge…</p>
+<ul>
+<li class="fragment">You have a coin that you do not know if it is fair or unfair. What is the probability that you will get 40 heads in 100 tosses?</li>
+</ul>
+</section>
+<section id="probability-5" class="slide level2">
+<h2>Probability</h2>
+<p>We cannot estimate it if we do not have the parameters!</p>
+<ul>
+<li class="fragment"><p>We usually do not have them</p></li>
+<li class="fragment"><p>It is what we are trying to estimate!!!!</p></li>
+<li class="fragment"><p>If we had them, there would be no point on sampling/experiments</p></li>
+<li class="fragment"><p>Examples:</p>
+<ul>
+<li class="fragment"><p>Probability of infection (infection rate)</p></li>
+<li class="fragment"><p>Yield of a crop</p></li>
+<li class="fragment"><p>Annual sales</p></li>
+<li class="fragment"><p>community composition</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="what-do-we-have" class="slide level2">
+<h2>What do we have?</h2>
+<p>Data!</p>
+</section>
+<section id="unfair-or-fair-coin" class="slide level2">
+<h2>Unfair or fair coin</h2>
+<p>You are smart, so you knew we couldn’t estimate it! You decide to grab the coin, and do 100 flips.</p>
+<ul>
+<li class="fragment"><p>You get 65 heads and 35 tails</p></li>
+<li class="fragment"><p>What value of P (prob of heads) is more likely:</p>
+<ul>
+<li class="fragment"><p>0.3</p></li>
+<li class="fragment"><p>0.5</p></li>
+<li class="fragment"><p>0.7</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="we-can-estimate-the-likelihood" class="slide level2">
+<h2>We can estimate the Likelihood</h2>
+<p>Likelihood of a parameter given our data</p>
+<ul>
+<li class="fragment"><p>Probability: <span class="math inline">\(P(X=x|\theta)\)</span></p></li>
+<li class="fragment"><p>x = data and <span class="math inline">\(\theta\)</span> = parameter</p></li>
+<li class="fragment"><p>Likelihood: <span class="math inline">\(\mathcal{L}(x|\theta = y)\)</span></p></li>
+</ul>
+</section>
+<section id="in-other-words" class="slide level2">
+<h2>In other words</h2>
+<ul>
+<li class="fragment"><p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.3 \; \&amp; \; n=100)\)</span></p></li>
+<li class="fragment"><p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.5 \; \&amp; \; n=100)\)</span></p></li>
+<li class="fragment"><p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.7 \; \&amp; \; n=100)\)</span></p></li>
+</ul>
+</section>
+<section id="in-other-words-1" class="slide level2">
+<h2>In other words</h2>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.3 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.5 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.7 \; \&amp; \; n=100)\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.3</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.273205e-13</code></pre>
+</div>
+</div>
+</section>
+<section id="in-other-words-2" class="slide level2">
+<h2>In other words</h2>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.3 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.5 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.7 \; \&amp; \; n=100)\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.3</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.273205e-13</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0008638557</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.04677968</code></pre>
+</div>
+</div>
+</section>
+<section id="in-other-words-3" class="slide level2">
+<h2>In other words</h2>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.3 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.5 \; \&amp; \; n=100)\)</span></p>
+<p>Likelihood: <span class="math inline">\(\mathcal{L}(65|p= 0.7 \; \&amp; \; n=100)\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.3</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.273205e-13</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0008638557</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.04677968</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.99</span>, <span class="at">by=</span><span class="fl">0.01</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 7.703225e-104  1.992063e-84  3.884481e-73  3.571358e-65  4.929663e-59
+ [6]  4.772511e-54  7.374228e-50  2.970735e-46  4.282059e-43  2.741123e-40
+[11]  9.091081e-38  1.750311e-35  2.132713e-33  1.758769e-31  1.035226e-29
+[16]  4.539569e-28  1.535868e-26  4.127038e-25  9.024029e-24  1.638853e-22
+[21]  2.515609e-21  3.313036e-20  3.792499e-19  3.816341e-18  3.409459e-17
+[26]  2.727838e-16  1.969634e-15  1.292261e-14  7.750912e-14  4.273205e-13
+[31]  2.176051e-12  1.028019e-11  4.523399e-11  1.860408e-10  7.175152e-10
+[36]  2.602570e-09  8.901681e-09  2.877953e-08  8.814231e-08  2.562323e-07
+[41]  7.082912e-07  1.864766e-06  4.682851e-06  1.123170e-05  2.576014e-05
+[46]  5.655635e-05  1.189753e-04  2.400149e-04  4.646673e-04  8.638557e-04
+[51]  1.542997e-03  2.649119e-03  4.373180e-03  6.943193e-03  1.060361e-02
+[56]  1.557780e-02  2.201417e-02  2.992165e-02  3.910718e-02  4.913282e-02
+[61]  5.931182e-02  6.875851e-02  7.649566e-02  8.160685e-02  8.340469e-02
+[66]  8.157530e-02  7.625895e-02  6.804079e-02  5.784834e-02  4.677968e-02
+[71]  3.590570e-02  2.609661e-02  1.791259e-02  1.157630e-02  7.019775e-03
+[76]  3.978485e-03  2.098032e-03  1.024198e-03  4.601262e-04  1.889469e-04
+[81]  7.036278e-05  2.354392e-05  7.002111e-06  1.827232e-06  4.119694e-07
+[86]  7.876283e-08  1.247985e-08  1.592788e-09  1.579556e-10  1.161994e-11
+[91]  5.965119e-13  1.966976e-14  3.709060e-16  3.373223e-18  1.136123e-20
+[96]  9.102708e-24  7.565670e-28  1.012012e-33  5.698078e-44</code></pre>
+</div>
+</div>
+</section>
+<section id="likelihood" class="slide level2">
+<h2>Likelihood</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.99</span>, <span class="at">by=</span><span class="fl">0.01</span>)</span>
+<span id="cb29-2"><a href=""></a>y<span class="ot">=</span><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.99</span>, <span class="at">by=</span><span class="fl">0.01</span>))</span>
+<span id="cb29-3"><a href=""></a><span class="fu">plot</span>(x,y,<span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lwd=</span><span class="dv">2</span>,<span class="at">ylab=</span><span class="st">"Likelihood"</span>, <span class="at">xlab=</span><span class="st">"Probability"</span>)</span>
+<span id="cb29-4"><a href=""></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-18-1.png" width="960" class="r-stretch"><p>“Very Unlikely that it is fair”</p>
+</section>
+<section id="probability-vs-likelihood" class="slide level2">
+<h2>Probability vs Likelihood</h2>
+<p>Probability:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Likelihood</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fu">seq</span>(<span class="fl">0.01</span>,<span class="fl">0.99</span>, <span class="at">by=</span><span class="fl">0.01</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="Bayesian_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"><p>Likelihood is continuous</p>
+</section>
+<section id="review" class="slide level2">
+<h2>Review</h2>
+<ul>
+<li class="fragment"><p>If you capture 5 raccoons with weights of 11.2, 12, 11.5, 12.8, 11.06 is it more likely that the population mean is 11.5 or 17?</p></li>
+<li class="fragment"><p>If you get 80 heads in 100 tosses, is it more likely that p is 0.8 or 0.5</p></li>
+<li class="fragment"><p>If you count insects per tree and find 77, 70, 75, 86, and 90 is it more likely that <span class="math inline">\(\lambda\)</span> for insects per tree is 60, 80, or 120?</p></li>
+<li class="fragment"><p>Likelihood is estimated!</p></li>
+<li class="fragment"><p><span class="math inline">\(\mathcal{L}(x|\theta = y)\)</span></p></li>
+<li class="fragment"><p>And usually (and correctly): <span class="math inline">\(\mathcal{L}(\theta|data)\)</span></p></li>
+<li class="fragment"><p>We use the probability density functions</p></li>
+</ul>
+</section>
+<section id="likelihood-and-probability-correct-way" class="slide level2">
+<h2>Likelihood and probability (correct way)</h2>
+<p><span class="math display">\[
+\Huge \mathcal{L}(\theta|data)
+\]</span></p>
+<p><span class="math display">\[
+\Huge P(data|\theta)
+\]</span></p>
+<p><span class="math display">\[
+\mathcal{L}(\theta|data) = P(data|\theta)
+\]</span></p>
+<ul>
+<li class="fragment">Likelihood of p being 0.5 given 48 heads out of 100 tosses</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0008638557</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">Probability of 48 heads out of 100 tosses given a probability of 0.5</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a><span class="fu">dbinom</span>(<span class="dv">65</span>,<span class="dv">100</span>,<span class="fl">0.5</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0008638557</code></pre>
+</div>
+</div>
+</section>
+<section id="bayesian" class="slide level2">
+<h2>Bayesian</h2>
+<p>A different statistical framework</p>
+<p>We have used frequentist so far</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Parameters</td>
+<td>Fixed unknown</td>
+<td>Random variable</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td>Random</td>
+<td>Fixed</td>
+</tr>
+<tr class="odd">
+<td>Inference</td>
+<td>Based on a sampling distribution</td>
+<td>Based on posterior</td>
+</tr>
+<tr class="even">
+<td>Output</td>
+<td>P-value, Confidence intervals, betas</td>
+<td>Credible intervals and posterior distribution</td>
+</tr>
+<tr class="odd">
+<td>Computational needs</td>
+<td>low</td>
+<td>high</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li class="fragment"><p>Data, random? Yes…</p></li>
+<li class="fragment"><p><span class="math inline">\(y_i = \beta_0 + \beta_1 + \epsilon_i\)</span></p></li>
+</ul>
+</section>
+<section id="bayesian-take-away" class="slide level2">
+<h2>Bayesian take away</h2>
+<p>Different way of looking at things… we will explore how</p>
+</section>
+<section id="bayes-theorem" class="slide level2">
+<h2>Bayes Theorem</h2>
+<p><span class="math display">\[
+\Huge P(\theta |data) = \frac{P(data|\theta) \times P(\theta)}{P(data)}
+\]</span></p>
+<ul>
+<li class="fragment"><span class="math inline">\(P(\theta|data)\)</span> : Posterior, probability of theta, given the data</li>
+<li class="fragment"><span class="math inline">\(P(data|\theta)\)</span> : Likelihood! <span class="math inline">\(\mathcal{L}(\theta|data) = P(data|\theta)\)</span></li>
+<li class="fragment"><span class="math inline">\(P(\theta)\)</span>: Prior (who knows what this is!)</li>
+<li class="fragment"><span class="math inline">\(P(data)\)</span>: Marginal (who knows!)</li>
+</ul>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<ul>
+<li class="fragment"><p>Challenge 1:</p>
+<ul>
+<li class="fragment">You go out to a Forest that has been separated in multiple plots. You are wondering what the count of total trees per plot is (<span class="math inline">\(\lambda\)</span>). You only can count the number of trees in one plot chosen at random. You count 37 trees, Estimate the Likelihood of different values of <span class="math inline">\(\lambda\)</span> as well as the maximum likelihood.</li>
+</ul></li>
+<li class="fragment"><p>Challenge 2:</p>
+<ul>
+<li class="fragment">You go to the same Forest, but were able to count three plots. They had 37, 41 and 35 trees. Estimate the Likelihood of different values of <span class="math inline">\(\lambda\)</span></li>
+</ul></li>
+</ul>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="Bayesian_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="Bayesian_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="Bayesian_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Bayesian_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
