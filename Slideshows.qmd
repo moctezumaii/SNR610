@@ -9,3 +9,15 @@
 [Mixed Effects Models](slides/mixedmodels_part_2_.html)
 
 [Generalized Additive Models](slides/gams.html)
+
+[Bayesian: Part 1](slides/Bayesian.html)
+
+[Bayesian: Part 2](slides/Bayesian2.html)
+
+[Bayesian: Part 3](slides/Bayesian3.html)
+
+[Bayesian: Part 4](slides/Bayesian 4.html)
+
+[Bayesian: Part 1](slides/Bayesian.html)
+
+[Visualization](https://rpubs.com/amolina/1288357)

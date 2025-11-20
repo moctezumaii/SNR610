@@ -344,6 +344,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./assignment_MV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Last assignment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -351,7 +357,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Slideshows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Slideshows</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -541,7 +547,7 @@ Warning
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 410.6106</code></pre>
+<pre><code>[1] 410.2382</code></pre>
 </div>
 </div>
 <p>We are going to simulate taking a sample of size 40. It is actually pretty straightforward to take a sample:</p>
@@ -632,7 +638,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI1,<span class="st">" UCI: "</span>, UCI1))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.610649462957 is included within the confidence interval. LCI: 383.318773169682 UCI: 415.893332785471"</code></pre>
+<pre><code>[1] "Nice! The real parameter 410.238159584528 is included within the confidence interval. LCI: 397.808388999439 UCI: 431.214712157399"</code></pre>
 </div>
 </div>
 <p>In class I mentioned examples in which I would sample the same population multiple times. Let’s do that, let’s start by taking a second sample and estimating the confidence interval:</p>
@@ -649,7 +655,7 @@ UpperCI = \overline{y} + 1.96SE
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Nice! The real parameter "</span>, mu, <span class="st">" is included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))</span>
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Bummer! The real parameter "</span>, mu, <span class="st">" is NOT included within the confidence interval. LCI: "</span>, LCI2,<span class="st">" UCI: "</span>, UCI2))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Nice! The real parameter 410.610649462957 is included within the confidence interval. LCI: 394.861403307653 UCI: 438.8621893792"</code></pre>
+<pre><code>[1] "Nice! The real parameter 410.238159584528 is included within the confidence interval. LCI: 383.672942569119 UCI: 421.607146520607"</code></pre>
 </div>
 </div>
 <p>Run the code again for sample 3</p>
@@ -710,7 +716,7 @@ UpperCI = \overline{y} + 1.96SE
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(inclusive)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 92</code></pre>
+<pre><code>[1] 97</code></pre>
 </div>
 </div>
 <p>That’s it! It will give you the number of “successes”.</p>
@@ -1257,7 +1263,7 @@ ratio of variances
 <span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2777603</code></pre>
+<pre><code>[1] 1803022</code></pre>
 </div>
 </div>
 

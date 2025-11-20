@@ -37,6 +37,7 @@ book:
         - mixedmfish.qmd
         - glmmmodelsanswers.qmd
     - gamassignment.qmd
+    - assignment_MV.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:
