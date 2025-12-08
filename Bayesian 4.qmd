@@ -1,0 +1,220 @@
+---
+title: "Bayesian 4"
+author: "Let's run this"
+---
+
+## Model: Wallcreeper
+
+
+Birds that have declined in the last years
+
+We will look at (simulate) data from 1989 to 2005
+
+We sample random quadrats each year and record (proportion of quadrats)
+
+We will use a normal linear model for this
+
+## Simulate our population
+
+$$
+y_i = \beta_0 + \beta_1 year_i + \epsilon_i 
+$$
+
+$$
+y_i = \alpha + \beta \times year_i + \epsilon_i 
+$$
+
+```{r}
+
+n = 16 (years)
+a = 40 (intercept)
+b = -0.5 (slope)
+sigma = 5 
+sigma2 = sigma^2
+x = 1:16
+
+```
+y is proportion of quadrats
+Save true values in an object
+
+```{r}
+truth <- c(alpha = a, beta = b, sigma = sqrt(sigma2))
+```
+
+
+## Simulation
+
+```{r}
+set.seed(12320)
+```
+
+```{r}
+y<- a+b*x + rnorm(n,0,sigma)
+
+```
+
+## Plot the data
+
+CHANGE THE X AXIS!
+
+```{r}
+
+
+```
+
+
+
+## Run the model in frequentist
+```{r}
+model <- lm(y ~ x)
+summary(model) 
+lm_est <- c(coef(model), sigma = sigma(model)) 
+ lm_est 
+
+```
+
+## Run the stan model
+
+Download the stan package
+
+```{r}
+library(rstan)
+```
+
+## Let's run the model
+
+First step: Bundle the data:
+
+Use a list to put response variable, explanatory variable and n(number of observations)
+
+```{r}
+dataList <- list(y = y, x = x, n = n)
+```
+
+## Step 2 (do not run)
+Let's break this up
+
+```{r eval=FALSE}
+# Write text file with model description in Stan language
+cat(file = "model.stan", # This line is R code
+"data { // This is the first line of Stan code
+  int <lower = 0> n; // Define the format of all data
+  vector[n] y; //. . . including the dimension of vectors
+  vector[n] x; //
+}
+parameters { // Define format for all parameters
+  real alpha;
+  real beta;
+  real <lower = 0> sigma; // sigma (sd) cannot be negative
+}
+transformed parameters {
+  vector[n] mu;
+  for (i in 1:n){
+    mu[i] = alpha + beta * x[i]; // Calculate linear predictor
+  }
+}
+model {
+  // Priors
+  alpha ~ normal(0, 100);
+  beta ~ normal(0, 100);
+  sigma ~ cauchy(0, 10);
+  // Likelihood (could be vectorized to increase speed)
+  for (i in 1:n){
+    y[i] ~ normal(mu[i], sigma);
+  }
+}
+
+" )
+
+```
+
+
+## Data and parameters
+
+```{r eval=FALSE}
+cat(file = "model.stan", # This line is R code
+"data { // This is the first line of Stan code
+  int <lower = 0> n; // Define the format of all data
+  vector[n] y; //. . . including the dimension of vectors
+  vector[n] x; //
+}
+
+parameters { // Define format for all parameters
+  real alpha;
+  real beta;
+  real <lower = 0> sigma; // sigma (sd) cannot be negative
+}
+```
+
+## Transformed parameter
+```{r}
+transformed parameters {
+  vector[n] mu;
+  for (i in 1:n){
+    mu[i] = alpha + beta * x[i]; // Calculate linear predictor
+  }
+
+```
+
+## Model
+```{r eval=FALSE}
+model {
+  // Priors
+  alpha ~ normal(0, 100);
+  beta ~ normal(0, 100);
+  sigma ~ cauchy(0, 10);
+  // Likelihood
+  for (i in 1:n){
+    y[i] ~ normal(mu[i], sigma);
+  }
+}
+```
+
+## All code
+
+```{r}
+# Write text file with model description in Stan language
+cat(file = "model.stan", # This line is R code
+"data { // This is the first line of Stan code
+  int <lower = 0> n; // Define the format of all data
+  vector[n] y; //. . . including the dimension of vectors
+  vector[n] x; //
+}
+parameters { // Define format for all parameters
+  real alpha;
+  real beta;
+  real <lower = 0> sigma; // sigma (sd) cannot be negative
+}
+transformed parameters {
+  vector[n] mu;
+  for (i in 1:n){
+    mu[i] = alpha + beta * x[i]; // Calculate linear predictor
+  }
+}
+model {
+  // Priors
+  alpha ~ normal(0, 100);
+  beta ~ normal(0, 100);
+  sigma ~ cauchy(0, 10);
+  // Likelihood (could be vectorized to increase speed)
+  for (i in 1:n){
+    y[i] ~ normal(mu[i], sigma);
+  }
+}
+
+" )
+
+```
+## Next step 
+Set settings and run it
+
+```{r}
+# HMC settings
+ni <- 3000 ; nb <- 1000 ; nc <- 4 ; nt <- 1
+# Call STAN 
+
+modelstan <- stan(file = "model.stan", data = dataList,
+chains = nc, iter = ni, warmup = nb, thin = nt)
+
+
+```

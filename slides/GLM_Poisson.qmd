@@ -186,7 +186,7 @@ ggplot(datpred,aes(x=x,y=logy,ymin=lwr,ymax=upr))+
   geom_line(aes(y=fit),lwd=2)+
   geom_ribbon(alpha=0.5)+
   xlab("flow")+
-  ylab("N (fish)")+
+  ylab("log (N fish)")+
   ggtitle("Fish passage \n N of fish")+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5))
@@ -400,7 +400,7 @@ ggplot(datpred2,aes(x=x,y=log(y),ymin=fit-2*se.fit,ymax=fit+2*se.fit))+
   geom_line(aes(y=fit),lwd=1)+
     geom_ribbon(alpha=0.2)+
   xlab("flow")+
-  ylab("(N fish)")+
+  ylab("log(N fish)")+
   ggtitle("Fish passage \n N of fish")+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5))
@@ -414,7 +414,7 @@ ggplot(datpred2,aes(x=x,y=y,ymin=exp(fit-2*se.fit),ymax=exp(fit+2*se.fit)))+
   geom_line(aes(y=exp(fit)),lwd=1)+
     geom_ribbon(alpha=0.2)+
   xlab("flow")+
-  ylab("log (N fish)")+
+  ylab("(N fish)")+
   ggtitle("Fish passage \n N of fish")+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5))
