@@ -22,7 +22,7 @@ A different statistical framework
 We have used frequentist so far
 
 | Topic | Frequentist | Bayesian |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Parameters | Fixed unknown | Random variable |
 | Data | Random | Fixed |
 | Inference | Based on a sampling distribution | Based on posterior |
@@ -52,7 +52,6 @@ $$
 
 -   You go out to a Forest that has been separated in multiple plots. You are wondering what the count of total trees per plot is ($\lambda$). You only can count the number of trees in one plot chosen at random. You count 37 trees, Estimate the Likelihood of different values of $\lambda$ as well as the maximum likelihood.
 
-
 ```{r}
 
 Lambda=seq(25,50, by=0.25)
@@ -66,7 +65,6 @@ plot(Lambda,Likelihood,type="l", col="blue", lwd=2,ylab="Likelihood", xlab="Lamb
 -   Challenge 2:
 
 -   You go to the same Forest, but were able to count three plots. They had 37, 41 and 35 trees. Estimate the Likelihood of different values of $\lambda$
-    
 
 ```{r}
 #| fig-height: 4
@@ -213,7 +211,7 @@ You check the score: the Browns are up 21 to 7 at halftime against the Ravens. I
 
 -   "Probability of winning when going 21-7 is about 80%"
 
--   $$ \text{Posterior belief} \propto \text{Prior (they find ways to lose)} \times \text{New data (they’re winning now)} $$      
+-   $$ \text{Posterior belief} \propto \text{Prior (they find ways to lose)} \times \text{New data (they’re winning now)} $$
 
 -   Essentially, you know that they tend to find ways to lose
 
@@ -256,10 +254,9 @@ plot(Lambda,Likelihood,type="l", col="blue", lwd=2,ylab="Likelihood", xlab="Lamb
 
 -   This is the Likelihood
 
--   $$ P(\theta | data) = \frac{P(data|\theta) \times P(\theta)}{P(data)} $$        
+-   $$ P(\theta | data) = \frac{P(data|\theta) \times P(\theta)}{P(data)} $$
 
 -   Joint Likelihood: We need to multiply it by the priors
-
 
 -   A prior study (one year ago), you counted trees per plots. And found a mean of 39.9 and a sd of 6.75
 
@@ -269,12 +266,12 @@ plot(Lambda,Likelihood,type="l", col="blue", lwd=2,ylab="Likelihood", xlab="Lamb
 
 -   For normal:
 
-    -   $\theta \sim N(\mu, \sigma^2)$ 
+    -   $\theta \sim N(\mu, \sigma^2)$
 
 -   For counts:
 
-    -   $\lambda \sim \gamma(\alpha, \beta)$  
-    
+    -   $\lambda \sim \gamma(\alpha, \beta)$
+
     -   $\beta = \frac{\mu}{\sigma^2}$
 
     -   $\alpha = \mu \times \beta$
@@ -330,7 +327,7 @@ lines(Lambda, prior_scaled, col="salmon", lty=2)
 
 $$ 
 P(data|\theta) \times P(\theta)
-$$ 
+$$
 
 Multiply them! The original numbers!
 
@@ -355,8 +352,8 @@ lines(Lambda,jointL)
 
 ```
 
-
 ## Scale it (for plots)
+
 ```{r}
 jointL_scaled <- jointL * max(Likelihood_scaled) / max(jointL)
 
@@ -370,8 +367,7 @@ lines(Lambda,jointL_scaled, lwd=3, lty=3)
 
 ## Final step
 
-$$ P(\theta | data) = \frac{P(data|\theta) \times P(\theta)}{P(data)} $$ 
-$P(data)$ is the marginal likelihood
+$$ P(\theta | data) = \frac{P(data|\theta) \times P(\theta)}{P(data)} $$ $P(data)$ is the marginal likelihood
 
 The point of the maginal likelihood is "standardizing" the joint likelihood
 
@@ -391,14 +387,13 @@ plot(Lambda,Posterior,type="l", col="blue", lwd=2,ylab="joint Likelihood", xlab=
 
 ```
 
-That is the result 
+That is the result
 
 -   No point estimate. It models "uncertainty"
 
 -   Median is usually reported
 
--   You can estimate 95% of the area under the curve --> credible intervals
-
+-   You can estimate 95% of the area under the curve --\> credible intervals
 
 ## Challenge. Bats per net
 
@@ -408,10 +403,9 @@ That is the result
 
 -   Estimate Likelihood, prior, combine them (joint) and estimate the posterior (normalized so that it sums to 1)
 
--   Plot all three on the same graph: likelihood, prior, and posterior --> Scale the prior and likelihood if necessary so they fit on the same plot
+-   Plot all three on the same graph: likelihood, prior, and posterior --\> Scale the prior and likelihood if necessary so they fit on the same plot
 
--   Find the most probable value of $\lambda$ 
-
+-   Find the most probable value of $\lambda$
 
 ## For next class
 
