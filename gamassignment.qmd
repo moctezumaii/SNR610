@@ -1,6 +1,11 @@
 ---
 execute:
   tidy: true
+categories:
+  - gam
+  - smoothing
+  - generalized-additive-models
+  - nonlinear-models
 ---
 
 ## GAM's vs GLM's

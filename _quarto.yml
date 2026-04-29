@@ -4,6 +4,32 @@ project:
     - img/slides/*
     - img/mixed/*
   output-dir: docs
+  render:
+    - index.qmd
+    - intro.qmd
+    - Assignment1.qmd
+    - Assignment1Q.qmd
+    - Readings1.qmd
+    - assignment2_intro.qmd
+    - assignment2.qmd
+    - Readings2.qmd
+    - linearmodels.qmd
+    - assignment3.qmd
+    - assignment4.qmd
+    - assignment5.qmd
+    - overdispersion.qmd
+    - mixed.qmd
+    - mixedmfish.qmd
+    - glmmmodelsanswers.qmd
+    - gamassignment.qmd
+    - assignment_MV.qmd
+    - bayesian.qmd
+    - references.qmd
+    - Slideshows.qmd
+    - Installation_instructions.qmd
+    - Datawrangling.qmd
+    - r-shiny_example.qmd
+    - FunctionsinR.qmd
 
 
 book:
@@ -38,10 +64,11 @@ book:
         - glmmmodelsanswers.qmd
     - gamassignment.qmd
     - assignment_MV.qmd
+    - bayesian.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:
-    - installation_instructions.qmd
+    - Installation_instructions.qmd
     - Datawrangling.qmd
     - r-shiny_example.qmd
     - FunctionsinR.qmd

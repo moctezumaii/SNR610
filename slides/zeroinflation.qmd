@@ -33,9 +33,9 @@ library(readr)
 
 -   We will look at overdispersion and zero inflation
 
--   Next Week: Data wrangling (short week)
+-   Next topic: Data wrangling
 
--   When we are back we will talk about "Generalized Mixed effects Models" –\> combine mixed effects and generalized linear models
+-   We will also talk about "Generalized Mixed effects Models", which combine mixed effects and generalized linear models
 
 -   These can also have zero inflation and overdispersion
 
@@ -76,7 +76,7 @@ ggplot(df, aes(x = x, y = y, fill = lambda)) +
 
 ## Examples of overdispersion
 
-A true Poisson distribution is completerly random!!! But if you are counting animals, are individuals randomly distributed in a field?
+A true Poisson distribution is completely random!!! But if you are counting animals, are individuals randomly distributed in a field?
 
 -   Fruit counts per plant (some produce a lot, some none)
 -   Animal scat counts (animals defecate in clusters)
@@ -119,7 +119,7 @@ Maybe due to the soil, genetics, plant vigor, health
 
 -   Bird counts
 
--   Parasite counts! (example from your current assignment) – most individuals have 0! But then some have hundreds!
+-   Parasite counts, an example from the current assignment; most individuals have 0, but then some have hundreds!
 
 ## Reasons for zero-inflation
 

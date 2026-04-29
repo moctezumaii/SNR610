@@ -109,7 +109,7 @@ Let's imagine the probability of getting a 5 after rolling one die. The probabil
 
 The odds are 0.2. This means you will see 0.2 successes for every failure (or one success for every 5 failures).
 
-Finally, let's think of the odds of me (Alejandro) seeing a car accident during my daily drive to and from campus). I know this is biased, and one semester I will actually sample this for an exercise, but my very biased estimate says the probability is 0.8 (80% chance of seeing one). If this was true, then the odds would be:
+Finally, let's think of the odds of me (Alejandro) seeing a car accident during my daily drive to and from campus). I know this is biased, and my very biased estimate says the probability is 0.8 (80% chance of seeing one). If this was true, then the odds would be:
 
 ```{r}
 0.8/(1-0.8)

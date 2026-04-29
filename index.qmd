@@ -1,3 +1,12 @@
+---
+categories:
+  - course-overview
+  - syllabus
+  - objectives
+  - natural-resources
+  - statistics
+---
+
 # Welcome! {.unnumbered}
 
 ### Introduction to Statistical Analysis in Agriculture and the Natural Resources
@@ -8,7 +17,7 @@ This book/course will provide graduate students with a theoretical framework for
 
 ## Syllabus
 
-Please check Canvas for an updated syllabus.
+Please refer to the current syllabus for course policies and updates.
 
 ## Objectives and structure
 

@@ -1,5 +1,9 @@
 ---
 bibliography: references.bib
+categories:
+  - readings
+  - references
+  - statistics
 ---
 
 # Supplementary Readings {.unnumbered}

@@ -1,3 +1,12 @@
+---
+categories:
+  - generalized-linear-models
+  - glm
+  - logistic-regression
+  - poisson
+  - link-functions
+---
+
 ## Generalized Linear models
 
 Just as a reminder... We use GLM's when the predictor and response variables **DO NOT** have an underlying normal distribution of the residuals or lack an underlying linear relationship.
@@ -49,7 +58,7 @@ Save it somewhere important!
 
 ## This assignment
 
-We went through the Poisson example in class. You can also download the presentation file (from Canvas) and access all of the code we used. During this assignment we will focus on the following:
+We went through the Poisson example earlier. You can also access the presentation file and all of the code we used. During this assignment we will focus on the following:
 
 1.  Logistic regression
 2.  Questions where you are presented with data, and a research question and you have to analyze the data. You need to decide what test or model to use, and interpret the results.
@@ -73,14 +82,14 @@ Some examples:
 
 What is the response variable? 🤔
 
-We usually obtain the **mean** of the response variable. In the grasslandexample, the response variable was **KgDMHA,** or Kilograms of Dry Matter per Hectare.
+We usually obtain the **mean** of the response variable. In the grassland example, the response variable was **KgDMHA,** or Kilograms of Dry Matter per Hectare.
 
 In the logistic regression, we are trying to find the **probability** of an event happening. Look at the examples before this box. If the binary outcomes are pregnant or not pregnant, the response variable is the probability of being pregnant.
 
-If we were exploring whether cortisol has an effect on succesful pregnancies in mice, and the model was `glm(pregnancy~cortisol, data=data, family=binomial(link="logit")` then, what we are trying to estimate are 1) whether cortisol has an effect on the probability of being pregnant (inference) **and** 2) what is the probability of a mouse being pregnant given a specific cortisol measurement. This explains why it is not linear. Probabilities go from 0 to 1.
+If we were exploring whether cortisol has an effect on successful pregnancies in mice, and the model was `glm(pregnancy~cortisol, data=data, family=binomial(link="logit")` then, what we are trying to estimate are 1) whether cortisol has an effect on the probability of being pregnant (inference) **and** 2) what is the probability of a mouse being pregnant given a specific cortisol measurement. This explains why it is not linear. Probabilities go from 0 to 1.
 :::
 
-The link equation is the "log of odds", also known as logit. This equation allows us to move from a system were the values go from 0 to 1 (probability) to one where we can theoretically go from -INF to INF.
+The link equation is the "log of odds", also known as logit. This equation allows us to move from a system where the values go from 0 to 1 (probability) to one where we can theoretically go from -INF to INF.
 
 #### Log of odds? What is that? And what are odds?
 
@@ -98,7 +107,7 @@ Let's imagine the probability of getting a 5 after rolling one die. The probabil
 
 The odds are 0.2. This means you will see 0.2 successes for every failure (or one success for every 5 failures).
 
-Finally, let's think of the odds of me (Alejandro) seeing a car accident during my daily drive to and from campus). I know this is biased, and one semester I will actually sample this for an exercise, but my very biased estimate says the probability is 0.8 (80% chance of seeing one). If this was true, then the odds would be:
+Finally, let's think of the odds of me (Alejandro) seeing a car accident during my daily drive to and from campus). I know this is biased, and my very biased estimate says the probability is 0.8 (80% chance of seeing one). If this was true, then the odds would be:
 
 ```{r}
 0.8/(1-0.8)

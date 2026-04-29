@@ -1,3 +1,11 @@
+---
+categories:
+  - shiny
+  - interactive-apps
+  - ui
+  - reactivity
+---
+
 # Shiny App Example
 
 ## Step 1

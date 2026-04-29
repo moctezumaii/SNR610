@@ -21,11 +21,11 @@ set.seed(145)
 
 ## Announcements
 
-Mixed Effects Models this week (lab) –\> One "lab" with me
+Mixed Effects Models lab, one lab session
 
-Next week: Generalized Mixed Effects Models (No Lab)
+Next topic: Generalized Mixed Effects Models
 
-Next week (Friday): Work on your plot
+Suggested follow-up: work on your plot
 
 ## Back to our example
 
@@ -48,7 +48,7 @@ Next week (Friday): Work on your plot
 -   $y_i \sim N(mean = E[Hg_i], \sigma)$
 
 ::: notes
-i -\> what does it stand for?
+i: what does it stand for?
 :::
 
 ## Linear model
@@ -95,9 +95,9 @@ Homoschedasticity
 
 Linearity
 
-Independence –\> of data
+Independence, of data
 
-Independence –\> of error (or residuals)
+Independence, of error, or residuals
 
 ## Linear Model
 
@@ -162,7 +162,7 @@ $$
 
 -   We can do a mixed model with mixed intercept or mixed slope
 
--   mixed intercept (nets only affect the intercept) –\> analogous to additive model:
+-   mixed intercept, nets only affect the intercept; analogous to an additive model:
 
 -   $$
     Hg_{ij} \sim \underbrace{(\beta_0 +\underbrace{\gamma_j}_{\text{Random intercept}})}_{intercept} + \underbrace{\beta_1size_{i}}_{slope} +\underbrace{\epsilon_i}_\text{ind var}
@@ -334,7 +334,7 @@ summary(m3)
     Grouping factor -\> region
 
 ::: notes
-Size is continuous!!!!! --\> slope Region categorical
+Size is continuous, so it has a slope; region is categorical
 :::
 
 ## Random slope and intercept
@@ -758,7 +758,7 @@ flowchart TD
 
 -   Also... there are mixed effects
 
--   Random intercept, random slope, both? –\> let's wait to discuss this
+-   Random intercept, random slope, both? We will return to this choice later.
 
 -   Step 1: Read the data... there is a potential issue
 

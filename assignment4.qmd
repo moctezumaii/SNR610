@@ -1,3 +1,11 @@
+---
+categories:
+  - model-selection
+  - likelihood
+  - aic
+  - multi-model-inference
+---
+
 # Model Selection and multi-model inference
 
 ## Complexity of Linear Models
@@ -16,21 +24,21 @@ Also, so far we have been running a single model for each dataset. In today's ac
 
 Before continuing: while we have been running multiple models, we haven't had time to stop and think about how `r` is computing the models. How does `r` finds a value for each coefficient $\beta$? It has been using least squares to find these values. Essentially, it finds values of $\beta$ that minimizes the sum of squares of the differences between predicted and observed values. Think of it as finding the line that minimizes residuals! While these are very useful methods, they are not the only ones!
 
-We will start using some methods that use Likelihood. During Wednesday class we talked a bit about likelihood and probability. At this point you should be able to understand the difference between the two (even if you can't describe it). If you find yourself using (or interested in using) Likelihood and Maximum Likelihood Methods, do yourself a favor and download the book by [Burnham and Anderson: Model Selection and Multimodel Inference. Which is free to download through the University of Tennessee Libraries!](https://link.springer.com/book/10.1007/b97636) [@burnham2010] It is the most useful book for multi-model inference!
+We will start using some methods that use Likelihood. At this point you should be able to understand the difference between likelihood and probability, even if you cannot fully describe it yet. If you find yourself using (or interested in using) Likelihood and Maximum Likelihood Methods, do yourself a favor and download the book by [Burnham and Anderson: Model Selection and Multimodel Inference. Which is free to download through the University of Tennessee Libraries!](https://link.springer.com/book/10.1007/b97636) [@burnham2010] It is the most useful book for multi-model inference!
 
-We will discuss the following paper next week: [@tredennick2021] [available here!](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.3336)
+I recommend the following paper: [@tredennick2021] [available here!](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecy.3336)
 
 While I am a huge proponent and user of AIC as an inferential method, the authors clearly disagree with me, and they make some very good points!
 
 ::: callout-note
-We will talk more about Likelihood next week. Last Wednesday we discussed the differences between Likelihood and Probability, hopefully that is still partially clear in your mind
+We will return to Likelihood later. The difference between Likelihood and Probability is worth revisiting a few times.
 :::
 
 ------------------------------------------------------------------------
 
 Likelihood description. Hopefully this will help with understanding likelihood.
 
-Likelihood theory is a paradigm underlying both frequentist and Bayesian statistics, and you need to understand it if you ever want to go deeper into data science and data analyses. This is similar to the example I talked about in class.
+Likelihood theory is a paradigm underlying both frequentist and Bayesian statistics, and you need to understand it if you ever want to go deeper into data science and data analyses. This is similar to the example discussed earlier.
 
 The theory underlying likelihood deals with a probabilistic model given the parameters $(\theta)$. Remember, the parameters are "the real" values that we are trying to estimate! And in this case I will describe our observations as *y.* In probability we usually do the following: $P(y|\theta)$. Essentially, what is the probability of of observing the outcomes represented by y, given $\theta$.
 
@@ -38,7 +46,7 @@ In a coin-toss example, $\theta$ is the probability of a success (in this case, 
 
 However, in the real world, we do not know $\theta$. That is what we are trying to estimate. Think of $\theta$ not as a coin-toss now, but as ANY of the following examples: 1) probability that a cow will be pregnant given that it was given a specific drug, 2) probability of survival for a turkey during a season, 3) probability that a food product will spoil after 48 hours at room temperature following a new packing procedure, 4) probability of a fish passing through a fish ladder it approached, 5) probability of a manufacturing defect in a new wood processing method.
 
-In these cases, we do not know the probability! That is what we are trying to estimate, however, we do know the outcomes! We sample our population and know the results. Going back to the coin-toss example, assume we don't know the probability of getting tails in a coin-toss. We don't know if the coin is fair or not. However, you do an experiment and toss the coin 10 times and record the results. You replicate this experiment 25 times. Now you have 25 observations ($y_i$), where each y is the number of successes observed in each experiment i. However, we can estimate the probability of observing what we did if $\theta$ was 0.01, and the probability of observing wat we did if it was 0.02, and if it was 0.03, or 0.04, and so on. This allow us to find a parameter $\theta$ that would maximize the following function:
+In these cases, we do not know the probability! That is what we are trying to estimate, however, we do know the outcomes! We sample our population and know the results. Going back to the coin-toss example, assume we don't know the probability of getting tails in a coin-toss. We don't know if the coin is fair or not. However, you do an experiment and toss the coin 10 times and record the results. You replicate this experiment 25 times. Now you have 25 observations ($y_i$), where each y is the number of successes observed in each experiment i. However, we can estimate the probability of observing what we did if $\theta$ was 0.01, and the probability of observing what we did if it was 0.02, and if it was 0.03, or 0.04, and so on. This allows us to find a parameter $\theta$ that would maximize the following function:
 
 $$
 \mathcal{L}(\theta|y) = P(y|\theta)
@@ -105,7 +113,7 @@ y \sim \beta_0+\beta_1x_1+ \\
 \beta_{12}x_1x_5+\beta_{13}x_2x_5+\beta_{14}x_3x_5+ \\ \beta_{15}x_4x_5+\beta_{16}x_1x_2x_3+\beta_{17}x_1x_2x_4+\\ \beta_{18}x_1x_3x_4+\beta_{19}x_2x_3x_4+\beta_{20}x_1x_2x_5+\\ \beta_{21}x_1x_3x_5+\beta_{22}x_2x_3x_5+\beta_{23}x_1x_4x_5+\\ 
 \beta_{24}x_2x_4x_5+\beta_{25}x_3x_4x_5+\beta_{26}x_1x_2x_3x_4+\\ \beta_{27}x_1x_2x_3x_5+\beta_{28}x_1x_2x_4x_5+\\ \beta_{29}x_1x_3x_4x_5+\beta_{30}x_2x_3x_4x_5+\beta_{31}x_1x_2x_3x_4x_5  
 \end{split}                 
-$$ Woah! That is a lot. You only have to write the equations for three models, just be sure to udnerstand where they are coming from! Now, let's run the model:
+$$ Woah! That is a lot. You only have to write the equations for three models, just be sure to understand where they are coming from! Now, let's run the model:
 
 ```{r}
 model10<-lm(KgDMHA~Water*Salinity*Nitrogen*Pests*Graze,data = grasslanddata)
@@ -113,7 +121,7 @@ model10<-lm(KgDMHA~Water*Salinity*Nitrogen*Pests*Graze,data = grasslanddata)
 AIC(model10)
 ```
 
-Using `plot(lm)` will plot some exploratory plots that allow you to test assumptions. Essentially, plot 1 and 2 are enough to check the 3 main assumptios.
+Using `plot(lm)` will plot some exploratory plots that allow you to test assumptions. Essentially, plot 1 and 2 are enough to check the 3 main assumptions.
 
 ```{r}
 plot(model10)
@@ -223,7 +231,7 @@ We will use three different methods to compare models and select our best model.
 ::: callout-tip
 ## Think about it 🧠
 
-We will discuss this on Monday and Wednesday: what makes a model "better"? Start thinking about it
+What makes a model "better"? Start thinking about it
 :::
 
 ### $R^2$
@@ -239,7 +247,7 @@ An $R^2$ value gives us the proportion of the data variance that was explained b
 ::: callout-tip
 ## Think about it 🧠
 
-We will discuss this on Monday: is a higher $r^2$ always better? When is it not better?
+Is a higher $r^2$ always better? When is it not better?
 :::
 
 ::: callout-warning
@@ -250,7 +258,7 @@ Check the outputs of the models you ran, and find the one with the highest $R^2$
 
 ### AICc
 
-We will talk more about AICc later in class. For the time being what you need to know is that it is an information criterion that uses maximum likelihood. While we can use maximum likelihood to estimate expected values and obtain estimates, we can also use it to compare models. In this case AIC compares models, and the model with the lowest AIC is the best. I attempt an explanation here, but if you don't understand it, hopefully next classes will make it clearer!
+We will return to AICc later. For the time being what you need to know is that it is an information criterion that uses maximum likelihood. While we can use maximum likelihood to estimate expected values and obtain estimates, we can also use it to compare models. In this case AIC compares models, and the model with the lowest AIC is the best. I attempt an explanation here, but if you don't understand it, hopefully later examples will make it clearer!
 
 AIC has the following equation:
 
@@ -391,7 +399,7 @@ While this is great, it's painful and costly to separate your data! You want to 
 
 7.  Compare the metric to the estimated metric from other possible models to select the ‘best’ model
 
-The point is, you are testing your model in data that was not used to develop the model. Does that make sense? If not, wait until Monday or raise your hand! :)
+The point is, you are testing your model in data that was not used to develop the model. Does that make sense? If not, pause here and ask for clarification. :)
 
 It is easy to do:
 

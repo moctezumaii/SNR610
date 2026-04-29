@@ -6,6 +6,11 @@ format:
     self-contained: true
 execute: 
   eval: false
+categories:
+  - installation
+  - r
+  - rstudio
+  - setup
 ---
 
 ## Install R and RStudio
@@ -24,7 +29,7 @@ To install R in a Mac the “Download R for Mac” link. Next, click on the `R-4
 
 #### Chromebook
 
-Chromebooks don’t allow you to install R or the RStudio program. However, there is an online platform that will allow you to run RStudio. If you go to <https://posit.cloud> , you should be able to create an account, and in your workspace you can open a new RStudio project. Your window will look the same as what we are working with, though there may be some quirks to getting
+Chromebooks do not allow you to install R or the RStudio program directly. However, there is an online platform that will allow you to run RStudio. If you go to <https://posit.cloud>, you should be able to create an account, and in your workspace you can open a new RStudio project. Your window will look very similar to what we are working with, though there may be some quirks to getting started.
 
 ### Install RStudio
 

@@ -618,7 +618,7 @@ How can we choose the number of knots? And where to place them
 
 -   Is there a good way?
 
--   We use a term $\lambda$ to penalize for wiggliness (Monday!) Many ways to estimate it... but what is important is that we are **NOT TRYING TO MINIMIZE residuals!**
+-   We use a term $\lambda$ to penalize for wiggliness. There are many ways to estimate it... but what is important is that we are **NOT TRYING TO MINIMIZE residuals!**
 
 -   More knots potentially means more ‘wiggliness’
 
@@ -672,7 +672,7 @@ summary(gam_model)
 
 -   Essentially, more EDF imply more complex, wiggly splines
 
--   EDF close to 1 –\> close to linear term (probably better running a linear model)!
+-   EDF close to 1, close to a linear term, so it is probably better to run a linear model!
 
 ## Can I do it myself?
 
@@ -766,13 +766,13 @@ As always... you should read the documentation of the package and the help file!
 
 ## Assignment
 
-I uploaded a GAM assignment to Canvas.
+There is a GAM assignment that goes with this material.
 
 ## Announcements
 
 Sorry about the grading!
 
-I teach 3 (4) classes this semester and have been drowning in work. Will get to it!
+I appreciate your patience with grading and feedback.
 
 Grades secondary, but I want to give you good feedback.
 

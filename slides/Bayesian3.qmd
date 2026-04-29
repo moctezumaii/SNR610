@@ -17,7 +17,7 @@ editor: visual
 
 ## Bayesian
 
--   Gives us a posterior, based on a prior an a Likelihood --\> models a probability. It is obtained by the product of:
+-   Gives us a posterior, based on a prior and a Likelihood; it models a probability. It is obtained by the product of:
 
 -   Likelihood, probability of a parameter being something, given our data
 
@@ -31,7 +31,7 @@ editor: visual
 
 -   Estimate Likelihood, prior, combine them (joint) and estimate the posterior (normalized so that it sums to 1)
 
--   Plot all three on the same graph: likelihood, prior, and posterior --\> Scale the prior and likelihood if necessary so they fit on the same plot
+-   Plot all three on the same graph: likelihood, prior, and posterior. Scale the prior and likelihood if necessary so they fit on the same plot
 
 -   Find the most probable value of $\lambda$
 
@@ -310,7 +310,7 @@ In frequentist: Equations that minimize residuals. It uses calculus and algebra
 
 -   You get the same solution each time. If all of you run the same model with the same data in R, you will all get the same betas as me!
 
--   Bayesian Integrates a posterior --\> No closed solution!
+-   Bayesian integrates a posterior, so there is no closed solution!
 
 -   Different solution each time!
 
@@ -376,9 +376,9 @@ plot(x, likelihood, type = "l", lwd = 3, col = "darkgreen",
 rbinom(1, 1, 0.5)
 ```
 
-If 1 --\> propose x + 3
+If 1, propose x + 3
 
-If 0 --\> propose x – 3
+If 0, propose x - 3
 
 3.  **Student A:** checks the new height (likelihood) and compares it to the current. If new height \> current, move 3 steps in that direction (Student B: write down the new x, student A write Likelihood) If not, move only 1 step. Write down the new x and Likelihood as well.
 
@@ -394,7 +394,7 @@ Propose a new set of parameters.
 
 Accept or reject based on how likely they are given the data.
 
-Repeat thousands of times. The chain “learns” the posterior shape.
+Repeat thousands of times. The chain learns the posterior shape.
 
 ## Youtube video
 
@@ -408,14 +408,12 @@ Most of our software uses a Gibbs sampler.
 
 -   After a while, it switches to a different parameter, and so on
 
-## Next classes (suggestion)
+## Suggested next steps
 
--   Wednesday: Plots
+-   Practice plotting posterior, prior, and likelihood curves
 
--   Friday: A Bayesian example (only for those interested).
+-   Work through one Bayesian example from start to finish
 
--   Next Week: Multivariate (lecture). Friday lab, no need to turn in, but an exercise I want you to do
+-   Compare a Bayesian answer with a frequentist answer
 
--   Monday 24: Session to work on final project (no class)
-
--   Monday 1st. Session to work on final project (no class). Free coffee + snacks (RSVP)!
+-   Think about how this connects to multivariate models and later course topics

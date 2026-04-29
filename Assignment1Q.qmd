@@ -1,3 +1,11 @@
+---
+categories:
+  - statistical-models
+  - indexing
+  - species-comparison
+  - data-analysis
+---
+
 # Assignment 1 {.unnumbered}
 
 To create a new quarto file, go to File \> New File \> Quarto Document \> Write a title and your name \> Create.
@@ -24,11 +32,11 @@ You can copy and paste it.
 ::: callout-warning
 ## ✏️ Question 1 ✏️ 5pts
 
-1.  Create a new Quarto file (html). This is the file that you will upload to Canvas.
+1.  Create a new Quarto file (html). This is the file that you will submit.
 2.  Write an explanation of what you think a statistical model is
 3.  Inside the Quarto file, using a code chunk, load the dataset, and then remove the first column `X` as we did earlier. This was explained in @sec-ass1
 4.  Look at the whole dataset
-5.  In @sec-ass1 you were asked to think about a plot. If you did your plot in R, try to embed it using code. If you used a different software option (or drew it), upload it to canvas as an independent file.
+5.  In @sec-ass1 you were asked to think about a plot. If you did your plot in R, try to embed it using code. If you used a different software option (or drew it), upload it as an independent file.
 :::
 
 ::: callout-warning
@@ -51,9 +59,9 @@ where $BCI_i$ is the index for individual i, $x_i$ is the forewing area for indi
 
 Write the code needed to estimate this BCI for each individual.
 
-tip: In the three objects you created (one for each species) add a column that estimates this BCI. Report he maximum and the minimum BCI (functions `max` and `min`) for each species.
+Tip: In the three objects you created, one for each species, add a column that estimates this BCI. Report the maximum and the minimum BCI, using the `max` and `min` functions, for each species.
 :::
 
-Click Render, and upload the resulting html file to CANVAS. If you can't get it to work contact me or talk to me after class.
+Click Render, and submit the resulting html file. If you can't get it to work, ask for help.
 
 Finally, please let me know if this assignment and these types of exercises are useful! :)
