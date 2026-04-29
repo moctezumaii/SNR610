@@ -1,3 +1,12 @@
+---
+categories:
+  - linear-models
+  - anova
+  - ancova
+  - assumptions
+  - regression
+---
+
 ## Linear Models
 
 So far we have run a categorical linear model with no covariates (also known as a one-sample t-test):
@@ -109,7 +118,7 @@ According to the results of the model, there is not a significant effect of stat
 
 In this assignment we will look at a model with **more** than two groups in a categorical variable, ANOVA, at a model with one continuous predictor, and at models with both categorical and continuous predictors (ANCOVA). Some of these topics we haven't seen in class yet.
 
-You have two weeks to turn this assignment in, as there will be no assignment next week! :)
+Take the time you need to work through this assignment carefully. :)
 
 We will also look at the always scary subject of model assumptions.
 
@@ -140,7 +149,7 @@ How do we test linearity?
 
 Well, if a model has only categorical variables, then it is automatically linear. So, no need to check this assumption in this case.
 
-Raise your hand if you don't understand why. We will actually discuss this in the next two weeks.
+Ask if you do not understand why. We will return to this idea later.
 
 ::: callout-warning
 #### Question 2
@@ -166,11 +175,11 @@ However, r has a very nice function, that automatically plots this interaction:
 plot(model2, which=1)
 ```
 
-This function plots the residuals and the fitted values. If the red line is around the dotted line (at y=0) then, the model is linear. We will talk about what to do when they are not linear on future classes. In this case it is as linear as can be (again, categorical variables are always completely linear).
+This function plots the residuals and the fitted values. If the red line is around the dotted line (at y=0) then, the model is linear. We will talk about what to do when they are not linear later on. In this case it is as linear as can be (again, categorical variables are always completely linear).
 
 ##### What to do when it is not linear?
 
-We will talk about this in future classes. But here is what you can do: usually we can transform the data (log-transform or square root), or add a polynomial term to it in order to fix non-linearity. Oftentimes we should be running a **generalized linear model (glm)** rather than a linear model. We will learn more about that in a couple weeks!
+We will talk about this in future classes. But here is what you can do: usually we can transform the data (log-transform or square root), or add a polynomial term to it in order to fix non-linearity. Oftentimes we should be running a **generalized linear model (glm)** rather than a linear model. We will learn more about that later on!
 
 ### 2. Normality
 
@@ -203,7 +212,7 @@ And you can run this plot:
 qqPlot(model2, id=F)
 ```
 
-This adds confidence itnervals to the plot. As long as the majority of the points fall within the CI's you are fine. Even if some do fall out, it's usually OK. Normality is a very forgiving assumption.
+This adds confidence intervals to the plot. As long as the majority of the points fall within the CI's you are fine. Even if some do fall out, it's usually OK. Normality is a very forgiving assumption.
 
 I **DO NOT** recommend to test for normality using a Shapiro-Wilk test. My reasons are explained incredibly by [Allen Downey](https://www.allendowney.com/blog/) here: <https://www.allendowney.com/blog/2023/01/28/never-test-for-normality/> Also, Allen Downey is incredibly insightful, and has some very interesting posts, you should read some of his other work,.
 
@@ -248,7 +257,7 @@ If we did a test of equal variance:
 var.test(growth~status,data=tunadata)
 ```
 
-We would conclude that the assumption is met . However, I think that in this particular case we would not completely trust that the variance is equal. We will discuss this in class.
+We would conclude that the assumption is met . However, I think that in this particular case we would not completely trust that the variance is equal. Think carefully about whether the assumption is met.
 
 #### 4. Independence
 
@@ -262,9 +271,9 @@ Let's actually work on the data and run models.
 
 You are welcome to check for assumptions for every model, but if your head is spinning after reading the assumptions section, then you can skip it and not run assumptions.
 
-Teporingos 🐰 part two: Remember the last teporingos dataset you worked with last week? Well, turns out that there were a total of four sites (or populations) sampled! However, they were saved in different files!
+Teporingos 🐰 part two: Remember the teporingos dataset you worked with earlier? Well, turns out that there were a total of four sites (or populations) sampled! However, they were saved in different files!
 
-So, you have to load two datasets: `teporingos2pops.csv` and `teporingosnew.csv` and somehow fuse them. We will do it using basic `r`. In a couple weeks you will be introduced to a different way to manage data: the `tidyverse`.
+So, you have to load two datasets: `teporingos2pops.csv` and `teporingosnew.csv` and somehow fuse them. We will do it using basic `r`. Later on you will be introduced to a different way to manage data: the `tidyverse`.
 
 Read both datasets:
 
@@ -291,7 +300,7 @@ summary(modelt)
 
 Wow! We ran this model **the same** way we did the one with 2 groups. That is super useful!
 
-You get more coefficients this time. Four of them. Let's explore the model equation (next week I will ask you to provide the model equations):
+You get more coefficients this time. Four of them. Let's explore the model equation:
 
 $$
 \begin{split}
@@ -480,7 +489,7 @@ summary(modeld)
 9.  Write the model equation (using betas). You can ask me how to write equations in Quarto!
 10. Interpret the model output
 11. Run an Anova (and a Tukey test using emmeans if necessary) to test whether there is an effect of dose on final consumption. Make sure to state the hypotheses!
-12. Plot the points, and predicted values (it is OK if you struggle with this, we will work on this together on Friday)
+12. Plot the points and predicted values
 :::
 
 ```{r eval=FALSE, echo=FALSE}

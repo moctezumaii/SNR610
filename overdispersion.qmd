@@ -1,3 +1,12 @@
+---
+categories:
+  - overdispersion
+  - zero-inflation
+  - count-data
+  - negative-binomial
+  - glm
+---
+
 # Zero inflation and overdispersion
 
 ## Overdispersion
@@ -115,7 +124,7 @@ performance::check_zeroinflation(model)
 
 ## Let's test for over-dispersion and zero-inflation
 
-We will be working with the same example from class. We are exploring horseshoe crab data (available at: <https://users.stat.ufl.edu/>). You can download the data from Canvas (`crabs.txt`)
+We will be working with the same example used earlier. We are exploring horseshoe crab data, available at <https://users.stat.ufl.edu/>. You can download the data as `crabs.txt`.
 
 Here is an image of horseshoe crabs:
 
@@ -304,7 +313,7 @@ As I said before, these models are the best when the processes that cause zeroes
 
 ### Zero-inflated Mixture models
 
-These are similar to hurdle models. We have two mini-models, but the count portion of the model is allow to have zeroes as well.
+These are similar to hurdle models. We have two mini-models, but the count portion of the model is allowed to have zeroes as well.
 
 We run zero-inflated mixture models just like we did hurdle models, but we use the `zeroinf` function rather than the `hurdle` one.
 
@@ -316,14 +325,14 @@ Run the same four models that you ran for the last section (hurdle models) and c
 
 Again... **We CANNOT test these models for overdispersion and zero inflation. But we do know the count residuals have some overdispersion problems, so a negative binomial distribution is probably best.**
 
-Now... sometimes when we run hurdle models and zero-inflated mixture models we essentially get the same result. We essentially get the same coefficients, same Likelihood, same AICc, same everything. If this is the case, then the processes that causes zeroes and ones is probably independent and we are better off with the hurdle models.
+Now... sometimes when we run hurdle models and zero-inflated mixture models we essentially get the same result. We essentially get the same coefficients, same Likelihood, same AICc, same everything. If this is the case, then the processes that cause zeroes and ones are probably independent and we are better off with the hurdle models.
 
 ::: callout-note
 ## Package glmmTMB can also run hurdle and mixture models
 
-You can run these models in package glmmTMB. This can be helpful if you are running multiple models that you want to compare. I shy away from overusing this package because it tends to have issues (as you experienced when trying to download and run it!) I do favor it for mixed effects models (next week's lab!).
+You can run these models in package glmmTMB. This can be helpful if you are running multiple models that you want to compare. I shy away from overusing this package because it tends to have issues (as you experienced when trying to download and run it!) I do favor it for mixed effects models.
 
-The issues are related to the fact that it has a lot of dependencies, so it needs to download tons of packages to function. And if one of those packages gets an update, it might result in glmmTMB not working with that partiuclar version. Finally, it usually requires you to have a fairly recent version of R, and constantly updating R can be a pain and unnecessary most of the time
+The issues are related to the fact that it has a lot of dependencies, so it needs to download tons of packages to function. And if one of those packages gets an update, it might result in glmmTMB not working with that particular version. Finally, it usually requires you to have a fairly recent version of R, and constantly updating R can be a pain and unnecessary most of the time
 :::
 
 ## Which distribution/model should I pick?
@@ -334,7 +343,7 @@ I like to use a method to choose one. I also like to define the method "a priori
 
 In this case, you will use AICc and make an AIC table and use that to choose the best model. **BUT BE AWARE!** This result does not tell us is the model is **good**. It only tells us if it's the best of the bunch (they could all be terrible, and you would still get a "best of the bunch" model). In other words: "The AIC comparisons only tell us which of our models is “best”, but they do not tell us if any of the models are actually any good" (Fieberg. Statistic for Ecologists. <https://fw8051statistics4ecologists.netlify.app/>).
 
-We should do a a thing caled **GOODNESS OF FIT** which will tell us if our model is good. In next week's lab you will do a goodness of fit test for this dataset (and your best model) and will also do model validation. You will also do that for the beaches mixed effects model example that we ran in class.
+We should do a **GOODNESS OF FIT** analysis, which will tell us if our model is good. A useful next step is to do a goodness of fit test for this dataset, and also do model validation.
 
 Meanwhile, we will only choose an AICc model, and assume it is good (FYI... most published papers rarely have goodness of fit tests, and oftentimes just run a single model with an assumed distribution).
 

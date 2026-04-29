@@ -1,0 +1,425 @@
+---
+title: "SNR 610 revision log"
+format:
+  html:
+    toc: true
+---
+
+## Edits
+
+- **File:** `/home/runner/work/SNR610/SNR610/index.qmd`
+  - **Original:** `Please check Canvas for an updated syllabus.`
+  - **Changed to:** `Please refer to the current syllabus for course policies and updates.`
+
+- **File:** `/home/runner/work/SNR610/SNR610/intro.qmd`
+  - **Original:** `Did you take ANSC/PLSC 571 with me in Spring 2025?...`
+  - **Changed to:** a generic note for readers who may have taken a similar introductory statistics course before.
+  - **Original:** `## Welcome to week 1`
+  - **Changed to:** `## Welcome`
+  - **Original:** `If you are reading this file before class... on Friday.`
+  - **Changed to:** a standalone introduction that no longer depends on class timing.
+  - **Original:** `We will learn more about projects during class. We will have our first R assignment this Friday...`
+  - **Changed to:** `We will learn more about projects as we go. For the time being, let's do the following:`
+  - **Original:** `Download the SNR610_W1_notes.qmd and the .csv files from CANVAS...`
+  - **Changed to:** `Download the SNR610_W1_notes.qmd and the .csv files into the newly created project directory`
+  - **Original:** `If you are working on this before class, you can (and should) stop now`
+  - **Changed to:** `If you are working on this as a reference exercise, you can stop here for now`
+  - **Original:** `Open R and make sure SNR 610 project is opened... We will continue there!`
+  - **Changed to:** `Open R and make sure the SNR 610 project is open... and continue there.`
+  - **Original:** `First of, we will discuss some topics.`
+  - **Changed to:** `First, we will discuss some topics.`
+  - **Original:** `We will learn how to clean data during the semester.`
+  - **Changed to:** `We will learn how to clean data later in the book.`
+  - **Original:** `More on that next week.`
+  - **Changed to:** `More on that in a later section.`
+  - **Original:** `### Friday`
+  - **Changed to:** `### Next steps`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Assignment1.qmd`
+  - **Original:** `Next week topic will be:`
+  - **Changed to:** `The next topic will be:`
+  - **Original:** the assignment support note with Friday due dates, office-hour times, and classroom timing.
+  - **Changed to:** a generic support note that keeps the same purpose without semester-specific scheduling.
+  - **Original:** `Please contact me (or raise your hand if in the classroom) to get help.`
+  - **Changed to:** `Please ask for help if you need it.`
+  - **Original:** `mat be too "basic"`
+  - **Changed to:** `may be too "basic"`
+  - **Original:** `Hopefully later in the course you won't feel the need to do this.`
+  - **Changed to:** `Hopefully later on you won't feel the need to do this.`
+  - **Original:** `By the end of the semester, you will!`
+  - **Changed to:** `right away`
+  - **Original:** `ownload all the files`
+  - **Changed to:** `download all the files`
+  - **Original:** `This whole document was written using Quarto, by the end of the semester...`
+  - **Changed to:** `This whole document was written using Quarto, and the goal is for you to be able to write full reports in Quarto`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Assignment1Q.qmd`
+  - **Original:** `This is the file that you will upload to Canvas.`
+  - **Changed to:** `This is the file that you will submit.`
+  - **Original:** `upload it to canvas as an independent file.`
+  - **Changed to:** `upload it as an independent file.`
+  - **Original:** `Report he maximum and the minimum BCI...`
+  - **Changed to:** `Report the maximum and the minimum BCI...`
+  - **Original:** `upload the resulting html file to CANVAS... after class.`
+  - **Changed to:** `submit the resulting html file... ask for help.`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2_intro.qmd`
+  - **Original:** `This is a "longer" assignment. But the next one will be shorter.`
+  - **Changed to:** `This is a longer assignment.`
+  - **Original:** `You can download the quarto document (from Canvas)...`
+  - **Changed to:** `You can download the Quarto document...`
+  - **Original:** `class folder`
+  - **Changed to:** `project folder`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2.qmd`
+  - **Original:** `book you read this week..`
+  - **Changed to:** `book chapter you read earlier.`
+  - **Original:** `take100`
+  - **Changed to:** `take 100`
+  - **Original:** `mroe`
+  - **Changed to:** `more`
+  - **Original:** `intervlas`
+  - **Changed to:** `intervals`
+  - **Original:** `calculatin`
+  - **Changed to:** `calculating`
+  - **Original:** `significanlty`
+  - **Changed to:** `significantly`
+  - **Original:** `Where there any differences?`
+  - **Changed to:** `Were there any differences?`
+  - **Original:** `hypotehsis`
+  - **Changed to:** `hypothesis`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment3.qmd`
+  - **Original:** `You have two weeks to turn this assignment in...`
+  - **Changed to:** `Take the time you need to work through this assignment carefully.`
+  - **Original:** `We will actually discuss this in the next two weeks.`
+  - **Changed to:** `We will return to this idea later.`
+  - **Original:** `future classes`
+  - **Changed to:** `later on`
+  - **Original:** `a couple weeks`
+  - **Changed to:** `later on`
+  - **Original:** `We will discuss this in class.`
+  - **Changed to:** `Think carefully about whether the assumption is met.`
+  - **Original:** `last week`
+  - **Changed to:** `earlier`
+  - **Original:** `next week I will ask you to provide the model equations`
+  - **Changed to:** removed the future-date reference and kept the model-equation prompt.
+  - **Original:** `we will work on this together on Friday`
+  - **Changed to:** removed the day-specific reference.
+  - **Original:** `itnervals`
+  - **Changed to:** `intervals`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment4.qmd`
+  - **Original:** references to `During Wednesday class`, `next week`, `Last Wednesday`, `Monday and Wednesday`, `Monday`, and `later in class`.
+  - **Changed to:** standalone wording such as `later`, `earlier`, `later examples`, and direct reflective prompts.
+  - **Original:** `wat`
+  - **Changed to:** `what`
+  - **Original:** `This allow us`
+  - **Changed to:** `This allows us`
+  - **Original:** `udnerstand`
+  - **Changed to:** `understand`
+  - **Original:** `assumptios`
+  - **Changed to:** `assumptions`
+  - **Original:** `If not, wait until Monday or raise your hand! :)`
+  - **Changed to:** `If not, pause here and ask for clarification. :)`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment5.qmd`
+  - **Original:** `We went through the Poisson example in class... (from Canvas)`
+  - **Changed to:** `We went through the Poisson example earlier...`
+  - **Original:** `one semester I will actually sample this for an exercise`
+  - **Changed to:** removed the semester-specific aside.
+  - **Original:** `grasslandexample`
+  - **Changed to:** `grassland example`
+  - **Original:** `succesful`
+  - **Changed to:** `successful`
+  - **Original:** `were the values go from 0 to 1`
+  - **Changed to:** `where the values go from 0 to 1`
+  - **Original:** `The transformation need to potentially be`
+  - **Changed to:** `The transformation needs to potentially be`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment_MV.qmd`
+  - **Original:** `This is the last assignment of the semester, and it is due by May 5.`
+  - **Changed to:** `This is the last assignment in the sequence...`
+  - **Original:** `chech`
+  - **Changed to:** `Check`
+  - **Original:** `pca or an nmds`
+  - **Changed to:** `PCA or an NMDS`
+  - **Original:** `That is a lot!You`
+  - **Changed to:** `That is a lot! You`
+  - **Original:** `ineplot`
+  - **Changed to:** `line plot`
+  - **Original:** `two-dimensaional`
+  - **Changed to:** `two-dimensional`
+  - **Original:** `spend sometime`
+  - **Changed to:** `spend some time`
+  - **Original:** `we need a :`
+  - **Changed to:** `like this:`
+  - **Original:** `intrepret`
+  - **Changed to:** `interpret`
+  - **Original:** `as the semester is ending`
+  - **Changed to:** removed the semester reference.
+  - **Original:** `calclulating`
+  - **Changed to:** `calculated`
+
+- **File:** `/home/runner/work/SNR610/SNR610/overdispersion.qmd`
+  - **Original:** `same example from class... download the data from Canvas`
+  - **Changed to:** `same example used earlier... download the data as crabs.txt`
+  - **Original:** `next week's lab!`
+  - **Changed to:** removed the week-specific reference.
+  - **Original:** `We should do a a thing caled GOODNESS OF FIT... In next week's lab...`
+  - **Changed to:** `We should do a GOODNESS OF FIT analysis... A useful next step is...`
+  - **Original:** `allow to have zeroes`
+  - **Changed to:** `allowed to have zeroes`
+  - **Original:** `causes zeroes and ones is`
+  - **Changed to:** `cause zeroes and ones are`
+  - **Original:** `partiuclar`
+  - **Changed to:** `particular`
+  - **Original:** `caled`
+  - **Changed to:** `called`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Datawrangling.qmd`
+  - **Original:** `No matter hoe you get there!`
+  - **Changed to:** `No matter how you get there!`
+  - **Original:** `go back and from`
+  - **Changed to:** `go back and forth`
+  - **Original:** `thar R introduced them`
+  - **Changed to:** `that R introduced them`
+  - **Original:** `While early in the semester...`
+  - **Changed to:** `While some earlier sections...`
+  - **Original:** `Please read careful... For this week's assignment...`
+  - **Changed to:** `Please read carefully... For this assignment...`
+  - **Original:** `let me know in Canvas`
+  - **Changed to:** `let me know`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Installation_instructions.qmd`
+  - **Original:** the Chromebook paragraph ended with `there may be some quirks to getting`
+  - **Changed to:** a complete sentence ending with `there may be some quirks to getting started.`
+
+- **File:** `/home/runner/work/SNR610/SNR610/FunctionsinR.qmd`
+  - **Original:** `Simulate the x values (based on n) — a normal or uniform distribution usually works well.`
+  - **Changed to:** `Simulate the x values, based on n; a normal or uniform distribution usually works well.`
+  - **Original:** `...even if no group is provided — in that case...`
+  - **Changed to:** `...even if no group is provided; in that case...`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Slideshows.qmd`
+  - **Original:** a plain list of links with a duplicated `Bayesian: Part 1` entry.
+  - **Changed to:** an introductory note explaining that the slide decks are rendered as standalone Reveal.js presentations, and the duplicate Bayesian link was removed.
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/mixedmodels_part_2_.qmd`
+  - **Original:** schedule-specific announcement lines and multiple arrow-style dash constructions.
+  - **Changed to:** stable announcement wording plus punctuation-based rewrites such as `Mixed Effects Models lab, one lab session` and `Random intercept, random slope, both? We will return to this choice later.`
+
+- **File:** `/home/runner/work/SNR610/SNR610/docs/slides/mixedmodels_part_2_.qmd`
+  - **Original:** the same schedule-specific announcement lines and arrow-style dash constructions found in the slide source.
+  - **Changed to:** matching stable wording, so the stored duplicate source stays consistent with the main slide source.
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/Bayesian2.qmd`
+  - **Original:** `95% of the area under the curve --\> credible intervals`
+  - **Changed to:** `95% of the area under the curve, credible intervals`
+  - **Original:** `## For next class` and `Download JAGS`
+  - **Changed to:** `## Practice` with an optional extension that does not depend on course timing.
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/Bayesian3.qmd`
+  - **Original:** `prior an a Likelihood`
+  - **Changed to:** `prior and a Likelihood`
+  - **Original:** multiple `--\>` arrow constructions and `The chain “learns” the posterior shape.`
+  - **Changed to:** plain punctuation, standard quotes removed, and direct wording such as `The chain learns the posterior shape.`
+  - **Original:** `## Next classes (suggestion)` with dated bullet points.
+  - **Changed to:** `## Suggested next steps` with generic practice suggestions.
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/gams.qmd`
+  - **Original:** `Monday!`, `I uploaded a GAM assignment to Canvas.`, and `I teach 3 (4) classes this semester...`
+  - **Changed to:** generic wording that keeps the same intent without date-specific course logistics.
+  - **Original:** `EDF close to 1 –\> close to linear term...`
+  - **Changed to:** `EDF close to 1, close to a linear term...`
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/zeroinflation.qmd`
+  - **Original:** `Next Week: Data wrangling...`, `When we are back...`, and `Parasite counts!... – most individuals...`
+  - **Changed to:** generic topic-forward wording without schedule references.
+  - **Original:** `completerly`
+  - **Changed to:** `completely`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment6.qmd`
+  - **Original:** `one semester I will actually sample this for an exercise`
+  - **Changed to:** removed the semester-specific aside, even though this file is not part of the book render list.
+
+## Suggestions
+
+- **File:** `/home/runner/work/SNR610/SNR610/gamassignment.qmd`
+  - **Current text:** the chapter argues strongly for simpler, more interpretable models and against unnecessary complexity.
+  - **Concern:** the framing is useful, but it may read as broader guidance than intended because later sections of the book move into more complex models.
+  - **Actionable suggestion:** add one short paragraph clarifying when extra complexity is justified, especially when prediction, hierarchical structure, or nonlinearity is central to the research question.
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment4.qmd`
+  - **Current text:** the chapter introduces $R^2$, likelihood, AIC, and cross-validation in the same assignment.
+  - **Concern:** students may not fully see that these tools answer different questions and come from different model-evaluation traditions.
+  - **Actionable suggestion:** add a short comparison paragraph that explains when a fit summary, an information criterion, and predictive validation are each most useful.
+
+- **File:** `/home/runner/work/SNR610/SNR610/overdispersion.qmd`
+  - **Current text:** the chapter explains overdispersion clearly once the topic begins.
+  - **Concern:** the contrast with the earlier Poisson GLM material could be made more explicit.
+  - **Actionable suggestion:** add one bridge sentence that reminds readers that Poisson assumes the mean and variance are linked, and that this is exactly what fails under overdispersion.
+
+- **File:** `/home/runner/work/SNR610/SNR610/mixedmfish.qmd`
+  - **Current text:** the chapter uses simulated data but does not emphasize reproducibility in the narrative.
+  - **Concern:** readers may not realize that their output can vary across runs.
+  - **Actionable suggestion:** add one short note near the simulation code explaining that setting a seed makes the example reproducible and keeps plots comparable across readers.
+
+## Categories Added
+
+- **File:** `/home/runner/work/SNR610/SNR610/index.qmd`
+  - **Added categories:** `course-overview`, `syllabus`, `objectives`, `natural-resources`, `statistics`
+- **File:** `/home/runner/work/SNR610/SNR610/intro.qmd`
+  - **Added categories:** `r-basics`, `quarto`, `projects`, `data-exploration`, `probability`
+- **File:** `/home/runner/work/SNR610/SNR610/Assignment1.qmd`
+  - **Added categories:** `r-basics`, `projects`, `quarto`, `plotting`, `exploratory-analysis`
+- **File:** `/home/runner/work/SNR610/SNR610/Assignment1Q.qmd`
+  - **Added categories:** `statistical-models`, `indexing`, `species-comparison`, `data-analysis`
+- **File:** `/home/runner/work/SNR610/SNR610/Readings1.qmd`
+  - **Added categories:** `readings`, `references`, `statistics`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2_intro.qmd`
+  - **Added categories:** `central-limit-theorem`, `confidence-intervals`, `simulation`, `ggplot`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2.qmd`
+  - **Added categories:** `sampling`, `simulation`, `confidence-intervals`, `t-tests`, `inference`
+- **File:** `/home/runner/work/SNR610/SNR610/Readings2.qmd`
+  - **Added categories:** `readings`, `references`, `statistics`
+- **File:** `/home/runner/work/SNR610/SNR610/linearmodels.qmd`
+  - **Added categories:** `linear-models`, `model-concepts`, `bias-variance`, `inference`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment3.qmd`
+  - **Added categories:** `linear-models`, `anova`, `ancova`, `assumptions`, `regression`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment4.qmd`
+  - **Added categories:** `model-selection`, `likelihood`, `aic`, `multi-model-inference`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment5.qmd`
+  - **Added categories:** `generalized-linear-models`, `glm`, `logistic-regression`, `poisson`, `link-functions`
+- **File:** `/home/runner/work/SNR610/SNR610/overdispersion.qmd`
+  - **Added categories:** `overdispersion`, `zero-inflation`, `count-data`, `negative-binomial`, `glm`
+- **File:** `/home/runner/work/SNR610/SNR610/mixed.qmd`
+  - **Added categories:** `mixed-effects`, `random-effects`, `hierarchical-models`
+- **File:** `/home/runner/work/SNR610/SNR610/mixedmfish.qmd`
+  - **Added categories:** `mixed-effects`, `mercury`, `fisheries`, `simulation`, `random-intercepts`
+- **File:** `/home/runner/work/SNR610/SNR610/glmmmodelsanswers.qmd`
+  - **Added categories:** `mixed-effects`, `glmmtmb`, `random-effects`, `model-comparison`
+- **File:** `/home/runner/work/SNR610/SNR610/gamassignment.qmd`
+  - **Added categories:** `gam`, `smoothing`, `generalized-additive-models`, `nonlinear-models`
+- **File:** `/home/runner/work/SNR610/SNR610/assignment_MV.qmd`
+  - **Added categories:** `multivariate-analysis`, `pca`, `nmds`, `ordination`, `vegan`
+- **File:** `/home/runner/work/SNR610/SNR610/bayesian.qmd`
+  - **Added categories:** `bayesian`, `likelihood`, `priors`, `posterior`, `r`
+- **File:** `/home/runner/work/SNR610/SNR610/references.qmd`
+  - **Added categories:** `references`, `bibliography`
+- **File:** `/home/runner/work/SNR610/SNR610/Slideshows.qmd`
+  - **Added categories:** `slideshows`, `course-resources`, `bayesian`, `glm`, `mixed-effects`
+- **File:** `/home/runner/work/SNR610/SNR610/Installation_instructions.qmd`
+  - **Added categories:** `installation`, `r`, `rstudio`, `setup`
+- **File:** `/home/runner/work/SNR610/SNR610/Datawrangling.qmd`
+  - **Added categories:** `data-wrangling`, `tidyverse`, `dplyr`, `ggplot2`, `data-management`
+- **File:** `/home/runner/work/SNR610/SNR610/r-shiny_example.qmd`
+  - **Added categories:** `shiny`, `interactive-apps`, `ui`, `reactivity`
+- **File:** `/home/runner/work/SNR610/SNR610/FunctionsinR.qmd`
+  - **Added categories:** `functions`, `automation`, `simulation`, `r-programming`
+
+## Calendar References Removed
+
+- **File:** `/home/runner/work/SNR610/SNR610/intro.qmd`
+  - **Original:** `Spring 2025`, `week 1`, `Friday`, `before class`, `during class`, `next week`
+  - **Changed to:** stable standalone wording such as `similar introductory statistics course before`, `Welcome`, `as you go`, and `later section`
+
+- **File:** `/home/runner/work/SNR610/SNR610/Assignment1.qmd`
+  - **Original:** Friday due-date and office-hour timing references, plus `By the end of the semester`
+  - **Changed to:** generic support wording and a long-term Quarto goal with no semester anchor
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2_intro.qmd`
+  - **Original:** `the next one will be shorter`
+  - **Changed to:** removed the comparison to another week
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment2.qmd`
+  - **Original:** `book you read this week`
+  - **Changed to:** `book chapter you read earlier`
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment3.qmd`
+  - **Original:** `two weeks`, `next week`, `next two weeks`, `future classes`, `a couple weeks`, `Friday`
+  - **Changed to:** stable phrasing such as `later`, `earlier`, or direct instructions without calendar timing
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment4.qmd`
+  - **Original:** `Wednesday class`, `next week`, `Last Wednesday`, `Monday and Wednesday`, `Monday`, `later in class`
+  - **Changed to:** `later`, `earlier`, `later examples`, and self-contained prompts
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment5.qmd`
+  - **Original:** `in class`, `one semester`
+  - **Changed to:** `earlier` and a version of the odds example with no semester reference
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment_MV.qmd`
+  - **Original:** `last assignment of the semester`, `due by May 5`, `as the semester is ending`
+  - **Changed to:** `last assignment in the sequence` and timing-free wording
+
+- **File:** `/home/runner/work/SNR610/SNR610/overdispersion.qmd`
+  - **Original:** `from class`, `Canvas`, `next week's lab`
+  - **Changed to:** `used earlier`, direct file naming, and `next step` wording
+
+- **File:** `/home/runner/work/SNR610/SNR610/Datawrangling.qmd`
+  - **Original:** `early in the semester`, `this week's assignment`
+  - **Changed to:** `earlier sections` and `this assignment`
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/mixedmodels_part_2_.qmd`
+  - **Original:** `this week`, `Next week`, `Friday`
+  - **Changed to:** `lab`, `Next topic`, and `Suggested follow-up`
+
+- **File:** `/home/runner/work/SNR610/SNR610/docs/slides/mixedmodels_part_2_.qmd`
+  - **Original:** the same `this week`, `Next week`, and `Friday` references found in the main slide source
+  - **Changed to:** the same timing-free wording used in the main slide source
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/Bayesian2.qmd`
+  - **Original:** `## For next class`
+  - **Changed to:** `## Practice`
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/Bayesian3.qmd`
+  - **Original:** `## Next classes (suggestion)` with dated bullets
+  - **Changed to:** `## Suggested next steps` with timing-free practice bullets
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/gams.qmd`
+  - **Original:** `Monday!`, `Canvas`, `this semester`
+  - **Changed to:** generic topic wording with no schedule references
+
+- **File:** `/home/runner/work/SNR610/SNR610/slides/zeroinflation.qmd`
+  - **Original:** `Next Week`, `When we are back`
+  - **Changed to:** timing-free topic transitions
+
+- **File:** `/home/runner/work/SNR610/SNR610/assignment6.qmd`
+  - **Original:** `one semester I will actually sample this for an exercise`
+  - **Changed to:** removed the semester-specific aside
+
+## Bayesian Chapter
+
+- **File created:** `/home/runner/work/SNR610/SNR610/bayesian.qmd`
+- **Placement:** inserted after `/home/runner/work/SNR610/SNR610/assignment_MV.qmd` in `/home/runner/work/SNR610/SNR610/_quarto.yml`
+- **Outline written:**
+  - probability, likelihood, and Bayes' theorem
+  - a binomial grid example with an unfair coin
+  - uniform and informative priors
+  - posterior summaries and credible intervals
+  - a Poisson count example using bats per net
+  - comparison between a posterior mode and a maximum likelihood estimate using `optim`
+  - interpretation and take-home points
+- **Assumptions made:**
+  - the new chapter should function as a narrative book chapter rather than as a slideshow
+  - the Bayesian slide decks provide the conceptual sequence, but the book chapter should stay focused on grid-based and likelihood-based Bayesian work in base `R`
+  - specialized MCMC workflows such as JAGS, Stan, Gibbs samplers, and OpenBUGS should be left out of the chapter body to match the requested scope
+
+## Slideshow Solution
+
+- **Problem:** the repository contains Reveal.js slide sources in `/home/runner/work/SNR610/SNR610/slides`, but the main book project was broad enough that slide `.qmd` files could be rendered in the wrong context. That risks broken layouts, figures, and slide behavior.
+- **Chosen solution:** separate the render workflows.
+- **Files modified or created:**
+  - `/home/runner/work/SNR610/SNR610/_quarto.yml`
+  - `/home/runner/work/SNR610/SNR610/slides/_quarto.yml`
+  - `/home/runner/work/SNR610/SNR610/Slideshows.qmd`
+- **What changed:**
+  - added an explicit `project.render` list in the root `_quarto.yml` so the main book render only processes the intended book chapters and appendices
+  - created `/home/runner/work/SNR610/SNR610/slides/_quarto.yml` as a separate slide project that renders `*.qmd` in `/slides` to `/home/runner/work/SNR610/SNR610/docs/slides`
+  - updated `Slideshows.qmd` to explain that the linked presentations are standalone Reveal.js outputs
+- **Why this solution was chosen:** it preserves slideshow integrity, keeps Reveal.js output separate from the book render, and removes the need to manually copy rendered slide output into `docs/`
+- **Render workflow going forward:**
+  - render the book from the repository root with `quarto render`
+  - render the slides separately with `quarto render slides`
+  - keep the links in `Slideshows.qmd` pointed at the generated files in `docs/slides`
+- **Validation note:** I could not fully execute the render workflow in this environment because both `quarto` and `R` were unavailable at the start of the task.

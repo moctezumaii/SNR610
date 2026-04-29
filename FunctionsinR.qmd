@@ -1,3 +1,11 @@
+---
+categories:
+  - functions
+  - automation
+  - simulation
+  - r-programming
+---
+
 # Functions
 
 ## Writing scripts and functions
@@ -125,7 +133,7 @@ Essentially, you will run the function with some inputs, and the output will be 
 
 -   Choose a continuous explanatory variable (x) that makes sense in your study system.
 
--   Simulate the x values (based on n) — a normal or uniform distribution usually works well.
+-   Simulate the x values, based on n; a normal or uniform distribution usually works well.
 
 -   Generate the response variable (y) using the linear equation: $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i $$
 
@@ -159,7 +167,7 @@ After running your function, the output should `return()` a plot and a model sum
 
 If you finish this function, you can make it more complex. Allow users to also add a categorical variable, the function should work whether the user inputs a categorical variable or not.
 
-Let users choose whether the effect is **additive** or **interactive**. Make sure the function still works even if no group is provided — in that case, it should behave like your simpler version.
+Let users choose whether the effect is **additive** or **interactive**. Make sure the function still works even if no group is provided; in that case, it should behave like your simpler version.
 
 ### TASK 2 ✏️
 

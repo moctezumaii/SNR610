@@ -1,3 +1,12 @@
+---
+categories:
+  - data-wrangling
+  - tidyverse
+  - dplyr
+  - ggplot2
+  - data-management
+---
+
 # Data Wrangling
 
 Data wrangling might be very important for you in your career. While this topic doesn't fall neatly in any of our topics, I usually decide to have a break around week 5 and look at this.
@@ -61,7 +70,7 @@ Before continuing I do want to admit to the fact that I generally prefer a combi
 
 Particularly, most users find that the syntax can be easier to understand and write, as it is written from left to right (instead of inside-out). You are free to use any package or any syntax that works best for you.
 
-While early in the semester I had some sections in which I expected you to run some specific code (with the idea of showcasing some of `baseR` syntax), going forward the focus will be in the results. If you identify the analysis needed, and you do it, it will be correct! No matter hoe you get there!
+While some earlier sections expected you to run specific code, with the idea of showcasing some of `baseR` syntax, going forward the focus will be on the results. If you identify the analysis needed, and you do it, it will be correct! No matter how you get there!
 
 ::: callout-tip
 ## Tibble, data.frame, what's the difference?
@@ -144,7 +153,7 @@ iris %>% filter(Species=="setosa") %>% mutate(widthm = Sepal.Width*10)
 
 So, there are two main differences. `tidy` reads "left to right", so, you filter the data, and the mutate it. But maybe the main difference is the use of a piping operator `%>%`.
 
-R pipes are a way to chain multiple operations together in a concise and expressive way. They are so popular thar `R` introduced them to their base use as: `|>`.
+R pipes are a way to chain multiple operations together in a concise and expressive way. They are so popular that `R` introduced them to their base use as: `|>`.
 
 Now, imagine you want to
 
@@ -174,7 +183,7 @@ Think about the following example: You are traveling to four sites and measuring
 
 ![Wide and Long data](img/wrangling/wl.png)
 
-Both can be useful! And we can go back and from using R. Download the tree dataset from Canvas.
+Both can be useful! And we can go back and forth using R. Download the tree dataset from Canvas.
 
 ```{r}
 tree<-read.csv("data/trees.csv")
@@ -197,7 +206,7 @@ treewide
 
 Easy! This will be useful for you in the future!
 
-**Please read careful before starting to work on the assignment:** For this week's assignment, you need to go to: <https://bookdown.org/jgscott/DSGI/data-wrangling.html> and read chapter 6. Reality is, this "tutorial" (and this book) are better written and have better information than what I could do for this lecture. I also think it will be more useful to you!. **If you are new** to `R` **and the** `tidyverse` I recommend you open a new r script and follow the "tutorial". You can ask me questions. The assignment will be to just let me know in Canvas whether you like this way (or baseR) better. **If you are experienced** in tidy, and you know the basics, then, I recommend you skip Chapter 6 and read chapter 17 <https://bookdown.org/jgscott/DSGI/probability-models.html>. (Actually, everyone should read it at some point, if you have time).
+**Please read carefully before starting to work on the assignment:** For this assignment, go to <https://bookdown.org/jgscott/DSGI/data-wrangling.html> and read chapter 6. Reality is, this "tutorial" (and this book) are better written and have better information than what I could do for this lecture. I also think it will be more useful to you!. **If you are new** to `R` **and the** `tidyverse` I recommend you open a new r script and follow the "tutorial". You can ask me questions. The assignment will be to let me know whether you like this way, or baseR, better. **If you are experienced** in tidy, and you know the basics, then, I recommend you skip Chapter 6 and read chapter 17 <https://bookdown.org/jgscott/DSGI/probability-models.html>. (Actually, everyone should read it at some point, if you have time).
 
 If you understand probability, then you understand statistics, whether they are frequentist, Bayesian, multivariate, etc. You can also read any other chapter if you find it more useful. Your assignment is telling me what chapter you worked on.
 

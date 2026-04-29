@@ -1,20 +1,29 @@
+---
+categories:
+  - r-basics
+  - projects
+  - quarto
+  - plotting
+  - exploratory-analysis
+---
+
 # Intro to R, Projects, and Quarto {#sec-ass1}
 
 Introduction to R, Projects, and Quarto.
 
-Next week topic will be:
+The next topic will be:
 
 1.  Statistical inference and linear models in R
 
 ::: callout-important
 ## About assignments
 
-While assignments are usually due on Fridays before class (check CANVAS), please read the following:
+Please read the following:
 
-1.  On Fridays, I will stay past the end of the class in the classroom, in case you have any questions.
-2.  My office is in room 474 of the ANR building. I am available MWF after class until \~4 pm and I am happy to help you with any assignment questions. Please don't hesitate to ask! I have also availability on Tuesdays and Thursdays
-3.  I am ALWAYS available via email, and I will do my best effort to reply to any R questions about the assignments as soon as possible. Please don't hesitate to reach me.
-4.  Most of the assignments will have the following structure: half-tutorial, and then half questions and assignment. You only need to turn things in that actually say "assignment question". As we move on, there will be less and less tips and less "tutorials" and more questions.
+1.  Reach out if you have questions about the assignments.
+2.  Use office hours or other posted help times if you need support.
+3.  Email is also a good way to ask R questions about the assignments.
+4.  Most assignments will have the following structure: half tutorial, and then half questions and assignment. You only need to turn in the sections that actually say "assignment question". As we move on, there will be fewer tips and more questions.
 :::
 
 ## Introduction to R
@@ -35,7 +44,7 @@ The objectives for this course (R-wise) are the following:
 
 ##### Let's get started!
 
-Please contact me (or raise your hand if in the classroom) to get help.
+Please ask for help if you need it.
 
 Open R-Studio and go to file \> new script.
 
@@ -64,9 +73,9 @@ You can type code here, and this is where the outputs are "printed". Notice in t
 
 I want you to worry less about grades, and more about learning and acquiring skills.
 
-If you have used R before, some of the steps in this assignment mat be too "basic". If that's the case feel free to skip them. Also, feel free to help other people that may be having issues or struggling. Collaborative learning can be super useful. And teaching/helping allows you to acquire even deeper knowledge.
+If you have used R before, some of the steps in this assignment may be too "basic". If that's the case feel free to skip them. Also, feel free to help other people that may be having issues or struggling. Collaborative learning can be super useful. And teaching/helping allows you to acquire even deeper knowledge.
 
-At the same time, if you are brand new and are struggling, and this is taking a while to complete. Feel free to not do the last parts of the assignment (just let me know what you had issues with). Hopefully later in the course you won't feel the need to do this.
+At the same time, if you are brand new and are struggling, and this is taking a while to complete. Feel free to not do the last parts of the assignment (just let me know what you had issues with). Hopefully later on you won't feel the need to do this.
 
 **Graduate student life** can be very busy. I want you to spend as much time as you can learning R and stats, because I believe it can be extremely beneficial for your career, but DO NOT sacrifice your learning in other areas (particularly research). Talk to me if you need more time, or have any issues
 :::
@@ -265,7 +274,7 @@ We won't have much time to go over probability distributions. If you are unfamil
 
 ::: callout-note
 If you can't figure out what a "function" does. Using the help function might help. Use `?` to ask R about a function. Try running `?rnorm` and see if you can figure out what this function does.\
-Again, no problem if you can't figure it out. By the end of the semester, you will! Also, what even is a function anyway?
+Again, no problem if you can't figure it out right away. Also, what even is a function anyway?
 :::
 
 ### Functions
@@ -300,7 +309,7 @@ Now, let's work on some real data.
 ::: callout-tip
 ## Projects
 
-If you create a project (which you should for this class), then you can ownload all the files in the **same directory** as the project. And you won't need to write the whole directory
+If you create a project, then you can download all the files into the **same directory** as the project. And you won't need to write the whole directory
 :::
 
 You can import data of various formats into R; they include data tables in the form of `.dbf`, `.csv`, and `.xlsx` files or even spatial data such as vectors `.shp` or rasters `.nc`.
@@ -482,7 +491,7 @@ Quarto is a multi-language, [next-generation](https://quarto.org/docs/faq/rmark
 
 1.  It allows to annotate your code
 2.  You can embed, run code and show plots.
-3.  This whole document was written using Quarto, by the end of the semester, I hope you are able to write full reports on Quarto
+3.  This whole document was written using Quarto, and the goal is for you to be able to write full reports in Quarto
 4.  You can mix it with Github and have version control
 5.  Create a yearly report. You can write the report, and have sections that are data-dependent. As new data comes in, the report auto-updates.
 

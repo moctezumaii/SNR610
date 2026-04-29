@@ -1,3 +1,10 @@
+---
+categories:
+  - mixed-effects
+  - random-effects
+  - hierarchical-models
+---
+
 # Mixed Effects Models
 
 Check the slideshows and both assignments in this section.

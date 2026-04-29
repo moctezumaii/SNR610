@@ -1,3 +1,11 @@
+---
+categories:
+  - central-limit-theorem
+  - confidence-intervals
+  - simulation
+  - ggplot
+---
+
 # The Central Limit Theorem and confidence intervals
 
 In this section we are going to learn the following:
@@ -7,9 +15,9 @@ In this section we are going to learn the following:
 3.  The central theorem and confidence intervals
 4.  Introduction to linear models
 
-This is a "longer" assignment. But the next one will be shorter. You can take as long as you need on it 😃
+This is a longer assignment. You can take as long as you need on it 😃
 
-You can download the quarto document (from Canvas) and use it to answer the questions, copy code, modify code, etc.
+You can download the Quarto document and use it to answer the questions, copy code, modify code, and so on.
 
 ## Remember!
 
@@ -22,7 +30,7 @@ You can also go to insert \> executable cell \> R and that should insert an r ch
 ::: callout-tip
 ## Why is my data not loading?
 
-Make sure you download the data file, and also save the quarto file you're working on in the class folder!
+Make sure you download the data file, and also save the Quarto file you're working on in the project folder!
 :::
 
 # 

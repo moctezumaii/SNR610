@@ -1,3 +1,12 @@
+---
+categories:
+  - sampling
+  - simulation
+  - confidence-intervals
+  - t-tests
+  - inference
+---
+
 # Exploring the CLT {#sec-ass2}
 
 The applet on [Ward and Nolte's book](https://collinn.github.io/sbi/ch7.html#central-limit-theorem) [@ward2024] is a great example of the central limit theorem. If you still have questions about this topic I recommend you check the applet on section 6.3 and the one on section 7.2. going to do a little experiment regarding the Central Limit Theorem and confidence intervals. We are going to:
@@ -224,7 +233,7 @@ if(mu<UCI2 & mu> LCI2){
 
 Run the code again for sample 3
 
-Now, I want you to do this 100 times (take a sample, estimate the CI, check if the real mean is included). This is just like in the applet from the book you read this week..
+Now, I want you to do this 100 times (take a sample, estimate the CI, check if the real mean is included). This is just like in the applet from the book chapter you read earlier.
 
 This might seem like a lot of work, but we can use a thing called `for loops`. Keep reading! 😃
 
@@ -245,7 +254,7 @@ $$
 1.  You start the for loop using `for`
 2.  You give a vector of values. During the `for` loop, x will take the first value in the vector and run the code block. After this, x will take the second value and run the code block. It will continue doing this until it reaches the last value. This is the "last iteration". After the last iteration, it will exit the for loop.
 
-Let's use a `for` loop to take100 samples.
+Let's use a `for` loop to take 100 samples.
 
 First, let's create some empty vectors to store our results. I like to create vectors before running the `for` loop because it is computationally faster than concatenating results as the loop goes. We will create vectors of size 100:
 
@@ -290,7 +299,7 @@ sum(inclusive)
 
 That's it! It will give you the number of "successes".
 
-At the end of the document, I have mroe information on for loops, and a "challenge" if you want to create one.
+At the end of the document, I have more information on for loops, and a "challenge" if you want to create one.
 
 Let's create a dataframe in which we store all of these results.
 
@@ -334,14 +343,14 @@ Three things you may be thinking about this plot:
 2.  It's a lot of code, and I'm not sure how good it looks
 3.  It's missing the confidence intervals!
 
-I agree with all of that. However, as class goes by I hope you will understand all the sections of the plot and make nicer plots than this!
+I agree with all of that. However, as you work through the class materials I hope you will understand all the sections of the plot and make nicer plots than this!
 
 For the time being, let's inspect each element:
 
 1.  `ggplot(df, aes(x = experiment, y = means,colour=inclusive))` initiate the plot, provides the data, and provides values for x, y, and for the color
 2.  `geom_point` draws the geometry (point) with our provided elements
 3.  `geom_hline` is drawing a horizontal line. We need to provide an actual value (mu in this case). Therefore it represents the real parameter
-4.  `scale_y_continuous` and `scale_x_continuous` provide information for the axes. You won't use this 99% of the time, and no need to worry about it right now. In this case I created y axis to be able to easily add the confidence intervlas in one of the following steps.
+4.  `scale_y_continuous` and `scale_x_continuous` provide information for the axes. You won't use this 99% of the time, and no need to worry about it right now. In this case I created y axis to be able to easily add the confidence intervals in one of the following steps.
 5.  `theme_classic` is providing a theme. Try running it without a pre-defined theme. I don't like the ggplot standard theme
 
 Finally, please notice how we add elements using `+`.
@@ -495,7 +504,7 @@ par(op)
 
 This is the t-distribution for our example.
 
-If you are curious as to what happens to the t distribution as df goes up, try calculatin it for 10,000 df. It actually becomes 1.96 and is no different than a normal distribution.
+If you are curious as to what happens to the t distribution as df goes up, try calculating it for 10,000 df. It actually becomes 1.96 and is no different than a normal distribution.
 
 Now, let's solve our problem. Remember, our linear model looks like:
 
@@ -515,7 +524,7 @@ summary(model1)
 ::: callout-warning
 ## Question 4 ✏️
 
-Interpret the results. What is the estimated mean? What are the confidence intervals? Do you think this population is significanlty different from 20.2?
+Interpret the results. What is the estimated mean? What are the confidence intervals? Do you think this population is significantly different from 20.2?
 :::
 
 You can also run a linear model like this:
@@ -633,7 +642,7 @@ summary(model2)
 
 Using this output, answer the following:
 
-1.  Where there any differences? (we will discuss this on Wednesday)
+1.  Were there any differences?
 2.  What is the estimated mean for infected individuals? Calculate it using only the coefficients!
 
 We are not focusing yet on assumptions. But usually, we can check most of them by running:
@@ -657,7 +666,7 @@ var.test(yH,yI)
 
 Are the variances equal? or not? Remember, **usually** a p value lower than 0.05 means difference.
 
-Also, read the alternative hypotehsis: `true ratio of variances is not equal to 1` check the 95% confidence interval, does it include 1?
+Also, read the alternative hypothesis: `true ratio of variances is not equal to 1` check the 95% confidence interval, does it include 1?
 
 Finally, let's run the t-test. This code chunk is incomplete. You have to specify whether the variance is equal or not. Use the results from the variance test to make your decision.
 

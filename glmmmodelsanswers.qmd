@@ -1,3 +1,11 @@
+---
+categories:
+  - mixed-effects
+  - glmmtmb
+  - random-effects
+  - model-comparison
+---
+
 # Mixed Models in glmmTMB
 
 ## How to run a model in glmmTMB

@@ -393,7 +393,7 @@ That is the result
 
 -   Median is usually reported
 
--   You can estimate 95% of the area under the curve --\> credible intervals
+-   You can estimate 95% of the area under the curve, credible intervals
 
 ## Challenge. Bats per net
 
@@ -403,10 +403,10 @@ That is the result
 
 -   Estimate Likelihood, prior, combine them (joint) and estimate the posterior (normalized so that it sums to 1)
 
--   Plot all three on the same graph: likelihood, prior, and posterior --\> Scale the prior and likelihood if necessary so they fit on the same plot
+-   Plot all three on the same graph: likelihood, prior, and posterior. Scale the prior and likelihood if necessary so they fit on the same plot
 
 -   Find the most probable value of $\lambda$
 
-## For next class
+## Practice
 
-Download JAGS
+Optional extension: compare this grid-based workflow with a software package that automates posterior sampling.

@@ -1,4 +1,15 @@
+---
+categories:
+  - slideshows
+  - course-resources
+  - bayesian
+  - glm
+  - mixed-effects
+---
+
 # Slideshows
+
+The slide decks are rendered as standalone Reveal.js presentations from the `slides/` project and are linked here as reference materials.
 
 [Poisson Distribution slideshow](slides/GLM_Poisson.html)
 
@@ -17,7 +28,5 @@
 [Bayesian: Part 3](slides/Bayesian3.html)
 
 [Bayesian: Part 4](slides/Bayesian 4.html)
-
-[Bayesian: Part 1](slides/Bayesian.html)
 
 [Visualization](https://rpubs.com/amolina/1288357)

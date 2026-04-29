@@ -1,5 +1,10 @@
 ---
 bibliography: references.bib
+categories:
+  - linear-models
+  - model-concepts
+  - bias-variance
+  - inference
 ---
 
 # Introduction to Models
