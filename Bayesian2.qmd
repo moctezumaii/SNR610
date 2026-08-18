@@ -21,7 +21,7 @@ A different statistical framework
 We have used frequentist so far
 
 | Topic | Frequentist | Bayesian |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Parameters | Fixed unknown | Random variable |
 | Data | Random | Fixed |
 | Inference | Based on a sampling distribution | Based on posterior |
@@ -86,4 +86,4 @@ $$ \Huge P(\theta |data) = \frac{P(data|\theta) \times P(\theta)}{P(data)} $$
 
 Before talking about priors, I want to tell you all a story
 
-## 
+##
