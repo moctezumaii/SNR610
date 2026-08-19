@@ -64,7 +64,7 @@ book:
         - glmmmodelsanswers.qmd
     - gamassignment.qmd
     - assignment_MV.qmd
-    - bayesian.qmd
+    - Bayesian.qmd
     - references.qmd
     - Slideshows.qmd
   appendices:

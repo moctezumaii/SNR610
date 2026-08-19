@@ -1,0 +1,719 @@
+---
+title: "Introduction"
+format:
+  revealjs:
+    incremental: true   
+    scrollable: true
+    chalkboard: true
+resources:
+  - "../img/slides/*"
+execute:
+  tidy: true
+---
+
+## SNR 610
+
+-   Before we can start the class, we need to take a statistics refresher
+
+## Questions
+
+1.  What is statistics?
+2.  What is a population? What is a sample?
+3.  What is a parameter? What is a statistic?
+
+Discuss, and answer in your own words.
+
+## Statistics 
+*    There are many definitions.
+*    My favorite definitions:
+    *   Statistics is the science of learning from data in the face of uncertainty.
+    *   Statistics is the study of uncertainty and variability.
+
+* Statistical models are not deterministic, they are probabilistic. They are used to describe the uncertainty in the data.
+
+## Statistics
+* “The study of the collection, analysis, interpretation, presentation, and organization of data (Dodge 2006)”
+* Or simply: "a very educated guess"
+
+## Population vs Sample
+-   A population is the entire set of individuals or items that we are interested in studying.
+-   Population: "all subjects of interest"
+-   Biological meaningful 
+ 
+-   A sample is a subset of the population that we actually observe or collect data from.
+-   Sample: "a subset of the population"
+
+## Population vs Sample
+If we collect data from the entire population, there is no need for inference.
+
+Why?
+
+::: {.notes}
+Go to tablet
+:::
+
+## Definitions
+
+*   Population: The group towards which scientists attempt to generalize
+*   Census: A study which includes all members of the population
+*   Sample: A portion of the population which is part of the study
+*   Study design: The process of obtaining the best sample to answer the research questions
+*   Inference: The process of making generalizations about the population
+*   Descriptive statistics: Methods for summarizing and/or presenting data
+*   Inferential statistics: Methods for making generalizations about a population using information contained in the sample
+
+## Data
+
+*   What is data?
+*   Types of data/variables?
+*   What are observations? What are variables?
+
+## Observations and variables
+
+<style>
+.data-diagram {
+  position: relative;
+  width: 900px;
+  height: 520px;
+  margin: 0 auto;
+  font-size: 22px;
+}
+
+/* ---------------- TABLE ---------------- */
+
+.data-diagram table {
+  position: absolute;
+  left: 140px;
+  top: 30px;
+  width: 620px;
+  border-collapse: collapse;
+  margin: 0;
+  border: 1px solid #777;
+}
+
+.data-diagram th {
+  background: #eeb4a6;
+  font-weight: normal;
+  padding: 3px 8px;
+  text-align: left;
+  border: none;
+}
+
+.data-diagram td {
+  background: #df8bad;
+  padding: 2px 8px;
+  height: 27px;
+  text-align: left;
+  border: none;
+}
+
+/* ---------------- LABELS ---------------- */
+
+.label-variables {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  color: #00a9e0;
+  font-size: 24px;
+}
+
+.label-data {
+  position: absolute;
+  left: 790px;
+  top: 115px;
+  color: #00b050;
+  font-size: 24px;
+}
+
+.label-observation {
+  position: absolute;
+  left: 0px;
+  top: 285px;
+  width: 100px;
+  color: #777;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+/* ---------------- OBSERVATION BOX ---------------- */
+
+.observation-box {
+  position: absolute;
+  left: 105px;
+  top: 275px;
+  width: 680px;
+  height: 31px;
+  border: 2px solid #e67e22;
+  box-sizing: border-box;
+  z-index: 5;
+  pointer-events: none;
+}
+</style>
+
+
+<div class="data-diagram">
+
+<div class="label-variables">
+variables
+</div>
+
+<div class="label-data">
+data
+</div>
+
+<div class="label-observation">
+an<br>observation
+</div>
+
+
+<table>
+<thead>
+<tr>
+<th>site</th>
+<th>latitude</th>
+<th>size</th>
+<th>air_temp</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>21.2</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>18.75</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>19.51</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>17.58</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>21.19</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>18.67</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>18.94</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>16.29</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>19.37</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>PIE</td>
+<td>42.7</td>
+<td>17.52</td>
+<td>10.293</td>
+</tr>
+
+<tr>
+<td>GTM</td>
+<td>30</td>
+<td>12.43</td>
+<td>21.792</td>
+</tr>
+
+<tr>
+<td>GTM</td>
+<td>30</td>
+<td>11.84</td>
+<td>21.792</td>
+</tr>
+
+<tr>
+<td>GTM</td>
+<td>30</td>
+<td>11.58</td>
+<td>21.792</td>
+</tr>
+
+<tr>
+<td>GTM</td>
+<td>30</td>
+<td>14.55</td>
+<td>21.792</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<div class="observation-box"></div>
+
+
+<svg
+  width="900"
+  height="520"
+  style="
+    position:absolute;
+    left:0;
+    top:0;
+    pointer-events:none;
+    z-index:10;
+  "
+>
+
+<defs>
+
+<marker
+  id="blue-arrow"
+  markerWidth="8"
+  markerHeight="8"
+  refX="7"
+  refY="3"
+  orient="auto"
+>
+<path
+  d="M0,0 L0,6 L8,3 z"
+  fill="#00a9e0"
+/>
+</marker>
+
+<marker
+  id="green-arrow"
+  markerWidth="8"
+  markerHeight="8"
+  refX="7"
+  refY="3"
+  orient="auto"
+>
+<path
+  d="M0,0 L0,6 L8,3 z"
+  fill="#00b050"
+/>
+</marker>
+
+<marker
+  id="gray-arrow"
+  markerWidth="8"
+  markerHeight="8"
+  refX="7"
+  refY="3"
+  orient="auto"
+>
+<path
+  d="M0,0 L0,6 L8,3 z"
+  fill="#777"
+/>
+</marker>
+
+</defs>
+
+
+<!-- VARIABLES ARROW -->
+
+<line
+  x1="90"
+  y1="20"
+  x2="138"
+  y2="38"
+  stroke="#00a9e0"
+  stroke-width="2"
+  marker-end="url(#blue-arrow)"
+/>
+
+
+<!-- DATA ARROW -->
+
+<line
+  x1="815"
+  y1="140"
+  x2="765"
+  y2="175"
+  stroke="#00b050"
+  stroke-width="2"
+  marker-end="url(#green-arrow)"
+/>
+
+
+<!-- OBSERVATION ARROW -->
+
+<line
+  x1="85"
+  y1="315"
+  x2="106"
+  y2="294"
+  stroke="#777"
+  stroke-width="2"
+  marker-end="url(#gray-arrow)"
+/>
+
+</svg>
+
+</div>
+
+## Types of variables
+
+<style>
+.variable-slide {
+  position: relative;
+  width: 1000px;
+  height: 520px;
+  margin: 0 auto;
+  font-size: 21px;
+}
+
+.variable-slide .node {
+  position: absolute;
+  border: 2px solid #e67e22;
+  background: #f7f7f7;
+  padding: 8px 14px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.variable-slide .data-node {
+  position: absolute;
+  left: 445px;
+  top: 10px;
+  width: 110px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ff7f00;
+  color: white;
+  border: 2px solid #b85c00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.variable-slide .major {
+  width: 300px;
+  height: 55px;
+  font-size: 23px;
+}
+
+.variable-slide .minor {
+  width: 220px;
+  height: 55px;
+  font-size: 22px;
+}
+
+.variable-slide .example {
+  position: absolute;
+  width: 230px;
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.variable-slide .example-title {
+  color: #008fd3;
+  font-style: italic;
+}
+
+.variable-slide .example-values {
+  color: #00a650;
+}
+
+.variable-slide .note {
+  position: absolute;
+  left: 275px;
+  top: 420px;
+  width: 450px;
+  background: #eeeeee;
+  padding: 12px 18px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.25;
+}
+</style>
+
+<div class="variable-slide">
+
+<div class="data-node">DATA</div>
+
+<div class="node major fragment" style="left: 115px; top: 120px;">
+Categorical<br>
+<span style="font-size:17px;">qualitative</span>
+</div>
+
+<div class="node major fragment" style="left: 585px; top: 120px;">
+Numerical<br>
+<span style="font-size:17px;">quantitative</span>
+</div>
+
+<div class="node minor fragment" style="left: 55px; top: 250px;">
+Nominal<br>
+<span style="font-size:16px;">no order</span>
+</div>
+
+<div class="node minor fragment" style="left: 305px; top: 250px;">
+Ordinal<br>
+<span style="font-size:16px;">ordered</span>
+</div>
+
+<div class="node minor fragment" style="left: 555px; top: 250px;">
+Discrete<br>
+<span style="font-size:16px;">counts</span>
+</div>
+
+<div class="node minor fragment" style="left: 805px; top: 250px;">
+Continuous<br>
+<span style="font-size:16px;">measurements</span>
+</div>
+
+<div class="example fragment" style="left: 50px; top: 330px;">
+<span class="example-title">Species, site, treatment</span><br>
+<span class="example-values">bass, trout, bluegill</span>
+</div>
+
+<div class="example fragment" style="left: 300px; top: 330px;">
+<span class="example-title">Condition</span><br>
+<span class="example-values">poor, ok, great</span>
+</div>
+
+<div class="example fragment" style="left: 550px; top: 330px;">
+<span class="example-title">Abundance</span><br>
+<span class="example-values">0, 1, 2, 3, 4...</span>
+</div>
+
+<div class="example fragment" style="left: 800px; top: 330px;">
+<span class="example-title">Length, biomass, temperature</span><br>
+<span class="example-values">12.4 cm, 27.8 g, 21.5°C</span>
+</div>
+
+<div class="note fragment">
+<strong>Extra numerical distinction:</strong><br>
+Temperature in °C is interval scale because 0°C is not “none.”<br>
+Length, biomass, and abundance are ratio scale because 0 means none.
+</div>
+
+<svg width="1000" height="520"
+     style="position:absolute; left:0; top:0; pointer-events:none; z-index:10;">
+
+<defs>
+  <marker id="orange-arrow" markerWidth="8" markerHeight="8"
+          refX="7" refY="3" orient="auto">
+    <path d="M0,0 L0,6 L8,3 z" fill="#ff7f00"/>
+  </marker>
+</defs>
+
+<line x1="445" y1="70" x2="265" y2="120"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+<line x1="555" y1="70" x2="735" y2="120"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+<line x1="265" y1="175" x2="165" y2="250"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+<line x1="265" y1="175" x2="415" y2="250"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+<line x1="735" y1="175" x2="665" y2="250"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+<line x1="735" y1="175" x2="915" y2="250"
+      stroke="#ff7f00" stroke-width="3"
+      marker-end="url(#orange-arrow)"/>
+
+</svg>
+
+</div>
+
+::: {.notes}
+interval: no real zero (e.g., temperature in °C)
+:::
+
+## Some more refreshers
+
+-   What is accuracy? What is precision?
+-   What is bias? What is variability?
+-   Why might we intentionally accept more bias in a model in order to reduce variance? --> We do this very often!
+
+## Accuracy and precision
+
+-  Accuracy: how close a measurement is to the true value
+-  Precision: how close repeated measurements are to each other
+-  Bias: systematic error that causes measurements to be consistently off from the true value
+-  Variance: the degree to which repeated measurements vary from each other
+
+## Accuracy and Precision
+
+```{r}
+#| echo: false
+#| fig-width: 7
+#| fig-height: 5.5
+#| fig-align: center
+# (plot code)
+
+library(ggplot2)
+library(dplyr)
+
+set.seed(42)
+n <- 25
+true_value <- c(0, 0)
+
+make_points <- function(label, center, sd) {
+  data.frame(
+    x = rnorm(n, mean = center[1], sd = sd[1]),
+    y = rnorm(n, mean = center[2], sd = sd[2]),
+    panel = label
+  )
+}
+
+df <- bind_rows(
+  make_points("Accurate & Precise",      c(0, 0),     c(0.15, 0.15)),
+  make_points("Precise, Biased",         c(1.2, 1.2), c(0.15, 0.15)),
+  make_points("Accurate, High Variance", c(0, 0),     c(0.7, 0.7)),
+  make_points("Biased & High Variance",  c(1.2, 1.2), c(0.7, 0.7))
+)
+
+df$panel <- factor(df$panel, levels = c(
+  "Accurate & Precise",
+  "Precise, Biased",
+  "Accurate, High Variance",
+  "Biased & High Variance"
+))
+
+# Concentric "target" rings for visual reference
+rings <- data.frame(r = c(0.5, 1, 1.5, 2))
+
+ggplot(df, aes(x, y)) +
+  # target rings
+  ggforce::geom_circle(
+    data = rings, aes(x0 = 0, y0 = 0, r = r),
+    inherit.aes = FALSE, color = "grey80"
+  ) +
+  geom_point(aes(0, 0), shape = 3, size = 4, color = "black", inherit.aes = FALSE) +
+  geom_point(color = "steelblue", size = 2, alpha = 0.8) +
+  coord_fixed(xlim = c(-2, 3), ylim = c(-2, 3)) +
+  facet_wrap(~panel, nrow = 2) +
+  labs(title = "Accuracy vs. Precision", x = NULL, y = NULL) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank(),
+    strip.text = element_text(face = "bold")
+  )
+
+```
+
+## Mean and variance
+-   Mean: the average of a set of values
+-   Variance: a measure of how much the values in a set differ from the mean
+-   Standard deviation: the square root of the variance, which gives a measure of spread in the same units as the data
+
+## Central Limit Theorem
+The central limit theorem states that the distribution of the sample mean will be approximately normally distributed, regardless of the shape of the population distribution, as long as the sample size is sufficiently large (usually n > 30).
+
+## CLT
+
+```{r}
+set.seed(123)
+data<-rnorm(10000, mean = 410.5, sd=60) #your population, 10,000 individuals total
+mu<-mean(data) #real population parameter
+sigma<-sd(data)
+n<-40
+
+experiment<-1:100
+means<-rep(NA,100) #For the means
+s<-rep(NA,100) #sd
+SE<-rep(NA,100) #SE
+LCI<-rep(NA,100) # Lower CI
+UCI<-rep(NA,100) # Upper CI
+inclusive<-rep(NA,100) #is the real parameter included?
+alpha<-0.05 #our alpha
+lower<-qnorm(alpha/2) #lower critical value
+upper<-qnorm(1-alpha/2) #upper critical value
+
+for(i in 1:100){
+sample<-sample(data,n)
+means[i]<-mean(sample)
+s[i]<-sd(sample)
+SE[i]<-s[i]/sqrt(n)
+LCI[i]<-means[i]+SE[i]*lower
+UCI[i]<-means[i]+SE[i]*upper
+if(mu<UCI[i] & mu> LCI[i]){
+  inclusive[i]<-T} else{
+    inclusive[i]<-F
+  }
+}
+df<-data.frame(experiment,means,s,SE,LCI,UCI,inclusive)
+library(ggplot2)
+
+ggplot(df, aes(x = experiment, y = means,colour=inclusive,ymin = LCI, ymax=UCI)) +
+   geom_point() +
+   geom_hline(yintercept = mu, color = "black", linetype = "longdash") +
+   scale_y_continuous(name = "", limits = c(min(df$LCI) - min(df$LCI)/10 , max(df$UCI + max(df$UCI)/10))) +
+   scale_x_continuous(limits = c(0, 100)) +
+   theme_classic()+
+  scale_color_manual(values=c("#ec280e", "#06b512"))+
+  geom_errorbar(width = 0)
+
+```
+
+## Probability and Likelihood
+-  What is probability? What is likelihood?
+
+
+## Probabiliy and Likelihood
+1.  Probability: the chance of observing a particular outcome given a known model or distribution
+2.  Likelihood: the plausibility of a model or estimate given observed data
+
+## Probability and inference
+Statistical inference is founded in the ability to quantify uncertainty. 
+
+We use probability to quantify uncertainty in our estimates and predictions.
+
+Probability tells us how likely a particular outcome is, given a known model or distribution.
+
+## Next Class
+
+Please read teh following by next Monday
+https://collinn.github.io/sbi/index.html
+
+An Intuitive, Interactive, Introduction to Biostatistics by Caitlin Ward and Collin Nolte
+
+Submit questions you may have.

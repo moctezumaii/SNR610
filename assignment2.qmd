@@ -86,6 +86,7 @@ sigma<-sd(data)
 Annual live weight (LW) meat production in 10,000 hectares (n = 10,000), each hectare represents one datapoint.
 
 ```{r}
+
 data<-rnorm(10000, mean = 410.5, sd=60) #your population, 10,000 individuals total
 mu<-mean(data) #real population parameter
 sigma<-sd(data)
