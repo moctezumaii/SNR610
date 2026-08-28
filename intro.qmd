@@ -11,13 +11,13 @@ categories:
 
 This section will introduce you to
 
--   Program R
+- Program R
 
--   Projects
+- Projects
 
--   Quarto
+- Quarto
 
--   Models
+- Models
 
 We will also discuss multiple important concepts!
 
@@ -77,11 +77,9 @@ Now, let's go back to the html file and follow the instructions to explore some 
 
 Download and read the butterfly file.
 
-<div>
-
+::: {}
 If you are comfortable with R basics, you can write the code for this exercise directly into Quarto. To add extra code chunks, write this symbols: \`\`\`{r}, if you are not comfortable with R, I recommend for the time being you open a new file and copy and paste the code there, and run it}
-
-</div>
+:::
 
 To read data, we use the following line:
 

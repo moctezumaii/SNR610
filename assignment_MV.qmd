@@ -307,13 +307,13 @@ Nice! We are done with PCAs!
 
 There are tons of resources online if you will be working with PCA's. I do recommend reading the `vegan` documentation. I also recommend you read the following:
 
--   <https://vegandevs.r-universe.dev/vegan/doc/intro-vegan.pdf>
+- <https://vegandevs.r-universe.dev/vegan/doc/intro-vegan.pdf>
 
--   <https://vegandevs.r-universe.dev/vegan/doc/partitioning.pdf>
+- <https://vegandevs.r-universe.dev/vegan/doc/partitioning.pdf>
 
--   <https://vegandevs.r-universe.dev/vegan/doc/diversity-vegan.pdf>
+- <https://vegandevs.r-universe.dev/vegan/doc/diversity-vegan.pdf>
 
--   <https://vegandevs.r-universe.dev/vegan/doc/decision-vegan.pdf>
+- <https://vegandevs.r-universe.dev/vegan/doc/decision-vegan.pdf>
 
 Even if not working with this package directly
 

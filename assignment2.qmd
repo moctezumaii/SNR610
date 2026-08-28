@@ -441,12 +441,12 @@ You are not measuring all the individuals, only 21
 
 The relevant hypotheses would be:
 
--   $$
-    Ho : \mu_1 = 20.2
-    $$
+- $$
+  Ho : \mu_1 = 20.2
+  $$
 
--   $$
-    Ha : \mu_1 \neq 20.2$$
+- $$
+  Ha : \mu_1 \neq 20.2$$
 
 Hopefully you understand this based on the readings, and some previous stats classes. If it's not clear, talk to me.
 
@@ -700,21 +700,21 @@ And a repeat loop is: ![repeat loop](img/assignment2/fig3.jpg)
 
 Some of the important functions to know.
 
--   `for` iterates over a sequence
+- `for` iterates over a sequence
 
--   `while` executes a set of statement as long as a logical condition is true
+- `while` executes a set of statement as long as a logical condition is true
 
--   `break` stops the loop before it loops through all items
+- `break` stops the loop before it loops through all items
 
--   `next` skip to next iteration before terminating the code chunk
+- `next` skip to next iteration before terminating the code chunk
 
--   `if...else` might also be good to know to set logical conditions
+- `if...else` might also be good to know to set logical conditions
 
 #### Challenge
 
 You are going to flip a **fair** coin 10,000,000 times. However, if you get lucky and get 20 **straight** tails, you get to stop flipping a coin (and you get 10 extra credit points!) You need the record in which throw you got the 20th straight tail, and print it. If you are able to do all of this, you get the credit!
 
-```{r}
+```{r, echo=F, eval=F}
 end<-20
 n<-10000000
 p<-0.5
